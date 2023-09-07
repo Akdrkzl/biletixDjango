@@ -1,0 +1,96 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<!-- !MAİN -->
+<div class="container-fluid main m-0 p-0">
+  <div class="container-lg bg-light p-0 p-md-5">
+    <div class="container-fluid kariyer-cont">
+      <div class="container-fluid p-0 p-md-5 bg-light">
+        <img
+          src="{% static './img/kariyer/career_tr.png' %}"
+          class="w-100 m-3 kariyer-img"
+          alt=""
+        />
+
+        <p class="text-kariyer">
+          Biletix TicketMaster Türkiye'de bize katılmak istersen aşağıdaki
+          pozisyonlar için CV'ni
+          <a href="#" class="kariyer-a"> hr@biletix.com</a>'a yollayabilirsin.
+        </p>
+
+        <p class="text-kariyer1">
+          Diğer iş fırsatları için bizi
+          <a href="#" class="kariyer-a">Linkedln</a> hesabımızda takip et!
+        </p>
+
+        <!-- card yapıları -->
+        <div class="kapsayan-container d-flex justify-content-between">
+          <div
+            class="card pb-2 m-1 rounded-0"
+            style="height: 40vh; width: 100%"
+          >
+            <div class="card-body card-body-kariyer m-0 pb-2 w-100">
+              <h5 class="card-title card-title-kariyer h5-card fw-bold">
+                Perakende Satış Temsilcisi
+              </h5>
+              <p class="card-text card-text-kariyer">
+                Tam zamanlı çalışmak istiyorsan, Lise ya da üniversite
+                mezunuysan, Esnek çalışma saatlerine, hareketli ve yoğun iş
+                temposuna uyum sağlayabileceğini düşünüyorsan,
+              </p>
+              <br />
+              <a href="#" class="btn btn-primary border-0 rounded-0"
+                >CV Gönder</a
+              >
+              <hr class="kariyer-cizgi" width="50%" color="#F8F8F7" />
+            </div>
+          </div>
+
+          <div
+            class="card pb-2 m-1 rounded-0"
+            style="height: 40vh; width: 100%"
+          >
+            <div class="card-body card-body-kariyer m-0 pb-2 w-100">
+              <h5 class="card-title card-title-kariyer h5-card fw-bold">
+                Çağrı Merkezi Operatörü
+              </h5>
+              <p class="card-text card-text-kariyer">
+                Tam zamanlı çalışmak istiyorsan, Lise ya da üniversite
+                mezunuysan, Esnek çalışma saatlerine, hareketli ve yoğun iş
+                temposuna uyum sağlayabileceğini düşünüyorsan,
+              </p>
+              <br />
+              <a href="#" class="btn btn-primary border-0 rounded-0"
+                >CV Gönder</a
+              >
+              <hr class="kariyer-cizgi" width="50%" color="#F8F8F7" />
+            </div>
+          </div>
+
+          <div class="card pb-2 m-1" style="height: 40vh; width: 100%">
+            <div class="card-body card-body-kariyer m-0 pb-2 w-100">
+              <h5 class="card-title card-title-kariyer h5-card fw-bold">
+                Part-Time Satış Temsilcisi
+              </h5>
+              <p class="card-text card-text-kariyer">
+                Üniversite öğrencisiysen, Ve boş zamanlarında hem eğlenmek hem
+                de harçlığını kazanmak istiyorsan,
+              </p>
+              <br />
+              <br />
+              <a href="#" class="btn btn-primary border-0 rounded-0"
+                >CV Gönder</a
+              >
+              <hr class="kariyer-cizgi" width="50%" color="#F8F8F7" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

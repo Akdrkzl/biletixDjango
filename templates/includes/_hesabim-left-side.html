@@ -1,0 +1,63 @@
+{% load static %}
+                <!-- lef-side -->
+                {% if user.is_authenticated %}
+             
+                <div class="col-lg-3 d-none d-lg-block  left-side-profil">
+                    <div class="profil">
+                        <div class="avatar">
+                            <img class="avatarProfil " src="{% static './img/avatar.svg' %}" alt="Avatar">
+                            <div class="nameMessage">
+                                <div class="name">{{request.user.first_name|title}}</div>
+                                <div class="welcome-message">Tekrar Hoşgeldiniz!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="accordionExampleHesabim">
+                        <div class="accordion-item hesabimAccordionItem">
+                            <h2 class="accordion-header biletlerimmm d-flex ">
+                                <i class="fa-solid fa-ticket mt-3 ms-2 fs-4"></i>
+                                <button class="accordion-button hesabimAccordionButton" 
+                                type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    Biletlerim
+                                </button> 
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse  biletlerimAl"
+                                data-bs-parent="#accordionExampleHesabim">
+                                <div class="accordion-body biletlerimBody biletContentIcerik hesabimAccordionBody">
+                                    <a href="{% url 'gelecek-bilet' %}" data-id="gelecekBilet" class="biletlerimEtkinlikHvr">Gelecekler Etkinlikler</a>
+                                    <a href="#gecmisBilet" data-id="gecmisBilet" class="biletlerimEtkinlikHvr ">Geçmiş Etkinlikler</a>
+                                    <a href="#sezonlukBilet" data-id="sezonlukBilet" class="biletlerimEtkinlikHvr">Sezonluk Biletlerim</a>
+                                    <a href="#tumBilet" data-id="tumBilet" class="biletlerimEtkinlikHvr">Tüm Siparişler</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item altkisimlar hesabimAccordionItem">
+                            <h2 class="accordion-header hesapAyarlariB d-flex">
+                                <i class="fa-solid fa-gear mt-3 ms-2 fs-4"></i>
+                                <button class="accordion-button collapsed-2 hesabimAccordionButton" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Hesap Ayarları
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExampleHesabim">
+                                <div class="accordion-body hesabimAccordionBody">
+                                    <div class="accordion-body hesabimAccordionBody">
+                                        <a href="{% url 'profil' %}" data-id="kisiselBilgilerimm" class="biletlerimEtkinlikHvr ">Kişisel Bilgilerim</a>
+                                        <a href="{% url 'sifre-degistir' %}"data-id="sifreDegisikligii" class="biletlerimEtkinlikHvr ">Şifre Değişikliği</a>
+                                        <a href="{% url 'adres' %}"data-id="adreslerimm" class="biletlerimEtkinlikHvr ">Adreslerim</a>
+                                        <a href="{% url 'bildirim' %}"data-id="bildirimTercihlerii" class="biletlerimEtkinlikHvr ">Bildirim Tercihleri</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cikisYap">
+                            <a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <span class="ms-2 fw-medium">Çıkış Yap</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                {% endif %}

@@ -1,0 +1,22 @@
+{% load static %}
+<header>
+    <h2 class="biletAyari">Biletlerim</h2>
+</header> 
+<div class="biletContent">
+    <div class="biletContentIcerik category-scroller-container">
+     <button id="prevBtn-2">&lt;</button>
+     <div id="categoryScroller-2">
+           <div class="category-item">
+
+           <a href="{% url 'gelecek-bilet' %}" data-id="gelecekBilet" class="biletlerimEtkinlikHvr ">Gelecek Etkinlikler</a>
+        
+           <a href="{% url 'gecmis-bilet' %}" data-id="gecmisBilet" class="biletlerimEtkinlikHvr">Geçmiş Etkinlikler</a>
+       
+           <a href="{% url 'sezonluk-bilet' %}" data-id="sezonlukBilet" class="biletlerimEtkinlikHvr ">Sezonluk Biletlerim</a>
+        
+           <a href="#tumBilet" data-id="tumBilet" class="biletlerimEtkinlikHvr ">Tüm Siparişler</a>
+           </div>
+       </div>
+       <button id="nextBtn-2" class="z-1">&gt;</button>           
+    </div>
+</div>

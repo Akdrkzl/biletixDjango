@@ -1,0 +1,50 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<div class="container w-75 m-auto hesap-arkaplan mb-5" >
+<div class="row">
+    <!-- hesap oluştur -->
+    <div class="col col-sm-alt mt-5 ms-4 ">
+        <h3 class="hesap-font">HESAP OLUŞTUR</h3>
+
+        <p style="font-size: 14px;">Henüz hesabınız yok mu? Burdan oluşturun!</p>
+<div class="hesap-buton float-end" >
+        <div type="button" class="btn btn-primary border-5 me-4">
+          <a class="text-white text-decoration-none" href="{% url 'createaccount' %}">Hesap Oluştur</a>
+        </div>
+    </div>
+    </div>
+     <!-- Giriş Yap -->
+    <div class=" col col-sm-alt mt-5 ">
+       
+        <h3 class="hesap-font ">GİRİŞ YAP</h3>
+
+       <form action="" class="mt-4">
+        <label for="email" class="">E-posta</label>
+        <input type="email" name="" id="" class="w-50 ms-5 border-0">
+        <br>
+        <label for="sifre" class="">Şifre</label>
+        <input type="password" name="" id="" class="w-50  mt-3  mb-3 border-0 " style="margin-left:70px;">
+        <a class="link-dark" href="#" style="margin-left:120px;">Şifremi unuttum</a><br>
+        <a class="link-dark" href="#" style="margin-left:120px;">Aktivasyon linki gönder</a>
+        <div class="hesap-buton-iki float-end ">
+        <div type="button" class="btn btn-danger border-5 me-4  mb-5" style="width: 150px;"><a class="text-white text-decoration-none " href="">Giriş</a>
+        </div>
+    </div>
+       </form>
+    
+        </div>
+       
+
+</div>
+
+
+
+
+
+</div>
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

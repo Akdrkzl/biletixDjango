@@ -1,0 +1,441 @@
+{% load static %}
+<!-- !NAVBAR-START -->
+<header class="container-fluid p-0 m-0 mb-md-5">
+  <!-- üst-div -->
+  <div class="container-fluid bg-dark" style="height: 35px">
+    <div class="ust-nav m-auto d-flex justify-content-between h-100">
+      <ul class="d-flex align-items-center m-0 p-0 h-100">
+        <div class="me-3">
+          <a id="tr" class="text-light" href="#">
+            <i class="fa-solid fa-message" style="color: #ffffff"></i>
+            TR
+          </a>
+        </div>
+        <div class="">
+          <a id="tum-tr" class="text-light" href="#">
+            <i class="fa-solid fa-earth-americas"></i>
+            Tüm Türkiye
+          </a>
+        </div>
+      </ul>
+      <ul class="ust-nav-items d-flex align-items-center m-0 p-0 h-100">
+        <div class="me-3">
+          <a class="text-light" href="{% url 'hediye-kart' %}">
+            <i class="fa-solid fa-gift"></i>
+            Hediye Kartı
+          </a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="https://www.flipsnack.com/885A97FF8D6/" target="_blank">Aylık Dergi</a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="https://blog.biletix.com/">Blog</a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="{% url 'yardim' %}">Yardım</a>
+        </div>
+        {% if request.user.sepet_set.count > 0 %}
+        
+        <div class="me-3">
+          <img src="{% static './img/SVG icons/sepet.svg' %}" alt="" />
+          <a class="text-light" href="{% url 'sepet' %}">Sepetim</a>
+        </div>
+        {% else %}
+
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg flex-wrap p-1">
+    <div class="navbar-responsive d-flex justify-content-center align-items-center w-100"
+    >
+      <!-- logo ve bar-menu -->
+      <div class="ms-2 d-flex align-items-center navbar-logo">
+        <i
+          class="fa-solid fa-bars fs-2 me-3 d-none bar-menu"
+          style="color: #ffffff"
+        ></i>
+        <a href="/" class="navbar-brand" href="#"
+          ><img src="{% static './img/btx-logo.svg' %}" alt=""
+        /></a>
+      </div>
+      <div class="me-2 d-flex align-items-center navbar-content">
+        <!-- link-grubu -->
+        {% load mptt_tags %}
+        <ul class="link-grubu navbar-nav me-5 mb-2 mb-lg-0">
+          {% recursetree kategori %}
+          <li class="nav-item">
+            <a
+              class="nav-link active text-white link-grup"
+              href="#"
+              data-target="link-detay-{{node.isim}}"
+              onclick="linkMenu(this)"
+              >{{node.isim}}</a
+            >
+          </li>
+          {% endrecursetree %}
+        </ul>
+        <!-- search-giriş yap ve eyes -->
+        <ul class="navbar-nav d-flex align-items-center">
+          <!-- search -->
+          <li class="nav-item me-4 navbar-search-item-1">
+            <form class="d-flex position-relative" role="search" method="GET" action="{% url 'search' %}">
+              <input
+                class="navbar-search"
+                name="search"
+                type="search"
+                placeholder="Etkinlik, sanatçı ya da mekan arayın"
+                aria-label="Search"
+              />
+              <button
+                class="position-absolute btn btn-outline-success navbar-search-buton"
+                type="submit"
+              ></button>
+            </form>
+          </li>
+          <!-- eye -->
+          <li class="nav-item eye me-3 d-md-none">
+            <i
+              id="navbar-eye"
+              class="fa-solid fa-eye fs-3"
+              style="color: #ffffff"
+            ></i>
+            <i
+              id="navbar-xmark"
+              class="fa-solid fa-xmark fs-3"
+              style="color: #ffffff"
+            ></i>
+          </li>
+          <!-- giriş-yap -->
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+            <a id="hesabim" class="text-light fs-6" href="#">
+              <i class="fa-regular fa-circle-user fs-2 text-white"></i>
+              <span class="d-none d-md-inline">Hesabım</span>
+            </a>
+            {% else %}
+            <a class="navbar-brand fs-6 text-white m-0" href="{% url 'login' %}">
+              <i class="fa-regular fa-circle-user fs-2 text-white"></i>
+              <span>Giriş Yap</span>
+            </a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- search-2 -->
+    <div class="w-100 mt-2 mx-2">
+      <ul
+        class="navbar-nav d-flex justify-content-center align-items-center w-100"
+      >
+        <li class="nav-item navbar-search-item-2 d-none w-100">
+          <form class="position-relative w-100" role="search" method="GET" action="{% url 'search' %}">
+            <input
+              class="navbar-search w-100"
+              type="search"
+              placeholder="Etkinlik, sanatçı ya da mekan arayın"
+              aria-label="Search"
+              name="search"
+
+            />
+            <button
+              class="position-absolute btn btn-outline-success navbar-search-buton"
+              type="submit"
+            ></button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar-kategori -->
+  <div
+    id="navbar-kategori"
+    class="navbar-kategori shadow position-absolute z-3 w-100 bg-light"
+  >
+    <div class="container-fluid">
+      <div
+        class="navbar-kategori-responsive d-flex justify-content-center align-items-center w-100"
+      >
+        <div class="navbar-kategori-select p-0">
+          <ul class="navbar-nav align-items-center">
+            <li class="d-flex flex-column align-items-center me-2">
+              <div>
+                <i
+                  class="fa-solid fa-eye fs-5 icons"
+                  style="color: #2d4791"
+                ></i>
+              </div>
+              <span> KEŞFET </span>
+            </li>
+            <li class="navbar-item ms-3 w-100">
+              <select class="">
+                <option selected="selected" value="-1">Tüm Kategoriler</option>
+                <option value="MUSIC">MÜZİK</option>
+                <option value="SPORT">SPOR</option>
+                <option value="ART">SAHNE</option>
+                <option value="FAMILY">AİLE</option>
+                <option value="OTHER">Eğitim & Fazlası</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-kategori-select ms-3 p-0">
+          <ul class="navbar-nav align-items-center w-100">
+            <li class="d-flex flex-column align-items-center">
+              <div>
+                <i
+                  class="fa-solid fa-calendar fs-5 navbar-kategori-icon"
+                  style="color: #2d4791"
+                ></i>
+              </div>
+              <span class=""> TARİH </span>
+            </li>
+            <li class="navbar-item ms-3 w-100">
+              <select class="">
+                <option selected="selected" value="-1">Tüm Tarihler</option>
+                <option value="today">Bugün</option>
+                <option value="weekend">Hafta Sonu</option>
+                <option value="nextweekend">Önümüzdeki Hafta Sonu</option>
+                <option value="thisweek">Bu Hafta</option>
+                <option value="next14days">Önümüzdeki 14 Gün</option>
+                <option value="next30days">Önümüzdeki 30 Gün</option>
+                <option id="seldatarange" value="daterange">
+                  Tarih Aralığı
+                </option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-kategori-select ms-3 p-0">
+          <ul class="navbar-nav align-items-center justify-content-start w-100">
+            <li class="d-flex flex-column align-items-center me-3">
+              <div class="text-start">
+                <i
+                  class="fa-solid fa-location-dot fs-5 navbar-kategori-icon"
+                  style="color: #2d4791"
+                ></i>
+              </div>
+              <span> YER </span>
+            </li>
+            <li class="navbar-item ms-3 w-100">
+              <select class="">
+                <option selected="selected" value="-1">Tüm Türkiye</option>
+                <option value="İstanbul">İstanbul</option>
+                <option value="Ankara">Ankara</option>
+                <option value="İzmir">İzmir</option>
+                <option value="Adana">Adana</option>
+                <option value="Afyonkarahisar">Afyonkarahisar</option>
+                <option value="Antalya">Antalya</option>
+                <option value="Aydın">Aydın</option>
+                <option value="Balıkesir">Balıkesir</option>
+                <option value="Batman">Batman</option>
+                <option value="Bingöl">Bingöl</option>
+                <option value="Bolu">Bolu</option>
+                <option value="Bursa">Bursa</option>
+                <option value="Çanakkale">Çanakkale</option>
+                <option value="Denizli">Denizli</option>
+                <option value="Diyarbakır">Diyarbakır</option>
+                <option value="Düzce">Düzce</option>
+                <option value="Edirne">Edirne</option>
+                <option value="Elazığ">Elazığ</option>
+                <option value="Erzurum">Erzurum</option>
+                <option value="Eskişehir">Eskişehir</option>
+                <option value="Gaziantep">Gaziantep</option>
+                <option value="Giresun">Giresun</option>
+                <option value="Hatay">Hatay</option>
+                <option value="Isparta">Isparta</option>
+                <option value="Kahramanmaraş">Kahramanmaraş</option>
+                <option value="Kayseri">Kayseri</option>
+                <option value="Kırıkkkale">Kırıkkkale</option>
+                <option value="Kırklareli">Kırklareli</option>
+                <option value="Kocaeli">Kocaeli</option>
+                <option value="Konya">Konya</option>
+                <option value="Kütahya">Kütahya</option>
+                <option value="Malatya">Malatya</option>
+                <option value="Manisa">Manisa</option>
+                <option value="Mardin">Mardin</option>
+                <option value="Mersin">Mersin</option>
+                <option value="Muğla">Muğla</option>
+                <option value="Nevşehir">Nevşehir</option>
+                <option value="Niğde">Niğde</option>
+                <option value="Ordu">Ordu</option>
+                <option value="Sakarya">Sakarya</option>
+                <option value="Samsun">Samsun</option>
+                <option value="Şanlıurfa">Şanlıurfa</option>
+                <option value="Sinop">Sinop</option>
+                <option value="Sivas">Sivas</option>
+                <option value="Tekirdağ">Tekirdağ</option>
+                <option value="Tokat">Tokat</option>
+                <option value="Trabzon">Trabzon</option>
+                <option value="Uşak">Uşak</option>
+                <option value="Yalova">Yalova</option>
+                <option value="Yozgat">Yozgat</option>
+                <option value="Zonguldak">Zonguldak</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-kategori-select ms-2 p-0 text-end">
+          <button class="btn btn-primary rounded-0">Git</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- linkler-detay-->
+  {% load mptt_tags %} 
+  {% recursetree kategori %}
+  <div id="link-detay-{{node.isim}}" class="link-detay container-fluid p-0 m-0 bg-light shadow position-absolute z-3">
+    <div class="container p-3">
+      <div class="row p-2">
+        <a
+          class="col-3 me-5 border-bottom p-2 text-dark fw-bold"
+          href="{% url 'etkinlik-kategori-detay' node.slug %}"
+          >Tüm {{node.isim}} Etkinlikleri</a
+        >
+
+        {% if not node.is_leaf_node %} 
+        {% for child in node.get_children%}
+        <a
+          class="col-3 me-5 border-bottom p-2 text-dark"
+          href="{% url 'etkinlik-liste' child.slug %}"
+        >
+          {{ child.isim }}
+        </a>
+        
+        {% endfor %} 
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endrecursetree %}
+</header>
+<!-- !Hamburger-Menu-Start -->
+<!--* Hamburger-Menu-Nav  -->
+<div
+  class="hamburger-menu position-fixed top-0 start-0 overflow-y-auto h-100"
+  id="accordionMenu"
+>
+  <div class="container-md h-100 m-0 p-0">
+    <div>
+      <i id="ok" class="fa-solid fa-arrow-left ok text-start"></i>
+      <h6 class="text-center">Menu</h6>
+    </div>
+    <div class="hamburger-link d-flex flex-column justify-content-between">
+      <ul class="accordion accordion-flush m-0 p-2" id="accordionFlushExample">
+        {% load mptt_tags %} 
+        {% recursetree kategori %}
+        
+        <li class="accordion-item">
+          <h2 class="accordion-header border-bottom">
+            <button
+              class="accordion-button hamburger-accordion-button collapsed fw-semibold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              {{node.isim}}
+            </button>
+          </h2>
+          <span class="arrow-icon"></span>
+          <ul
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <li class="p-2 border-bottom">
+              <a class="fw-semibold" href="{% url 'etkinlik-kategori-detay' node.slug %}">
+                Tüm {{node.isim}} Etkinlikleri
+              </a>
+            </li>
+            {% if not node.is_leaf_node %} 
+            {% for child in node.get_children%}
+            <li class="p-2 border-bottom">
+              <a class="fw-semibold" href="{% url 'etkinlik-liste' child.slug %}"
+              >{{ child.isim }}
+              </a>
+            </li>
+            {% endfor %} 
+            {% endif %}
+          </ul>
+        </li>
+
+        {% endrecursetree %}
+      </ul>
+
+      <ul class="m-0 p-0" style="background: #f6f7f9">
+        <li class="p-3 border-bottom">
+          <a class="fw-normal" href="#">Hediye Kartı</a>
+        </li>
+        <li class="p-3 border-bottom">
+          <a class="fw-normal" href="#">Aylık Dergi</a>
+        </li>
+        <li class="p-3 border-bottom">
+          <a class="fw-normal" href="#">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--* Hamburger-Menu-TR  -->
+<div
+  class="hamburger-menu-tr position-fixed top-0 start-0 overflow-y-auto h-100"
+  id="accordionMenu"
+>
+  <div class="container-md h-100 m-0 p-0">
+    <div>
+      <i id="ok-tr" class="fa-solid fa-arrow-left ok text-start"></i>
+      <h6 class="text-center border-bottom">Dil</h6>
+    </div>
+    <div class="hamburger-link p-2">
+      <a class="d-block p-3 border-bottom fw-semibold" href="#">Türkçe</a>
+      <a class="d-block p-3 border-bottom fw-semibold" href="#">İngilizce</a>
+    </div>
+  </div>
+</div>
+<!--* Hamburger-Menu-Tum-Tr  -->
+<div
+  class="hamburger-menu-tum-tr position-fixed top-0 start-0 overflow-y-auto h-100"
+  id="accordionMenu"
+>
+  <div class="container-md h-100 m-0 p-0">
+    <div>
+      <i id="ok-tum-tr" class="fa-solid fa-arrow-left ok text-start"></i>
+      <h6 class="text-center border-bottom">BÖLGE</h6>
+    </div>
+    <div class="hamburger-link p-2">
+      <a class="d-block p-3 border-bottom fw-semibold" href="#">Tüm Türkiye</a>
+      <a class="d-block p-3 border-bottom fw-semibold" href="#"
+        >İstanbul / Marmara</a
+      >
+      <a class="d-block p-3 border-bottom fw-semibold" href="#"
+        >Ankara / İç Anadolu</a
+      >
+      <a class="d-block p-3 border-bottom fw-semibold" href="#">İzmir / Ege</a>
+      <a class="d-block p-3 border-bottom fw-semibold" href="#"
+        >Antalya / Akdeniz</a
+      >
+      <a class="d-block p-3 border-bottom fw-semibold" href="#">Diğer</a>
+    </div>
+  </div>
+</div>
+<!--* Hamburger-Menu-Hesabım -->
+<div class="hamburger-menu-hesabim position-fixed top-0 end-0 overflow-y-auto h-100" id="accordionMenu">
+        <div class="container-md h-100 m-0 p-0">
+            <div>
+                <i id="ok-tum-tr" class="fa-solid fa-xmark ok text-start"></i>
+                <h6 class=" fw-semibold text-primary p-3">Merhaba</h6>
+            </div>
+            <div class=" hesabim-10 p-2">
+              <a class="d-block p-3 border-bottom text-black fw-semibold" href="{% url 'profil' %}">PROFİLİM</a>
+              <a class="d-block p-3 border-bottom text-black fw-semibold" href="{% url 'adres' %}">ADRESLERİM</a>
+              <a class="d-block p-3 border-bottom text-black fw-semibold" href="{% url 'gelecek-bilet' %}">BİLETLERİM</a>
+              <a class="d-block p-3 border-bottom text-black fw-semibold" href="{% url 'sezonluk-bilet' %}">SEZONLUK BİLETLERİM</a>
+              <a class="d-block p-3 text-danger border-bottom fw-semibold" href="{% url 'logout' %}">ÇIKIŞ</a>
+        </div>
+        </div>
+</div>
+<!-- !Hamburger-Menu-Start -->
+<!-- !NAVBAR-END -->

@@ -1,0 +1,722 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-iki.html' %}
+
+<div class="container-lg container-fluid manga-biletleri-container p-lg-0 p-md-0 p-sm-0">
+  {% for i in etkinlik %}
+
+  <div aria-label="breadcrumb" class="mt-3 ms-xxl-0 ms-xl-0 ms-lg-0 ms-md-4 ms-sm-4">
+    <ol class="breadcrumb">
+      <li class="breadcrumb">
+        <a href="#" class="text-secondary pe-2">{{i.kategori}}</a>
+        <img
+          src="{% static './img/SVG icons/chevron-thin-right.svg' %}"
+          class="pe-2"
+          alt=""
+        />
+      </li>
+
+      <li class="breadcrumb">
+        <a href="#" class="text-secondary pe-2">{{i.isim}}</a>
+      </li>
+
+      <li class="breadcrumb">
+        <img
+          src="{% static './img/SVG icons/chevron-thin-right.svg' %}"
+          class="pe-2"
+          alt=""
+        />
+      </li>
+      <li class="breadcrumb">
+        <a href="#" class="text-secondary">{{i.etkinlik_tarihi}}</a>
+      </li>
+
+      <li class="breadcrumb ms-1">
+        <a href="#" class="text-secondary">{{i.etkinlik_saat}}</a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="bltx-detay-title">
+    <h1 class="ms-xxl-0 ms-xl-0 ms-lg-0 ms-md-4 ms-sm-4">{{i.isim}}</h1>
+  </div>
+
+  <div class="konser-detay d-flex justify-content-between">
+    <div class="btn-detay-paylas d-flex">
+      <div
+        class="description me-xxl-5 me-xl-5 me-lg-5 me-md-5 me-sm-5 ms-xxl-0 ms-xl-0 ms-lg-0 ms-md-4 ms-sm-4 mb-sm-3"
+      >
+        <!-- etkinlik-mekan -->
+        <a href="{% url 'mekan' i.etkinlik_mekan.all.0.slug %}">
+          <img src="{% static './img/SVG icons/location-pin.svg' %}" alt="" />
+          <span>{{i.etkinlik_mekan.all.0}}</span>
+        </a>
+      </div>
+      <div class="description-2">
+        <img
+          src="{% static './img/SVG icons/calendar-o.svg' %}"
+          class="me-1"
+          alt=""
+        />
+        <span class="me-1">{{i.etkinlik_tarihi}}</span>
+        <img
+          src="{% static './img/SVG icons/clock.svg' %}"
+          class="me-1"
+          alt=""
+        />
+        <span class="me-1">{{i.etkinlik_saat}}</span>
+      </div>
+    </div>
+
+    <div class="button-paylas">
+      <button
+        id="toggleBtn-1"
+        type="button"
+        class="btn btn-outline-primary mb-2"
+      >
+        <img src="{% static './img/SVG icons/share.svg' %}" alt="" />
+        <span>Paylaş</span>
+      </button>
+
+      <div class="paylas-icerik-detay">
+        <ul id="menuPaylas-detay">
+          <li>
+            <p style="color: rgba(0, 0, 0, 0.3); padding: 8px; margin: 5px">
+              Etkinliği Paylaş
+            </p>
+          </li>
+
+          <li class="mb-2">
+            <a href="#" class="paylas-etiket-detay ps-2">
+              <i
+                class="fa-brands fa-whatsapp"
+                style="
+                  color: white;
+                  border-radius: 100%;
+                  background-color: #17de2e;
+                  padding: 8px;
+                  margin: 5px;
+                "
+              ></i>
+              WhatsApp
+            </a>
+          </li>
+
+          <li class="mb-2">
+            <a href="#" class="paylas-etiket-detay ps-2">
+              <i
+                class="fa-regular fa-envelope"
+                style="
+                  color: white;
+                  border-radius: 100%;
+                  background-color: #0d1117;
+                  padding: 8px;
+                  margin: 5px;
+                "
+              ></i>
+              E-posta
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="paylas-etiket-detay ps-2">
+              <i
+                class="fa-solid fa-link"
+                style="
+                  color: white;
+                  border-radius: 100%;
+                  background-color: #2668d9;
+                  padding: 8px;
+                  margin: 5px;
+                "
+              ></i>
+              Bağlantıyı Kopyala
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex manga-img justify-content-center">
+    <img src="{{i.etkinlik_resim_profil.url}}" class="w-100 rounded-3" alt="" style="max-height: 500px;" />
+  </div>
+
+  <section class="mt-5">
+    <div class="container-lg container-fluid biletix-manga-container">
+      <div class="row position-relative">
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
+          <div class="etkinlik-detaylari-menu border-bottom pb-3">
+            <a
+              href="#etkinlige-dair"
+              id="link1"
+              class="text-secondary pb-3 pe-3"
+              >Etkinliğe Dair</a
+            >
+            <a href="#ticket-title" id="link2" class="text-secondary pb-3 pe-3"
+              >Biletler</a
+            >
+            <a href="#ticket-title" id="link3" class="text-secondary pb-3 pe-3"
+              >Koltuk Seçimi</a
+            >
+            <a
+              href="#etkinlik-kural"
+              id="link4"
+              class="text-secondary pb-3 pe-3"
+              >Etkinlik Kuralları</a
+            >
+          </div>
+          <div id="etkinlige-dair" class="etkinlige-dair-title">
+            <h2 class="mt-4">Etkinliğe Dair</h2>
+          </div>
+          <div class="etkinlik-saat mt-4 mb-3">
+            <div class="row">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex">
+                <div class="acilis-ikon">
+                  <img
+                    src="{% static './img/SVG icons/meeting_room.svg' %}"
+                    class="border rounded-5 p-2"
+                    alt=""
+                  />
+                </div>
+                <div class="acilis-aciklama ms-2 mt-2">
+                  <span class="d-block">{{i.etkinlik_saat}}</span>
+                  <span>KAPI AÇILIŞ SAATİ</span>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex">
+                <div class="baslangic-ikon">
+                  <img
+                    src="{% static './img/SVG icons/access_alarms.svg' %}"
+                    class="border rounded-5 p-2"
+                    alt=""
+                  />
+                </div>
+                <div class="baslangic-aciklama ms-2 mt-2">
+                  <span class="d-block">{{i.etkinlik_saat}}</span>
+                  <span>ETKİNLİK BAŞLANGIÇ</span>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-6 d-flex">
+                <div class="kural-ikon">
+                  <img
+                    src="{% static './img/SVG icons/rule.svg' %}"
+                    class="border rounded-5 p-2"
+                    alt=""
+                  />
+                </div>
+                <div class="kural-aciklama ms-2 mt-2">
+                  <span class="d-block">Hassas Kurallar</span>
+                  <span>ETKİNLİK KURALI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="explanation">
+            <p>
+              maNga, 7 Ağustos günü Şek Yapım organizasyonuyla Altın Güvercin
+              Amfi Tiyatro Kuşadası Sahnesi'nde sevenleriyle buluşuyor.
+            </p>
+          </div>
+          <div class="organizasyon-reklam border-bottom">
+            <img
+              src="{% static './img/sek-organizasyon.png' %}"
+              class="w-100 mt-3 pb-3"
+              alt=""
+            />
+          </div>
+
+          <div id="ticket-title" class="etkinlik-listele">
+            <h3 class="mt-5">Biletler</h3>
+          </div>
+
+          <div class="tickets-about border-bottom pb-4 d-flex">
+            <div class="tickets-about-icon">
+              <img src="{% static './img/SVG icons/standing.svg' %}" alt="" />
+            </div>
+            <div class="tickets-about-explanation ms-2 mt-2">
+              <span class="d-block">Ayakta</span>
+              <span
+                >Etkinliğe katılım ayakta olup oturma düzeni
+                bulunmamaktadır.</span
+              >
+            </div>
+          </div>
+
+          <div class="ticket-transactions border rounded-3 mt-4">
+            <div class="ticket-category rounded-top-3">
+              <div class="container-lg container-fluid pt-3 pb-5">
+                <div class="row">
+                  <!-- Genel-select -->
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 ticket-category-ic">
+                    <select id="kategori" class="form-select pt-3 mb-md-3 mb-sm-3  pb-3">
+                      <option value="" disabled selected hidden>BİLET TÜRÜ</option>
+                      <option value="genel">GENEL SATIŞ</option>
+                      <option value="cift">Çift Bileti</option>
+                    </select>
+                  </div>
+                  <!-- bölüm-select -->
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 ticket-category-ic">
+
+                    <select id="blok" class="form-select pt-3 mb-md-3 mb-sm-3 pb-3"aria-label="Disabled select example">
+                      <option value="" selected disabled hidden>
+                        BÖLÜM / BLOK
+                      </option>
+                      <option value="a">A Blok</option>
+                      <option value="b">B Blok</option>
+                      <option value="c">C Blok</option>
+                    </select>
+                  </div>
+
+                  <!-- fiyat-select -->
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 ticket-category-ic">
+                    <select id="fiyat" class="form-select pt-3 mb-md-3 mb-sm-3 pb-3" >
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- Seç-Buton -->
+          <div style="display: none;" id="sec-div" class="col-lg-4 col-sm-12 ticket-category-ic w-100 pt-1">
+            <div class="d-flex justify-content-between px-3">
+              <span class="fw-semibold">TAM <br> 
+                <span id="secilen-fiyat"></span>
+              </span>
+              <div class="" id="sayac" style="display: none;">
+                  <div style="height: 35px; background: #ebf4fd; border-radius: 100px;">
+                      
+                      <span id="secilen-miktar-eksi">
+                        <button style="height: 35px; width: 35px; border-radius: 35px; border: 1px solid #d6e7fa; box-shadow: 0 0 20px #0000000d;">
+                          <i class="fa-solid fa-trash" style="color: #026cdf;"></i>
+                          <i class="fa-solid fa-minus" style="color: #026cdf; display:none;" ></i>
+                        </button>
+                      </span>
+                      <span id="secilen-miktar"></span>
+                      <span id="secilen-arti">
+                        <button style="height: 35px; width: 35px; border-radius: 35px; border: 1px solid #d6e7fa; box-shadow: 0 0 20px #0000000d;">
+                          <i class="fa-solid fa-plus"  style="color: #026cdf;"></i>
+                        </button>
+                      </span>
+                  </div>
+              </div>
+              <button class="sec-btn btn btn-light  p-2" id="sec" >Seç</button>
+            </div>
+          </div>
+
+
+            <div class="ticket-price">
+              <div class="ticket-price-start">
+                <div class="ticket-price-start-container">
+
+                  <div id="ticket-price-content1">
+                    <div
+                      class="ticket-price-start-content1 m-auto pt-5 d-flex justify-content-center"
+                    >
+                      <img src="{% static './img/SVG icons/ticket.png' %}" alt="" />
+                    </div>
+                    <div
+                      class="ticket-price-start-content1 m-auto pb-5 d-flex justify-content-center"
+                    >
+                      <p>Bilet fiyatlarını görebilmek için kategori seçiniz.</p>
+                    </div>
+                  </div>
+
+                  <div
+                    id="ticket-price-content2"
+                    class="ticket-price-start-content2 d-none justify-content-between"
+                  >
+                    <div class="genel-satis ms-4">
+                      <p>TAM</p>
+                      <p>₺250,00</p>
+                    </div>
+                    <div class="genel-satis-btn me-4 mt-3">
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary ps-5 pe-5"
+                      >
+                        Seç
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    id="ticket-price-content3"
+                    class="ticket-price-start-content2 d-none justify-content-between"
+                  >
+                    <div class="genel-satis ms-4">
+                      <p>TAM</p>
+                      <p>₺450,00</p>
+                    </div>
+                    <div class="genel-satis-btn me-4 mt-3">
+                      <button type="button" class="btn btn-outline-primary ps-5 pe-5">
+                        Seç
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="ticket-price-start-container-text ps-2">
+                    <p>Sepet başına ₺3,50 sipariş bedeli eklenir.</p>
+                    <p>
+                      Kampanya ve indirimler, profil seçimine göre bilet
+                      fiyatına yansıtılır.
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="standard-ticket-prices border-bottom pb-3 mt-2">
+            <a href="#">Standart Bilet Fiyatlarını Gör </a>
+            <img src="{% static './img/SVG icons/chevron-thin-right-copy.svg' %}" alt="" />
+          </div>
+
+          <section
+            id="etkinlik-kural"
+            class="etkinlik-kurallari mt-5 pb-3 mb-4 border-bottom"
+          >
+            <h3 class="mb-5">Etkinlik Kuralları</h3>
+            <p>- Belirtilen saat kapı açılış saatidir.</p>
+            <p>- Etkinlik 6 yaş ve üstü katılımcılar için uygundur.</p>
+            <p>
+              - Etkinlik başlangıç saatinden en az 1 saat önce biletle birlikte
+              etkinliğin kapısında olacak şekilde hazır olunması gerekmektedir.
+            </p>
+            <p>
+              - Misafirlerin belirtilen oturma düzenine uyması zorunludur.
+              Etkinlik boyunca belirlenen koltuklarda oturulması gerekmektedir.
+            </p>
+            <p>
+              - Organizatör, indirimli bilet satın alma koşullarında değişiklik
+              yapma hakkını saklı tutar.
+            </p>
+            <p>
+              - Organizatör, etkinlik alanı ve saatinde değişiklik yapma hakkına
+              sahiptir.
+            </p>
+            <p>
+              - Organizatör, etkinlik için uygun görmediği kişileri, bilet
+              ücretini iade ederek etkinlik mekanına almama hakkına sahiptir.
+            </p>
+            <p>- Etkinlik mekanına yiyecek ve içecek sokmak yasaktır.</p>
+            <p>
+              - Etkinlik mekanına kamera ve fotoğraf makinası sokmak yasaktır.
+            </p>
+          </section>
+        </div>
+        <!-- right-side -->
+        <div id="sepet-bos"  class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 h-100 rounded-top-3 ticket-find-4 text-center position-sticky top-0"
+        >
+          <div
+            class="ticket-find-container ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-0 ms-sm-0 border rounded-top-3 rounded-bottom-1"
+          >
+            <div
+              class="ticket-find-start-container rounded-top-3 rounded-bottom-1"
+            >
+              <div
+                class="ticket-find-card-header rounded-top-3 rounded-bottom-1"
+              >
+                <div class="dots"></div>
+              </div>
+              <div class="ticket-find-card-content mt-3">
+                <img
+                  src="{% static './img/SVG icons/biletBul-ticket.png' %}"
+                  class="bilet-img"
+                  alt=""
+                />
+                <span class="d-block mt-2 mb-2">Henüz bilet seçmediniz.</span>
+                <p class="mb-2">Hemen bilet seçebilirsiniz.</p>
+
+                <a href="#ticket-title">
+                  <button
+                    type="button"
+                    id="ticket-find"
+                    class="btn border btn-outline-light btn-bilet-bul btn-lg mb-3"
+                  >
+                    Bilet Bul
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="display: none;" id="sepet-dolu" class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12  h-100 rounded-top-3  ticket-find-4  text-center position-sticky top-0">
+          <div class="ticket-find-container ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-0 ms-sm-0    border rounded-top-3 rounded-bottom-1">
+              <div class="ticket-find-start-container rounded-top-3 rounded-bottom-1">
+                  <div class="ticket-find-card-header rounded-top-3 rounded-bottom-1 ">
+                      <div class="dots"></div>
+                </div>
+                <!-- form -->
+                <form  method="POST" novalidate>
+                  {% csrf_token %}
+                  <!-- miktar -->
+                 <div class="ticket-content">
+                      <div class="ticket-content-title text-start">
+                          <h2 class="ms-5 mt-5 mb-4">
+                            Biletler ( <span name="miktar" class="miktar-yaz"></span> )
+                          </h2>
+                          <input hidden id="miktar-yazz" type="number" name="miktar" value="">
+                      </div>
+                 </div>
+      
+                  <div class="selected-shopping-item d-flex justify-content-between">
+                          <div class="shopping-item-1 ms-5">
+                              <span>TAM (<span class="miktar-yaz"></span> Adet)</span>
+                          </div>
+                          <div class="shopping-item-2 me-5">
+                              <!-- biletfiyatibir -->
+                              <span id="biletFiyatiBir"></span>
+                          </div>
+                  </div>
+      
+                  <div class="selected-shopping-item-container w-75 m-auto">
+      
+                      <div class="selected-shopping-item-content">
+                          <!-- Bölüm -->
+                              <div class="selected-shopping-category-section ">
+                                  <span class="category-title text-start d-block ms-2">
+                                      Kategori,Bölüm / Blok
+                                  </span>
+                                  <span class="category-name text-start d-block ms-2" id="bolumSec">
+                                              
+                                  </span>
+                              </div>
+                              <div class="selected-shopping-ticket-infos d-flex justify-content-between mt-2">
+                                  <div class="ticket-infos1  ms-2 ">
+                                      <span class="ticket-price-title d-block">
+                                          Bilet Fiyatı
+                                      </span>
+                                      <!-- biletfiyatiiki -->
+                                      <span class="product-price" id="biletFiyatiİki">
+                                          
+                                      </span>
+                                  </div>
+                                  <div class="ticket-infos2 me-5">
+                                      <span class="service-fee-title d-block">
+                                          Hizmet Bedeli
+                                      </span>
+                                      <span class="total-pirce" id="hizmet-bedeli">
+                                      
+                                      </span>
+                                  </div>
+                              </div>
+                      </div>
+                      <div class="order-price d-flex justify-content-between mt-3 mb-3 pb-3 pt-3 border-top border-bottom">
+                          <span class="order-value-title">Sipariş Bedeli</span>
+                          <span class="order-price-extra" id="siparis-bedeli"></span>
+                      </div>
+                      <div class="price-dots"></div>
+                      <!-- toplam-tutar -->
+                      <div class="total-amount-container d-flex justify-content-between">
+             
+                              <span class="total-title">Toplam Tutar</span>
+                              <span class="total-price" id="toplam-iki"></span>
+                            <input    id="toplam-iki-form" type="number" name="toplam-fiyat" value="">
+
+                         
+                      </div>
+                      <div class="action-button mt-2 mb-2">
+                          <button type="submit" class="btn btn-primary w-100">Sepete At</button>
+                      </div>
+                      <div class="legal-notice  pb-4 ">
+                          <ul class="text-start">
+                                  <li>Bilet henüz sizin için rezerve edilmedi, seçiminizi değiştirebilirsiniz.</li>
+                                  <li>Taksitli ödemede bankalara göre değişen <a href="#">vade farkı</a> uygulanabilir.</li>
+                                  <li >Bu sitede işlem yaparak
+                                      <a href="https://www.biletix.com/ourpolicies/TURKIYE/tr" target="_blank">Kullanım Koşulları</a>'nı okumuş ve kabul etmiş sayılırsınız.
+                                  </li>
+                          </ul>
+                      </div>
+                    </div>
+                </form>
+                 </div>
+                 
+                 
+      
+              </div>
+      
+      </div>
+
+
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+</div>
+<script>
+  const kategoriSelect = document.getElementById('kategori');
+  const blokSelect = document.getElementById('blok');
+  const fiyatSelect = document.getElementById('fiyat');
+  const secilenFiyat = document.getElementById('secilen-fiyat');
+  const sayac = document.getElementById('sayac');
+  const sec = document.getElementById('sec')
+  const secDiv = document.getElementById('sec-div')
+  const standardTicket = document.getElementById('ticket-price-content1')
+  const sepet = document.getElementById('sepet')
+  const secilenMiktarEksi = document.getElementById('secilen-miktar-eksi');
+  const secilenMiktarArti = document.getElementById('secilen-arti');
+  const secilenMiktar = document.getElementById('secilen-miktar');
+  const toplamİkiYaz = document.getElementById('toplam-iki');
+  const toplamİkiYazForm = document.getElementById('toplam-iki-form');
+  const miktarYaz = document.querySelectorAll('.miktar-yaz');
+  const miktarYazz = document.getElementById('miktar-yazz');
+  const cop = document.querySelector('.fa-trash')
+  const eksi = document.querySelector('.fa-minus')
+
+  // biletix
+  const biletFiyatiBir = document.getElementById('biletFiyatiBir');
+  const biletFiyatiİki = document.getElementById('biletFiyatiİki');
+  const BolumSec = document.getElementById('kategoriSec')
+  const hizmetBedeli = 10
+  const hizmetBedeliYaz = document.getElementById('hizmet-bedeli')
+  const siparisBedeli = 5.50
+  const siparisBedeliYaz = document.getElementById('siparis-bedeli')
+  const sepetBos = document.getElementById('sepet-bos')
+  const sepetDolu = document.getElementById('sepet-dolu')
+
+
+  kategoriSelect.addEventListener('change', populateFiyatOptions);
+  blokSelect.addEventListener('change', populateFiyatOptions);
+
+  fiyatSelect.addEventListener('change', function() {
+      secilenFiyat.textContent =`₺${fiyatSelect.value}`;
+  });
+
+  sec.addEventListener('click',() =>{
+      if(secilenFiyat.textContent !==''){
+          secilenMiktar.innerHTML = 1
+          let miktar = parseInt(secilenMiktar.textContent);
+          // sepet.innerHTML=`${fiyatSelect.value}TL X ${miktar} ${fiyatSelect.value} TL `
+          //biletix
+          biletFiyatiBir.textContent = `₺${fiyatSelect.value},00` 
+          biletFiyatiİki.textContent = `₺${fiyatSelect.value},00x${miktar}`
+
+          //biletix
+          bolumSec.textContent = blokSelect.options[blokSelect.selectedIndex].textContent
+          hizmetBedeliYaz.textContent = `₺${hizmetBedeli},00x${miktar}`
+          siparisBedeliYaz.textContent =`₺${siparisBedeli}`
+          const toplamİki = ((miktar * fiyatSelect.value) + (hizmetBedeli * miktar) +(siparisBedeli))
+          toplamİkiYaz.textContent = `₺${toplamİki}`
+          miktarYaz.forEach(e => {
+            e.textContent = `${miktar}`
+          })
+          // form
+          miktarYazz.value = miktar
+          toplamİkiYazForm.value =toplamİki
+          console.log(toplamİki)
+
+          sepetBos.style.display='none'
+          sepetDolu.style.display='block'
+          sayac.style.display='block'
+          sec.style.display='none'
+
+      }
+
+  })
+
+
+  secilenMiktarEksi.addEventListener('click', function() {
+      let miktar = parseInt(secilenMiktar.textContent);
+      if (miktar > 1){
+        cop.style.display = 'block'
+        eksi.style.display = 'none'
+        miktar--;
+        secilenMiktar.textContent = miktar;
+        calculateTotal();
+      }
+      else if(miktar <= 1){
+        // sepet.innerHTML=''
+        sec.style.display='block'
+        sayac.style.display='none'
+        toplamİkiYaz.innerHTML=''
+        siparisBedeliYaz.innerHTML = ''
+        hizmetBedeliYaz.innerHTML=''
+        biletFiyatiBir.innerHTML=''
+        biletFiyatiİki.innerHTML=''
+        sepetDolu.style.display='none'
+        sepetBos.style.display='block'
+      }
+  });
+
+  secilenMiktarArti.addEventListener('click', function() {
+      if(secilenFiyat.textContent !==''){
+          let miktar = parseInt(secilenMiktar.textContent);
+          if(miktar < 9){
+              cop.style.display = 'none'
+              eksi.style.display = 'block'
+              miktar++;
+              secilenMiktar.textContent = miktar;
+              calculateTotal();
+          }
+      }
+
+  });
+
+  function calculateTotal() {
+      const miktar = parseInt(secilenMiktar.textContent);
+      const fiyat =parseInt(fiyatSelect.value);
+      const toplamBir = (miktar * fiyat) + (hizmetBedeli * miktar);
+      const toplamİki = ((miktar * fiyat) + (hizmetBedeli * miktar) +(siparisBedeli))
+      // sepet.textContent = `${fiyat}TL X ${miktar} ${toplamBir} TL`;
+
+      //biletix
+      biletFiyatiBir.textContent = `₺${toplamBir},00`
+      biletFiyatiİki.textContent = `₺${fiyat},00x${miktar}` 
+      hizmetBedeliYaz.textContent = `₺${hizmetBedeli},00x${miktar}`
+      toplamİkiYaz.textContent = `₺${toplamİki}`
+      miktarYaz.forEach(e => {
+            e.textContent = `${miktar}`
+          })
+
+      // form
+      miktarYazz.value = miktar
+      toplamİkiYazForm.value = parseInt(toplamİki)
+  }
+
+
+  function populateFiyatOptions() {
+      fiyatSelect.innerHTML = '<option value=""selected disabled hidden>Fiyatlar</option>';
+
+      const kategoriValue = kategoriSelect.value;
+      const blokValue = blokSelect.value;
+
+      let fiyatlar = [];
+      if (blokValue !== '') {
+        secDiv.style.display='block'
+        standardTicket.style.display='none'
+      }
+      
+        if (kategoriValue === 'genel' && blokValue === 'a'){
+          fiyatlar = [50.00, 75, 100];
+        } else if (kategoriValue === 'genel' && blokValue === 'b') {
+            fiyatlar = [40, 60, 80];
+        } else if (kategoriValue === 'genel' && blokValue === 'c') {
+            fiyatlar = [30, 45, 60];
+        } else if (kategoriValue === 'cift' && blokValue === 'a') {
+            fiyatlar = [90, 140, 180];
+        } else if (kategoriValue === 'cift' && blokValue === 'b') {
+            fiyatlar = [80, 120, 160];
+        } else if (kategoriValue === 'cift' && blokValue === 'c') {
+            fiyatlar = [70, 105, 140];
+        }
+      
+
+      fiyatlar.forEach(fiyat => {
+          const option = document.createElement('option');
+          option.value = fiyat;
+          option.textContent = `${fiyat} TL`;
+          fiyatSelect.appendChild(option);
+      });
+  }
+
+  // Sayfa yüklendiğinde fiyatları da güncelleyelim
+  populateFiyatOptions();
+
+</script>
+
+{% include 'includes/_footer-iki.html' %} 
+{% endblock content %}

@@ -1,0 +1,47 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include "includes/_navbar-iki.html" %}
+<form action="">
+  <div class="sidenav-content mt-3 container">
+    <div class="side-nav-header">
+      <div class="row">
+        <!-- left-side -->
+        {% include "includes/_hesabim-left-side.html" %}
+        <div class="col-lg-9 col-sm-12 right-side hessap">
+          <!-- nav -->
+          {% include "includes/_hesabim-nav-iki.html" %}
+
+          <!-- 4. tüm biletler -->
+          <div class="tumBilet etkinlikBilet mt-5" id="tumBilet">
+            <img
+              src="{% static './img/biletlerimetkinlik.png' %}"
+              width="100px"
+              height="100px"
+              alt=""
+            />
+            <p class="text-center" style="font-size: 20px">
+              Henüz bir işleminiz bulunmamaktadır.
+            </p>
+            <p class="mt-3 text-center">
+              Bilet almak için güncel etkinlikleri keşfedin.
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary rounded-3 border-4 fw-bold -"
+            >
+              Etkinliklere Göz Atın
+            </button>
+            <p class="mt-4 text-start biletlerim-t">
+              Burada gösterilenlerden daha eski bir işlem mi arıyorsunuz? Bu
+              bilgileri nasıl talep edeceğinizi görmek için
+              <a href="#">Gizlilik Politikamızı </a>görüntüleyin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "includes/_footer-iki.html" %} {% endblock content %}
+</form>

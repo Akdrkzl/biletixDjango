@@ -1,0 +1,727 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<div style="background-color: #f7f7f7">
+  <div class="container w-75 bg-white olustur-font">
+    <div class="py-4 uyelik-resim">
+      <img
+        src="{% static './img/createaccount/createAccount.png' %}"
+        width="100%"
+        alt=""
+        class=""
+      />
+    </div>
+
+    <div class="container text-left">
+      <div class="row">
+        <!-- üyelik formu -->
+        <div
+          class="col-sm-5 col-md-6 mt-3 w-50 uyelik-sol"
+          style="border-right: 1px solid"
+        >
+          <form action="" class="">
+            <div class="mb-3">
+              <label for="">Ad*</label>
+              <input type="text" class="hesap-input me-3" />
+            </div>
+            <div class="mb-3">
+              <label for="">Soyad*</label>
+              <input type="text" name="" id="" class="hesap-input me-3" />
+            </div>
+            <div class="mb-5">
+              <label for="">Telefon Numaranız*</label>
+
+              <!-- Tr tel  -->
+              <select
+                type="tel"
+                name=""
+                id="tr-tel"
+                class="w-25 hesap-input-tel me-4"
+                style="visibility: hidden"
+              >
+                <option value="">Seçiniz</option>
+                <option value="">501</option>
+                <option value="">502</option>
+                <option value="">503</option>
+                <option value="">504</option>
+                <option value="">505</option>
+                <option value="">506</option>
+                <option value="">507</option>
+                <option value="">508</option>
+                <option value="">509</option>
+                <option value="">510</option>
+                <option value="">511</option>
+                <option value="">512</option>
+                <option value="">513</option>
+                <option value="">514</option>
+                <option value="">515</option>
+                <option value="">516</option>
+                <option value="">517</option>
+                <option value="">518</option>
+                <option value="">519</option>
+                <option value="">520</option>
+                <option value="">521</option>
+                <option value="">522</option>
+                <option value="">523</option>
+                <option value="">524</option>
+                <option value="">525</option>
+                <option value="">526</option>
+                <option value="">527</option>
+                <option value="">528</option>
+                <option value="">529</option>
+                <option value="">530</option>
+                <option value="">531</option>
+                <option value="">532</option>
+                <option value="">533</option>
+                <option value="">534</option>
+                <option value="">535</option>
+                <option value="">536</option>
+                <option value="">537</option>
+                <option value="">538</option>
+                <option value="">539</option>
+                <option value="">540</option>
+                <option value="">541</option>
+                <option value="">542</option>
+                <option value="">543</option>
+                <option value="">544</option>
+                <option value="">545</option>
+                <option value="">546</option>
+                <option value="">547</option>
+                <option value="">548</option>
+                <option value="">549</option>
+                <option value="">550</option>
+                <option value="">551</option>
+                <option value="">552</option>
+                <option value="">553</option>
+                <option value="">554</option>
+                <option value="">555</option>
+                <option value="">556</option>
+                <option value="">557</option>
+                <option value="">558</option>
+                <option value="">559</option>
+                <option value="">560</option>
+                <option value="">561</option>
+              </select>
+              <select
+                type="country"
+                name="country"
+                id="country-select"
+                class="hesap-input-tel w-25"
+              >
+                <option value="0">Seçiniz</option>
+                <option value="90">Turkey (+90)</option>
+                <option value="1">United States (+1)</option>
+                <option value="44">United Kingdom (+44)</option>
+                <option value="33">France (+33)</option>
+                <option value="49">Germany (+49)</option>
+                <option value="81">Japan (+81)</option>
+                <option value="86">China (+86)</option>
+                <option value="7">Russia (+7)</option>
+                <option value="39">Italy (+39)</option>
+                <option value="34">Spain (+34)</option>
+                <option value="971">United Arab Emirates (+971)</option>
+                <option value="971">Canada (+1)</option>
+                <option value="61">Australia (+61)</option>
+                <option value="27">South Africa (+27)</option>
+                <option value="55">Brazil (+55)</option>
+                <option value="91">India (+91)</option>
+                <option value="81">South Korea (+82)</option>
+                <option value="52">Mexico (+52)</option>
+                <option value="65">Singapore (+65)</option>
+
+                <option value="86">China (+86)</option>
+                <option value="33">France (+33)</option>
+                <option value="49">Germany (+49)</option>
+                <option value="39">Italy (+39)</option>
+                <option value="81">Japan (+81)</option>
+                <option value="52">Mexico (+52)</option>
+                <option value="7">Russia (+7)</option>
+                <option value="966">Saudi Arabia (+966)</option>
+                <option value="65">Singapore (+65)</option>
+                <option value="34">Spain (+34)</option>
+
+                <option value="971">United Arab Emirates (+971)</option>
+                <option value="44">United Kingdom (+44)</option>
+                <option value="1">United States (+1)</option>
+                <option value="0">Diğer...(+)</option>
+              </select>
+              <input type="tel" name="" id="" class="hesap-input mt-1 me-3" />
+            </div>
+            <div class="mb-3">
+              <label for="">Cinsiyet*</label>
+              <select name="" id="" class="hesap-input me-3">
+                <option value="">Lütfen Seçin</option>
+                <option value="">Erkek</option>
+                <option value="">Kadın</option>
+              </select>
+              <br />
+            </div>
+            <div class="mb-3">
+              <label for="">Doğum Tarihi*</label>
+              <input type="date" name="" id="" class="hesap-input me-3" />
+            </div>
+            <div class="mb-3">
+              <label for="">E-posta*</label>
+              <input type="email" name="" id="" class="hesap-input me-3" />
+            </div>
+            <div class="mb-3">
+              <label for="">E-posta Tekrar*</label>
+              <input type="email" name="" id="" class="hesap-input me-3" />
+            </div>
+            <div class="mb-3">
+              <label for="">Şifre*</label>
+              <input type="password" name="" id="" class="hesap-input me-3" />
+            </div>
+            <div class="mb-3">
+              <label for="">Şifre Tekrar*</label>
+              <input type="password" name="" id="" class="hesap-input me-3" />
+            </div>
+            <!-- 1.form check Default-->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="FirstCheckBox"
+              />
+              <label class="form-check-label" for="defaultCheck1">
+                Kişisel Verilerin Korunması Hakkında Bilgilendirme metnini
+                okudum ve içeriğini anladım.
+              </label>
+            </div>
+
+            <!-- MODAL BOX -->
+
+            <div id="modalBoxForm" class="modal-form">
+              <div class="content-form w-75">
+                <div class="modal-font ms-3 me-3" style="font-size: 13px">
+                  <h2 class="fw-bold text-center">
+                    KİŞİSEL VERİLERİN KORUNMASI HAKKINDA BİLGİLENDİRME
+                  </h2>
+
+                  <p class="fw-bold text-center">
+                    (Son güncelleme: 20 Ocak 2021)
+                  </p>
+
+                  <p>
+                    Biletix A.Ş. (“Biletix”) olarak, siz değerli
+                    müşterilerimizin güvenliğini göz önünde bulundurarak, başta
+                    özel hayatın gizliliği olmak üzere, temel hak ve
+                    özgürlüklerin korunması amacıyla, kişisel verilerle ilgili
+                    düzenlenen "Kişisel Verilerin Korunması Kanunu" hususunda
+                    sizi bilgilendirmek ve bu kapsamda “Aydınlatma
+                    Yükümlülüğümüzü” yerine getirmek istiyoruz.
+                  </p>
+                  <p>
+                    <b class="text-decoration-underline">Amacımız;</b> kişisel
+                    verilerinizin alınma şekilleri, işlenme amaçları, hukuki
+                    nedenleri ve haklarınız konularında sizi en şeffaf şekilde
+                    bilgilendirmektir. Biletix’e iletmiş olduğunuz her türlü
+                    kişisel veri (“Veri”) bakımından, 7 Nisan 2016 tarihinde
+                    yürürlüğe giren 6698 sayılı Kişisel Verilerin Korunması
+                    Kanunu (“KVKK”) gereğince, Şirketimiz Biletix A.Ş.; Veri
+                    Sorumlusu ve Veri İşleyen sıfatıyla, kişisel bilgileri;
+                    kanunda açıklandığı çerçevede ve aşağıda açıklanan şart ve
+                    sınırlara bağlı kalarak; elde edebilecek, kaydedebilecek,
+                    depolayabilecek, muhafaza edebilecek, hizmetlerini devam
+                    ettirebilmek amacıyla güncelleyebilecek, değiştirebilecek,
+                    yeniden düzenleyebilecek, mevzuatın izin verdiği durumlarda
+                    ve ölçüde üçüncü kişilere açıklayabilecek, devredebilecek,
+                    aktarabilecek, paylaşabilecek, sınıflandırabilecek, anonim
+                    hale getirebilecek ve kanunda sayılan diğer şekillerde
+                    işleyebilecektir.
+                  </p>
+                  <p>
+                    <b class="text-decoration-underline">Veri Sorumlusu:</b>
+                    İletişim bilgileri aşağıda aktarılan Biletix Bilet Dağıtım
+                    Basım ve Ticaret A.Ş.
+                  </p>
+                  <p>
+                    <b class="text-decoration-underline"
+                      >Kişisel verilerinizin işlenme amaçları ve hukuki
+                      sebepleri;</b
+                    >
+                    Kimlik bilgileri, erişim/iletişim bilgileri, tüketici
+                    alışkanlığına ilişkin bilgiler, sesli ve görüntülü
+                    görüşmelerde veya kurulan sözleşmeler kapsamında gerçekleşen
+                    işlemler sonucu edinilen siz müşterilerimizin kimliğini
+                    belirli veya belirlenebilir hale getirmeye yarayan her türlü
+                    bilgi ve belge, KVKK madde 3/d hükmüne istinaden
+                    <u> kişisel veri</u> kapsamındadır.
+                  </p>
+
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Veri Kategorisi</th>
+                        <th scope="col">Veri Saklama Süresi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kimlik</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>İletişim</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Lokasyon</td>
+                        <td>5 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Özlük</td>
+                        <td>İstihdamın sona ermesi + 10 yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Hukuki İşlem</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Müşteri İşlem</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>Fiziksel Mekan Güvenliği</td>
+                        <td>1 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>İşlem Güvenliği</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>Finans</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10</th>
+                        <td>Mesleki Deneyim</td>
+                        <td>İstihdam + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">11</th>
+                        <td>Pazarlama</td>
+                        <td>1 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">12</th>
+                        <td>Görsel ve İşitsel Kayıtlar</td>
+                        <td>1 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">13</th>
+                        <td>Dernek Üyeliği</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">14</th>
+                        <td>Vakıf Üyeliği</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">15</th>
+                        <td>Sağlık Bilgileri</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">16</th>
+                        <td>Ceza Mahkumiyeti ve Güvenlik Tedbirleri</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">17</th>
+                        <td>
+                          Diğer Bilgiler-Çalışan, Çalışan Adayı ve Stajyer
+                          Bilgisi
+                        </td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">18</th>
+                        <td>Diğer Bilgiler-Talep ve Şikayet Bilgisi</td>
+                        <td>Hukuki İlişki + 10 Yıl</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">19</th>
+                        <td>Diğer Bilgiler-Araç Bilgisi</td>
+                        <td>5 Yıl</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p>
+                    Kişisel verileriniz; tarafınızla akdedilen sözleşmelerin
+                    gereklerinin yerine getirilmesi, etkinlik biletlerinin
+                    satışının yapılması ve tercih ettiğiniz teslimat yöntemine
+                    bağlı olarak teslim edilebilmesi, ödemelerinizin
+                    gerçekleşebilmesi, e-faturalama, e-arşiv faturalama ve
+                    gerekmesi durumunda iade ve değişiklik işlemlerinin
+                    yapılabilmesi, satın aldığınız etkinlikler ya da
+                    katıldığınız kampanya/çekilişler kapsamında tercih ettiğiniz
+                    iletişim kanalı üzerinden size bilgi paylaşımı yapılması,
+                    işlem bilgilerinin tespiti,<u> talebinize bağlı olarak</u>
+                    Biletix üyelik kaydı oluşturabilmeniz ve kaydınızın
+                    muhafazası,
+                    <u> iletişim izni vermiş iseniz</u> tanıtım/bilgilendirme,
+                    pazarlama ve kampanya faaliyetlerinin yapılması, etkinlik
+                    bülteni gönderilmesi, veri analizi-araştırma yapılabilmesi,
+                    bilet satın alırken sigorta seçimi yapmış iseniz sigorta
+                    işlemlerinin yapılması, şikayetlerinizin/taleplerinizin
+                    Şirketimize aktarılabilmesi ve takibi, talebinize bağlı
+                    olarak kombine üyelik ve sadakat programı üyelik
+                    işlemleriniz ile akreditasyon işlemlerinin yapılabilmesi ve
+                    bu üyelikler kapsamında size bilgi verilebilmesi, yapılan
+                    işlem kayıtlarının yedeklenmesi/arşivlenmesi, depolanması ve
+                    saklanması, ilgili mevzuat hükümlerince bilgi saklama,
+                    raporlama, bilgilendirme yükümlülüklerine uyulması ve yasal
+                    yükümlülüklerimizin ifası amaçlarıyla işlenebilmektedir.
+                    Biletix, kişisel verilerinizi burada belirtilen işleme
+                    amaçları dışında kullanmayacak, açık rızanız ya da ilgili
+                    mevzuatta öngörülen sebepler olmaksızın 3. kişilere
+                    aktarmayacak ve/veya ifşa etmeyecektir.
+                  </p>
+                  <p>
+                    <b class="text-decoration-underline"
+                      >Yukarıda belirtilen amaçlarla, kişisel verilerinizin
+                      aktarılabileceği kişi/kuruluşlar:</b
+                    >
+                    Kişisel Verileriniz; tercih ettiğiniz ödeme şekline bağlı
+                    olarak ilgili Bankalara, online ödeme sistemlerine, bilet
+                    satın alırken sigorta seçimi yapmış iseniz ilgili sigorta
+                    şirketine ve aracı kurumlarına, tercih ettiğiniz teslimat
+                    seçimi kapsamında ilgili dağıtım/kargo-kurye şirketlerine,
+                    kombine üyelik ve sadakat programı üyeliği gibi özel bir
+                    üyelik satın almış iseniz, ilgili spor kulüplerine ve
+                    program üyesi olan ilgili Vakıflara/firmalara, bilet satın
+                    alırken bağış seçimi yapmış iseniz ilgili kuruma,
+                    şikayetlerinizin giderilmesi ve size daha iyi bir hizmet
+                    sunabilmemiz için alt yapı sağlayıcısına,
+                    e-faturalama/e-arşiv faturalama işlemleri kapsamında ilgili
+                    kurum/kuruluş ve alt yapı sağlayıcılarına, yapılan işlem
+                    kayıtlarının
+                    yedeklenmesi/saklanması/arşivlenmesi/depolanması için yurt
+                    içi ve dışında birlikte çalıştığımız sunucu barındırma,
+                    arşivleme, depolama ve yazılım hizmetleri sağlayıcılarına,
+                    Şirketimizin ana hissedarına, doğrudan/dolaylı
+                    yurtiçi/yurtdışı iştiraklerine; şikayetlerinizin ya da hasıl
+                    olan bir sorunun giderimi ya da yasal yükümlülüklerimizin
+                    ifası için Şirket’imizin çalışanlarına, hukuk, mali ve vergi
+                    danışmanlarına, denetçilerine ve de mevzuat hükümlerinin
+                    izin verdiği kişi, kurum ve kuruluşlara aktarılabilecektir.
+                    <u>
+                      Kişisel verileriniz bu maddede belirtilen üçüncü kişilere
+                      aktarılırken sadece gerektiği kadarı ile ve ilgisi
+                      kapsamında bir aktarım yapılacaktır.</u
+                    >
+                  </p>
+                  <br />
+                  <br />
+                  <p class="fw-bold">Kişisel verilere ait haklarım nelerdir?</p>
+
+                  <br />
+                  <br />
+                  <p class="fw-bold">
+                    <b
+                      >Kanun’un 11. Maddesi Çerçevesinde Haklarınız ve
+                      İstisnaları;</b
+                    >
+                  </p>
+                  <br />
+                  <br />
+                  <p>
+                    Şirketimize yazılı olarak veya Kurulun belirleyeceği diğer
+                    yöntemlerle başvurarak;
+                    <br />
+                    <br />
+
+                    <b>a)</b> Kişisel verilerinizin işlenip işlenmediğini
+                    öğrenme,
+                    <br />
+                    <b>b)</b> Kişisel verileriniz işlenmişse buna ilişkin bilgi
+                    talep etme,
+                    <br />
+                    <b>c)</b> Kişisel verilerinizin işlenme amacını ve amacına
+                    uygun kullanılıp kullanılmadığını öğrenme,
+                    <br />
+                    <b>ç)</b> Kişisel verilerinizin yurt içinde veya yurt
+                    dışında aktarıldığı üçüncü kişileri bilme,
+                    <br />
+                    <b>d)</b> Kişisel verilerinizin eksik veya yanlış işlenmiş
+                    ise düzeltilmesini isteme,
+                    <br />
+                    <b>e)</b> Kanun’un 7. maddesinde öngörülen şartlar
+                    çerçevesinde kişisel verilerinizin silinmesini veya yok
+                    edilmesini isteme,
+                    <br />
+                    <b>f)</b>Kişisel verilerinizin aktarıldığı üçüncü kişilere
+                    yukarıda sayılan ve bentleri uyarınca yapılan işlemlerin
+                    bildirilmesini isteme,
+                    <br />
+                    <b>g)</b> Kişisel verilerinizin münhasıran otomatik
+                    sistemler ile analiz edilmesi nedeniyle aleyhinize bir
+                    sonucun ortaya çıkmasına itiraz etme ve
+                    <br />
+                    <b>ğ)</b>Kişisel verilerinizin kanuna aykırı olarak
+                    işlenmesi sebebiyle zarara uğramanız hâlinde zararın
+                    giderilmesini talep etme hakkına sahipsiniz. Haklarınızın,
+                    düzenlemenin yürürlük tarihi olan 07.10.2016 tarihinden
+                    itibaren kullanılması mümkündür.
+                    <br />
+                    <br />
+                  </p>
+
+                  <p class="fw-bold">
+                    Yukarıdaki maddelerle ilgili daha detaylı bilgi almak ve
+                    kişisel verileriniz hakkındaki talepleriniz için lütfen
+                    formu doldurun.
+                  </p>
+                  <p>
+                    Kişisel verilerle ilgili taleplerinizi; kimliğinizi tespit
+                    edici gerekli bilgiler ve kullanmak istediğiniz hakkınıza
+                    yönelik açıklamalarınızla birlikte, a) Şirketimizin Yardım
+                    adresindeki ilgili yardım sayfalarındaki formu doldurarak,
+                    b) Ayazağa Mahallesi, Ayazağa Yolu, Çelik İş Merkezi, B
+                    Blok, No: 3, Şişli-İstanbul adresine iadeli taahhütlü posta,
+                    noter vasıtasıyla veya elden teslim yöntemi ile
+                    göndereceğiniz bir dilekçe/müracaat yazısı ile
+                    iletebilirsiniz. Ayrıca, talebin iletimi konusunda Kurulun
+                    başkaca yöntemler belirlemesi durumunda söz konusu
+                    yöntemlerle de talebinizi iletebilmeniz mümkün olacaktır.
+                    Şirketimiz, başvuruda yer alan taleplerinizi, talebin
+                    niteliğine göre en kısa sürede ve en geç otuz gün içinde
+                    ücretsiz olarak sonuçlandıracaktır.
+                  </p>
+                  <p>
+                    Ancak, işlemin ayrıca bir maliyet gerektirmesi hâlinde,
+                    Kurulca belirlenen tarifedeki ücret alınabilir. Şirketimiz
+                    talebi kabul etme veya gerekçesini açıklayarak reddetme ve
+                    cevabını ilgili kişiye yazılı olarak veya elektronik ortamda
+                    bildirme hakkına sahiptir. Başvuruda yer alan talebin kabul
+                    edilmesi hâlinde Şirketimiz talebinizin gereğini yerine
+                    getirecektir. Başvurunun Şirketimizin hatasından
+                    kaynaklanması hâlinde alınan bir ücret varsa, ücret ilgiliye
+                    iade edilecektir. Başvurunun reddedilmesi, verilen cevabın
+                    yetersiz bulunması veya süresinde başvuruya cevap
+                    verilmemesi hâllerinde; ilgili kişinin, Şirketimizin
+                    cevabını öğrendiği tarihten itibaren otuz ve her hâlde
+                    başvuru tarihinden itibaren altmış gün içinde Kurula
+                    şikâyette bulunabilme hakkı saklıdır. KVKK madde 14/2
+                    hükmüne istinaden, veri sorumlusu olan Şirketimize başvuru
+                    yolu tüketilmeden Kurula şikâyet yoluna başvurulamaz.
+                    Kişilik hakları ihlal edilenlerin, genel hükümlere göre
+                    tazminat hakkı saklıdır.
+                  </p>
+                  <p>
+                    Bununla birlikte, KVKK madde 28/2 hükmüne istinaden;
+                    “zararın giderilmesini talep etme hakkı hariç, haklarınızı
+                    düzenleyen 11 inci maddenin; a) Kişisel veri işlemenin suç
+                    işlenmesinin önlenmesi veya suç soruşturması için gerekli
+                    olması b) İlgili kişinin kendisi tarafından alenileştirilmiş
+                    kişisel verilerin işlenmesi c) Kişisel veri işlemenin
+                    kanunun verdiği yetkiye dayanılarak görevli ve yetkili kamu
+                    kurum ve kuruluşları ile kamu kurumu niteliğindeki meslek
+                    kuruluşlarınca, denetleme veya düzenleme görevlerinin
+                    yürütülmesi ile disiplin soruşturma veya kovuşturması için
+                    gerekli olması ç) Kişisel veri işlemenin bütçe, vergi ve
+                    mali konulara ilişkin olarak Devletin ekonomik ve mali
+                    çıkarlarının korunması için gerekli olması durumlarında
+                    uygulanmayacağını da belirtiriz.
+                  </p>
+                  <p>
+                    <b class="text-decoration-underline"
+                      >Rıza Gerektirmeyen Haller:</b
+                    >
+                    6698 sayılı Kişisel Verilerin Korunması Kanunu’nun 5.
+                    Maddesinin 2. fıkrası uyarınca, kanunlarda açıkça
+                    öngörülmesi, bir sözleşmenin kurulması veya ifasıyla
+                    doğrudan doğruya ilgili olması kaydıyla, sözleşmenin
+                    taraflarına ait kişisel verilerin işlenmesinin gerekli
+                    olması, veri sorumlusu/veri işleyen sıfatıyla Biletix
+                    A.Ş.’nin hukuki yükümlülüğünü yerine getirebilmesi için
+                    zorunlu olması, ilgili kişi tarafından alenileştirilmiş
+                    olması, bir hakkın tesisi, kullanılması veya korunması için
+                    veri işlemenin zorunlu olması, ilgili kişinin temel hak ve
+                    özgürlüklerine zarar vermemek kaydıyla veri sorumlusu olan
+                    Şirketimizin meşru menfaatleri için veri işlenmesinin
+                    zorunlu olması hallerinde Şirketimizin açık rıza almaksızın
+                    kişisel verileri işleyebilme hakkı mevcuttur. Ayrıca,
+                    Şirketimizin tabii olduğu mevzuattan kaynaklanan kanuni
+                    yükümlülüklerini yerine getirmesi için ve/veya yasal
+                    zorunluluklar nedeniyle bilgi talep edebilecek
+                    kişi/kurumlara yapılacak açıklama, kullanım ve aktarımlar
+                    için açık rıza alınmasına gerek olmamaktadır.
+                  </p>
+                  <p>
+                    Ticaret Ünvanı :
+                    <b>Biletix Bilet Dağıtım Basım ve Ticaret A.Ş.</b>
+                  </p>
+                  <p>
+                    İletişim Adresi : Ayazağa Mahallesi Vadistanbul Bulvar
+                    Cendere Caddesi No:109/B 1B Blok Ofis No:1-2 , 34396
+                    Sarıyer, İstanbul, TÜRKİYE
+                  </p>
+                  <p>MERSİS No : 0171009936100018</p>
+                  <p>İletişim Telefonu : 0850 755 55 55</p>
+                  <p>Merkez Ofis : 0212 365 00 00</p>
+                  <p>İletişim Faks Numarası : 0212 285 15 25</p>
+                  <p>
+                    İletişim Web Adresi :
+                    <a
+                      class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover link-dark"
+                      href="#"
+                      >Yardım</a
+                    >
+                  </p>
+                </div>
+                <div
+                  class="d-grid gap-2 d-md-flex justify-content-md-end modal-buttons me-3"
+                >
+                  <button
+                    class="btn btn-danger me-md-2 modal-kapaiki text-light"
+                    type="button"
+                    data-bs-dismiss="modal"
+                  >
+                    ONAYLAMADAN ÇIK
+                  </button>
+                  <button
+                    class="btn btn-primary modal-kapa text-light"
+                    type="button"
+                    id="onaylamaButonu"
+                  >
+                    OKUDUM ANLADIM
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.form check disabled -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="okudumAnladim"
+                disabled
+              />
+              <label class="form-check-label" for="defaultCheck2">
+                Kişisel verilerimin, Biletix üyelik kaydı oluşturmak ve üyelik
+                haklarından yararlanmak amacıyla Biletix’in Kişisel Verilerin
+                Korunması Hakkında Bilgilendirme metni’nde yer alan hususlarda
+                işlenmesine ve paylaşılmasına aydınlatılmış açık rızam ile onay
+                veriyorum
+              </label>
+            </div>
+            <!-- 3.form check Default-->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Biletix Etkinlik Habercisi ile özel promosyon ve kampanya
+                duyurularını e-posta ve sms yoluyla almak istiyorum.
+              </label>
+            </div>
+          </form>
+        </div>
+        <!-- sağ kısım -->
+        <div class="col-sm-5 col-md-6 w-50 uyelik-sag">
+          <!-- 1 -->
+          <div class="mt-1 mb-4 ms-3">
+            <div class="float-start" style="margin-right: 25px">
+              <img
+                src="{% static './img/createaccount/createAccountsignup_mic.png' %}"
+                alt=""
+              />
+            </div>
+
+            <div class="fw-bold">2.000'den fazla etkinlik.</div>
+            <span>Tek tıkla etkinliklere ulaş, eğlenceni planla.</span>
+          </div>
+          <!-- 2 -->
+
+          <div class="mb-4 ms-3">
+            <div class="float-start" style="margin-right: 25px">
+              <img
+                src="{% static './img/createaccount/createAccountsignup_bell.png' %}"
+                alt=""
+              />
+            </div>
+            <div class="fw-bold">Sahnede kim var?</div>
+            <span
+              >Bildirimlere izin ver, ilgini çeken etkinliklerden ilk senin
+              haberin olsun.</span
+            >
+          </div>
+
+          <!-- 3 -->
+          <div class="mb-4 ms-3">
+            <div class="float-start" style="margin-right: 25px">
+              <img
+                src="{% static './img/createaccount/createAccountsignup_ticket.png' %}"
+                alt=""
+              />
+            </div>
+            <div class="fw-bold">Bilet almanın en kolay yolu.</div>
+            <span
+              >Biletlerin ister telefonuna, ister e-posta adresine, istersen
+              kuryeyle evine gelsin.</span
+            >
+          </div>
+
+          <!-- 4 -->
+          <div class="mb-4 ms-3">
+            <div class="float-start" style="margin-right: 25px">
+              <img
+                src="{% static './img/createaccount/createAccountsignup_que.png' %}"
+                alt=""
+              />
+            </div>
+            <div class="fw-bold">Yardıma mı ihtiyacın var</div>
+            <span
+              >Sanal asistanımız ve müşteri temsilcilerimiz her zaman
+              yanında.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 mb-5 py-3 px-3 border border-light-subtle border-2">
+      <p>
+        <b>NOT:</b> Biletix üyelik kaydı oluşturmak istemezseniz “üye olmadan
+        devam et” bölümünden etkinlik bileti satın alabileceğinizi hatırlatırız.
+        <strong>
+          Ayrıca, dilediğiniz zaman üyelik bilgilerinizi güncelleyebilmeniz veya
+          üyeliğinizi iptal etmeniz mümkündür. İptal edilen üyelik bilgilerinin
+          tekrar aktif edilemeyeceğini ve üyelik bilgilerinizi silmeniz
+          durumunda yaptığınız işlemleri artık hesabınızda göremeyeceğinizi
+          hatırlatmak isteriz.</strong
+        >
+      </p>
+    </div>
+
+    <div class="alt-buton d-flex justify-content-center">
+      <div type="button" class="btn btn-primary mb-3">
+        <a class="text-white text-decoration-none" href="#">Devam</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/_footer-main.html' %} {% endblock content %}

@@ -1,0 +1,319 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anasayfa</title>
+    <!-- !bootstrap-link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="{% static 'css/stylev1.css' %}" />
+  </head>
+  <body>
+
+    {% block content %} 
+    {% include 'includes/_mesaj.html' %}
+    {% include 'includes/_index-modal.html' %}
+    {% include 'includes/_navbar-main.html' %}
+
+    <!-- !MAİN -->
+    <div class="container-fluid main m-0 p-0 ">
+      <div class="container-lg bg-light p-0 p-md-5">
+
+        {% include 'includes/_reklam.html' %}
+
+        <!-- !CAROUSEL -->
+        {% include 'includes/_carousel.html' %}
+
+        <!--! MÜZİK SAHNE START -->
+        <section class="content bg-light mt-5 mb-5">
+          <div class="row m-0">
+            <!-- Müzik -->
+            <div class="left-side col-md-7 col-12">
+              <a href="#">
+                <h2 class="overflow-hidden" style="color: black">MÜZİK</h2>
+              </a>
+              
+              <div class="row gx-1 gy-2">
+                {% for i in etkinlik %} 
+                {% if i.muzik_index %}
+                <div class="col-6 col-lg-4">
+                  <a class="d-inline-block h-100 w-100" href="{% url 'etkinlik-detay' i.slug %}">
+                    <div
+                      class="card rounded-0 h-100 w-100"
+                      style="width: 165px"
+                    >
+                      <img
+                        src="{{i.etkinlik_resim_profil.url}}"
+                        class="img-fluid rounded-0 w-100 h-100"
+                        alt="..."
+                        style="max-height: 110px"
+                      />
+                      <div style="padding: 11px;" class="card-body ps-1 pt-0 card-etkinlik">
+                        <h6 style="font-size: 12px !important;">{{i.isim}}</h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endif %} 
+                {% endfor %} 
+
+              </div>
+            </div>
+            <!-- Sahne -->
+            <div class="right-side col-md-5 col-12">
+              <a href="#">
+                <h2 class="overflow-hidden" style="color: black">SAHNE</h2>
+              </a>
+              <div class="row gx-1 gy-2">
+
+                {% for i in etkinlik %} 
+                {% if i.sahne_index %}
+                <div class="col-6">
+                  <a class="d-inline-block h-100 w-100" href="{% url 'etkinlik-detay' i.slug %}">
+                    <div
+                      class="card rounded-0 h-100 w-100"
+                      style="width: 165px"
+                    >
+                      <img
+                        src="{{i.etkinlik_resim_profil.url}}"
+                        class="img-fluid rounded-0 w-100 h-100"
+                        alt="..."
+                        style="max-height: 106px"
+                      />
+                      <div style="padding: 14px;" class="card-body ps-1 pt-0 card-etkinlik">
+                        <h6 style="font-size: 12px !important;">{{i.isim}}</h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endif %} 
+                {% endfor %}
+
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--! MÜZİK SAHNE END -->
+
+        {% include 'includes/_reklam.html' %}
+
+
+        <!-- !Tüm-Türkiyede-Start -->
+        <div class="container d-none d-md-block">
+          <h1><a href="#">BU HAFTASONU TÜM TÜRKİYEDE</a></h1>
+          <div class="p-2 d-flex justify-content-center m-auto" style="background-color: #e6e6e6">
+          {% for i in etkinlik %}
+          {% if i.tum_tr %}
+            <div class="mx-2">
+              <a class="d-inline-block h-100" href="#">
+                <div class="card rounded-0 h-100" style="width: 165px">
+                  <img
+                    src="{{i.etkinlik_resim_profil.url}}"
+                    class="card-img-top rounded-0 w-100 h-100"
+                    alt="..."
+                  />
+                  <div class="card-body ps-1 pt-0 card-etkinlik">
+                    <h6>{{i.isim}}</h6>
+                    <p>{{i.etkinlik_mekan.all.0}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <!-- !Tüm Türkiyede-Start -->
+
+        <!-- !HOTTICKETS-YENİ&YAKINDAGELECEKLER BAŞLANGIÇ -->
+        <div class="container a214">
+          <div class="row fragman">
+            <div class="col-lg-7 col-md-12 fragman2 p-md-0 p-lg-3 py-0 hot">
+              <div class="row m-0">
+                <div class="col-12 text-center">
+                  <div class="row cs mb-sm-2 pt-1">
+                    <div id="ticket1" class="col-md-3 col-sm-12 ticket pt-2">
+                      <span class="hotcc cursor-pointer">HOT TICKET</span>
+                    </div>
+                    <div id="satis1" class="col-md-9 col-sm-12 satis pt-2">
+                      <span
+                        class="hotc"
+                        style="font-size: 21px; cursor: pointer"
+                        >YENİ SATIŞTA & YAKINDA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- hot-ticket-kısımı -->
+                <div id="ticket11" class="hottickettt mt-1 col-12">
+                  <!-- hot-ticket -->
+                  {% for i in etkinlik_tarih %}
+                  {% if i.hot_ticket %}
+                  <div class="row hotTicketss">
+                    <div class="col-3 text-center">
+                      <div class="date">
+                        <div class="day">
+                          <p class="day">{{i.etkinlik_tarihi|date:"d"}}</p>
+                        </div>
+                        <div class="days">
+                          <p>{{i.etkinlik_tarihi|date:"D"}}</p>
+                          <p>{{i.etkinlik_tarihi|date:"M"}}</p>
+                          <p>{{i.etkinlik_tarihi|date:"Y"}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-7 consert">
+                      <a class="text-dark" href="{% url 'etkinlik-detay' i.slug %}">
+                        <p class="consertName">{{i.isim}}</p>
+                      </a>
+                      <a href="{% url 'mekan' i.etkinlik_mekan.all.0.slug %}"><p class="consertPlace">
+                        {{i.etkinlik_mekan.all.0}}
+                      </p></a>
+                  
+                        <p class="consertDate cursor-pointer">{{i.etkinlik_tarihi}}</p>
+                    </div>
+                    <div class="col-2 m-auto">
+                      <a href="#">
+                        <i
+                          style="color: #009ddd"
+                          class="fs-1 text-center fa-solid fa-chevron-right"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+
+                <!-- YENİ-SATIŞTA GÖRÜNÜCEK KISIM -->
+                <div id="satis22" class="yenisatisss col-12">
+                  {% for i in etkinlik_tarih %}
+                  <div class="row hotTicketss">
+                    <div class="col-3 text-center">
+                      <div class="date">
+                        <div class="day">
+                          <p class="day">{{i.etkinlik_tarihi|date:"d"}}</p>
+                        </div>
+                        <div class="days">
+                          <p>{{i.etkinlik_tarihi|date:"D"}}</p>
+                          <p>{{i.etkinlik_tarihi|date:"M"}}</p>
+                          <p>{{i.etkinlik_tarihi|date:"Y"}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-7 consert">
+                      <a class="text-dark" href="{% url 'etkinlik-detay' i.slug %}">
+                        <p class="consertName">{{i.isim}}</p>
+                      </a>
+                      <a href="{% url 'mekan' i.etkinlik_mekan.all.0.slug %}"><p class="consertPlace">
+                        {{i.etkinlik_mekan.all.0}}
+                      </p></a>
+                  
+                        <p class="consertDate cursor-pointer">{{i.etkinlik_tarihi}}</p>
+                    </div>
+                    <div class="col-2 m-auto">
+                      <a href="#">
+                        <i
+                          style="color: #009ddd"
+                          class="fs-1 text-center fa-solid fa-chevron-right"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                </div>
+              </div>
+            </div>
+
+            <!-- spor-aile -->
+            <div class="col-lg-5 col-md-12 mt-4 p-lg-2 p-md-0 spor">
+              <h2>
+                <a class="ms-md-2 ms-sm-2 ms-xs" href="#">SPOR</a>
+              </h2>
+              <div class="row deneme2 p-1">
+                {% for i in etkinlik %}
+                {% if i.spor_index %}
+                <div class="col-6 p-1">
+                  <a href="{% url 'etkinlik-detay' i.slug %}">
+                    <div class="card w-100 h-100 rounded-0">
+                      <img
+                        src="{{i.etkinlik_resim_profil.url}}"
+                        class="card-img-top rounded-0"
+                        alt="..."
+                      />
+                      <div class="card-body ps-1 pt-0">
+                        <h3 class="deneme">
+                          {{i.isim}}
+                        </h3>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+
+              <!-- aile -->
+              <h2>
+                <a class="ms-md-2 ms-sm-2" href="#">AİLE</a>
+              </h2>
+              <div class="row deneme2 p-1">
+                {% for i in etkinlik %}
+                {% if i.aile_index %}
+                <div class="col-6 p-1">
+                  <a href="{% url 'etkinlik-detay' i.slug %}">
+                    <div class="card w-100 h-100 rounded-0">
+                      <img
+                        src="{{i.etkinlik_resim_profil.url}}"
+                        class="card-img-top rounded-0"
+                        alt="..."
+                      />
+                      <div class="card-body ps-1 pt-0">
+                        <h3 class="deneme">
+                          {{i.isim}}
+                        </h3>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--! HOTTICKETS-YENİ&YAKINDAGELECEKLER SON BURASI -->
+      </div>
+    </div>
+
+    {% include 'includes/_footer-main.html' %} 
+    {% endblock content %}
+
+    <!-- !fontawesome-script -->
+    <script
+      src="https://kit.fontawesome.com/5dfa75166b.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- !bootstrap-script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- !script-js -->
+    <script src="{% static 'script/script.js' %}"></script>
+  </body>
+</html>

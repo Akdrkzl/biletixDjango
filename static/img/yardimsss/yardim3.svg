@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="81px" height="77px" viewBox="0 0 81 77" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <g id="icons8_online_money_transfer" transform="translate(6 4)">
+    <path d="M0 0L12.6184 0L12.6184 16.2237L0 16.2237L0 0Z" transform="translate(27.9408 42.36182)" id="Rectangle" fill="#B6DCFE" stroke="none" />
+    <path d="M0 0L14.4211 0L14.4211 18.0263L0 18.0263L0 0ZM12.6184 16.2237L12.6184 1.80263L1.80263 1.80263L1.80263 16.2237L12.6184 16.2237Z" transform="translate(27.03946 41.46057)" id="Shape" fill="#4788C7" fill-rule="evenodd" stroke="none" />
+    <path d="M0 0L66.6974 0L66.6974 43.2632L0 43.2632L0 0Z" transform="translate(0.9013062 8.111816)" id="Rectangle" fill="#EEEEEE" stroke="none" />
+    <path d="M0 0L68.5 0L68.5 45.0658L0 45.0658L0 0ZM66.6974 43.2632L66.6974 1.80263L1.80263 1.80263L1.80263 43.2632L66.6974 43.2632Z" transform="translate(0 7.210571)" id="Shape" fill="#4788C7" fill-rule="evenodd" stroke="none" />
+    <path d="M0 0L37.8553 0L37.8553 5.40789L0 5.40789L0 0Z" transform="translate(15.32236 58.58557)" id="Rectangle" fill="#98CCFD" stroke="none" />
+    <path d="M0 0L39.6579 0L39.6579 7.21052L0 7.21052L0 0ZM37.8553 5.40789L37.8553 1.80263L1.80263 1.80263L1.80263 5.40789L37.8553 5.40789Z" transform="translate(14.42105 57.6842)" id="Shape" fill="#4788C7" fill-rule="evenodd" stroke="none" />
+    <g id="Group" transform="translate(14.42105 0)">
+      <path d="M0 0L37.8553 0L37.8553 34.25L0 34.25L0 0Z" transform="translate(0.901316 0.9013155)" id="Rectangle" fill="#98CCFD" stroke="none" />
+      <g id="Group">
+        <path d="M0 0L39.6579 0L39.6579 36.0526L0 36.0526L0 0ZM37.8553 34.25L37.8553 1.80263L1.80263 1.80263L1.80263 34.25L37.8553 34.25Z" id="Shape" fill="#4788C7" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+    <path d="M0 13.2944L0 12.6184C0 5.64945 5.64945 0 12.6184 0C19.5874 0 25.2368 5.64945 25.2368 12.6184C25.2368 15.0952 25.2368 13.2944 25.2368 13.2944L0 13.2944L0 13.2944Z" transform="translate(21.63162 21.75598)" id="Shape" fill="#EEEEEE" stroke="none" />
+    <path d="M0 5.4079C0 2.4212 2.4212 0 5.40789 0C8.39459 0 10.8158 2.4212 10.8158 5.4079C10.8158 8.39459 8.39459 10.8158 5.40789 10.8158C2.4212 10.8158 0 8.39459 0 5.4079Z" transform="translate(28.8421 5.407837)" id="Circle" fill="#EEEEEE" stroke="none" />
+    <g id="Group" transform="translate(9.013153 30.64478)">
+      <path d="M43.2632 0L43.2632 3.60527L7.21053 3.60527L7.21053 0L0 0L0 5.4079L50.4737 5.4079L50.4737 0L43.2632 0Z" id="Polygon" fill="#4788C7" stroke="none" />
+    </g>
+  </g>
+</svg>

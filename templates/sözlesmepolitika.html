@@ -1,0 +1,736 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<!-- ! Sözleşme -->
+<div class="container-fluid divb w-100">
+  <div class="container bg-white shadow">
+    <div class="sözlesmeimg">
+      <img id="rese" src="{% static './img/sözlesme img/policies_tr.png' %}" class="w-100" />
+    </div>
+    <br />
+    <br />
+    <div class="container d-flex justify-content-between">
+      <div id="reses" class="sözl d-flex">
+        <button
+          class="btn res1 button diva"
+          data-target="satis"
+          onclick="linkMen(this)"
+        >
+          Satış Sözleşmesi
+        </button>
+        <button
+          class="btn res1 button diva"
+          data-target="kullanım"
+          onclick="linkMen(this)"
+        >
+          Kullanım Koşulları
+        </button>
+        <button
+          class="btn res1 button diva"
+          data-target="onbil"
+          onclick="linkMen(this)"
+        >
+          Ön Bilgilendirme Metni
+        </button>
+      </div>
+      <div class="pri">
+        <img src="{% static './img/sözlesme img/CnPrint.png' %}"/>
+      </div>
+    </div>
+    <div class="prin d-none">
+      <img src="{% static './img/sözlesme img/CnPrint.png' %}"/>
+    </div>
+    <div id="satis" class="resesss row sözle">
+      <div class="col-12 my-5 div1">
+        <h1 class="sözlesme">Biletix Satış Politikaları ve Satış Sözleşmesi</h1>
+        <p class="sözlesme1">
+          6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun’un
+          (“Kanun”) 3 üncü maddesi ve diğer mevzuatın ilgili hükümleri uyarınca,
+          Biletix Bilet Dağıtım Basım ve Tic. A.Ş (“Biletix”) ile ilgili
+          tanıtıcı bilgilerin tümü, sitemizin “Hakkımızda” başlıklı bölümünde ve
+          ayrıca Ön Bilgilendirme Metninde güncel şekilde yer almaktadır.
+          Biletix olarak hedefimiz; katılmayı düşündüğünüz etkinliğin biletini
+          en kısa sürede, en kolay şekilde satın almanızı sağlamaktır. Aşağıdaki
+          Satış Politikamızı ve Satış Sözleşmemizi, sizi memnun kılacak ve
+          biletix.com'daki satın alım süreci konusunda sizi bilgilendirecek
+          şekilde tasarladık. Belirtiriz ki, internet sitesinden yapılan
+          satışlar, mesafeli satış düzenlemelerine bağlı olup, Taraflar
+          arasındaki sözleşme şartları mesafeli satış sözleşmesindeki kurallar
+          dahilinde belirlenmektedir. Şirketimiz, sözleşmenin kurulmasından
+          önce, satış sözleşmesi hükümlerini ve de ön bilgilendirme metnini
+          mevzuat hükümleri doğrultusunda sizler ile paylaştığından,
+          siparişinizi onaylamadan ve bilet satın almadan önce Satış
+          Sözleşmesini okumanızı tavsiye ederiz. Satış Politikası ve
+          Sözleşmemiz, Kullanım Koşullarımızın da bir bölümünü oluşturur.
+          Siparişinizi onaylayarak ve/veya web sitemizden bilet alım işlemlerini
+          gerçekleştirerek, Ön Bilgilendirme Metnini, Kullanım Koşullarını,
+          Satış Politikası ve Sözleşme hükümlerini ve Gizlilik Beyanını
+          okuduğunuzu, anladığınızı ve içeriklerini aynen kabul etmiş
+          sayılacağınızı belirtir, satış politikası ve/veya sözleşme
+          hükümlerinin aksine bir talebinizin ya da şikayetinizin-çekincenizin
+          olması durumunda, herhangi bir bilet alım işlemi gerçekleştirmeden ve
+          siparişinizi onaylamadan önce, Yardım sayfasını ziyaret etmenizi
+          ve/veya bizimle sitemizde belirtilen iletişim numaralarından iletişime
+          geçmenizi öneririz. Sitemizden bilet satın alarak ve siparişinizi
+          onaylayarak, tarafınıza önceden iletilen işbu Sözleşme hükümlerine
+          bağlı olduğunuzu kabul etmiş sayılacağınızı önemle vurgularız.
+          Dolayısı ile sitemizden bilet satın aldığınızda, etkinlik biletleri
+          ile ilgili tüm sürece, prosedürlere ve işlemlere aşağıda yer alan
+          Sözleşme hükümlerinin aynen uygulanacağını önemle belirtiriz.
+        </p>
+        <p class="sözlesme1">
+          Bilet satın alma işlemi ayrıca aşağıdaki hükümlere tabidir: (i)
+          etkinlik için uygulanacağı açıklanan ve duyurulan özel hüküm ve
+          koşullara, (ii) Etkinlik organizatörünün (organizatörlerinin)
+          belirlediği ve açıkladığı ve/veya etkinliğin açıklanan diğer tüm hüküm
+          ve koşullarına; ve (iii) etkinlik organizatörü tarafından açıklanmış
+          ise etkinlik mekan hüküm ve koşullarına (giriş koşulları dahil).
+          Dolayısı ile, bilet satın alma işlemini yapmak suretiyle, etkinlik
+          için belirlenen ve duyurulan tüm hüküm ve koşullara ve Sözleşme
+          hükümlerine aynen riayet edeceğinizi kabul etmiş olmaktasınız. Şayet,
+          etkinliğin belirlenen ve açıklanan hüküm ve koşullarından herhangi
+          birini kabul etmiyorsanız veya bu koşullardan herhangi birine riayet
+          edemiyorsanız ve/veya edemeyeceksiniz, bilet satın alma işlemini
+          yapmamalısınız. Aksi durumda, bilet satın almış olsanız dahi etkinlik
+          mekanına ve/veya etkinliğe alınmamanızdan ya da etkinlik mekanından
+          çıkarılmanızdan dolayı Şirketimizin herhangi bir sorumluluğu
+          olmayacağını, bilet bedeli de dahil olmak üzere Şirketimizin herhangi
+          bir ödeme yükümü oluşmayacağını önemle belirtiriz. Ayrıca, Ön
+          Bilgilendirme Metni ile de önceden bilgilendirildiğiniz gibi,
+          siparişinizi onaylayarak; bileti satın almadan önce; a) firmamız ile
+          ilgili gerekli tüm bilgileri ve iletişim adreslerini b) satın
+          aldığınız bilete ve hizmete ilişkin tüm özellikleri ve ayrıca tüm
+          vergiler dahil toplam bilet/hizmet fiyatını ve varsa tüm ek masrafları
+          c) Ödeme, teslimat, ifaya ilişkin bilgileri ve şikayetlere ilişkin
+          sözleşmede düzenlenen çözüm yöntemlerini d) uyuşmazlık konusunda
+          başvurularınızı Tüketici Mahkemesine veya Tüketici Hakem Heyetine
+          yapabileceğinize dair sözleşmesel bilgileri e) Mesafeli Sözleşmeler
+          Yönetmeliği’nin 15 (g) maddesine istinaden cayma hakkınızın olmadığını
+          ve neticeten sözleşmede düzenlenen tüm hükümleri bildiğinizi yazılı
+          olarak kabul, beyan ve taahhüt etmektesiniz. Siparişlerinizi
+          onaylamadan ve bileti satın almadan önce, mevzuat kapsamında gerekli
+          ön bilgilendirme yükümünün yerine getirilerek sizlerin
+          bilgilendirildiğini, sizlerden onayınız kapsamında, yazılı şekilde ön
+          bilgilendirme onayı alındığını ve ön bilgilendirme onayının işbu
+          Sözleşmenin ayrılmaz bir parçası olduğunu da ayrıca ve önemle
+          vurgularız. İlaveten, işbu sözleşme ve ön onayınız ile “bilet satın
+          alma siparişinizin onaylanması durumunda ödeme yükümlülüğü altına
+          gireceğiniz” konusunda açık ve anlaşılır şekilde bilgilendirildiğinizi
+          de önemle bilmenizi isteriz.
+        </p>
+        <h1 class="sözlesme">
+          Etkinlik Bileti Alım/ Satımı ile İlgili Şart ve Koşullar/ Sözleşme
+          Hükümleri:
+        </h1>
+        <p class="sözlesme1">
+          1. Biletix, yetkili bilet satış acentesi olarak, biletini satın
+          aldığınız etkinliği düzenleyen “organizatör, etkinlik mekanı, kulüp
+          veya tiyatroların” (Bundan böyle her biri “Etkinlik Organizatörü” diye
+          anılacaktır) etkinlik biletlerinin satış ve dağıtımına aracılık
+          etmekte olup, bilet başına hizmet bedeli alır, ancak, etkinlik
+          içeriğini, bilet fiyatlarını veya oturma yerlerini belirleme konusunda
+          hak ve yetkiye sahip değildir. Biletix’in etkinlikler kapsamında
+          ve/veya etkinliklerin içeriğine dair hiçbir hak ve yetkisi ve dolayısı
+          ile sorumluluğu bulunmamaktadır. Şirketimiz, etkinlik organizatörleri
+          adına ya da hesabına hareket etmemekte, organizatörler ile her ne nam
+          adı altında olursa olsun herhangi bir bayilik, distribütörlük,
+          temsilcilik, alt bayilik vs kapsamında da herhangi bir hukuki/ticari
+          ilişkisi bulunmamaktadır. Bileti satın alan kişi, satın aldığı bileti
+          hiçbir ticari amaç gütmeksizin, münhasıran şahsi kullanımı için satın
+          aldığını, Etkinlik Organizatörü veya temsilcileri tarafından açıkça
+          yazılı izin verilmesi haricinde, bileti, hiçbir ticari iş veya başkaca
+          bir faaliyet için kullanmayacağını beyan ve taahhüt eder. Örnek vermek
+          gerekirse, satın alınan bilet, üçüncü kişilere her ne şekilde olursa
+          olsun satılamaz, biletin ilave ücretle ya da başka şekilde satışı
+          teklif edilemez; satın alınan bilet, reklam, yarışma ve çekilişler de
+          dahil olmak ancak bunlarla sınırlı olmamak üzere promosyon veya diğer
+          ticari amaçlarla ya da yasa dışı şekilde kullanılamaz. 2. Biletix’in
+          etkinliklere ve içeriklerine dair hiçbir bilgisi, katkısı ya da dahli
+          söz konusu olmamaktadır. Etkinlikler için kişi başı maksimum bilet
+          adedini ve fiyatları Etkinlik Organizatör’ü belirler. Satın
+          alınabilecek bilet adedi, etkinlik sayfasında Lütfen Not Edin
+          bölümünde ve satın almanın ilk aşamasında belirtilir. Bu uygulamanın
+          amacı haksız bilet alımlarının önüne geçmektir. Bilet alımları, bazı
+          etkinliklerde kişi başına ve/veya kredi kartı başına, bazılarında ise
+          hane başına sınırlandırılabilir. Bu kuralın herhangi bir şekilde ihlal
+          edildiğini tespit edersek, bilet alımı ister birden fazla kart
+          kullanılarak, isterse de aynı hanenin üyelerinin kart kullanımları ile
+          gerçekleştirilsin, Biletix, belirttiği adet sınırı üzerinde satın
+          alınan biletleri, önceden bildirimde bulunmaksızın tek taraflı iptal
+          etme hakkını saklı tutar. Otomatik vasıtaların kullanımı suretiyle
+          bilet satın alınması, kesinlikle yasaktır. 3. Biletler, genellikle
+          internet, çağrı merkezi, perakende satış noktaları gibi çeşitli
+          dağıtım noktaları aracılığıyla satılır. Tüm satış kanalları aynı
+          biletleme havuzuna eriştiğinden popüler etkinliklerde biletler hızlı
+          bir şekilde tükenebilir. Bazı durumlarda etkinlikten önce Etkinlik
+          Organizatörü’nün kararı ile ilave bilet satışa çıkarılabilir ancak bu
+          kapasite veya bilet mevcudiyeti konusunda herhangi bir kontrol gücüne
+          sahip bulunmamakla birlikte bu kapsamda herhangi bir garanti de
+          veremeyeceğimizi belirtiriz. Ayrıca, bazı etkinliklerde etkinlik
+          organizatörleri bilet fiyatlarını sonradan güncelleyebilir, bu
+          kapsamda bilet fiyatında artış ya da indirim yapabilir, ek kampanyalar
+          düzenleyebilir ya da etkinliği ücretsiz bir etkinlik şekline de
+          dönüştürebilir. Bu gibi durumlarda Biletix’in herhangi bir sorumluluğu
+          bulunmadığını, etkinlik fiyatlarını etkinlik organizatörünün
+          belirlediğini yineleriz. 4. Satın aldığınız biletleriniz için teslimat
+          şekli olarak “kurye” seçeneğini seçerseniz, teslimatta sorun yaşamamak
+          için adres ve teslimatı alacak kişinin bilgilerinin doğru olduğundan
+          emin olunuz.Kurye bedeli, ön bilgilendirme aşamasında ve satın alma
+          işlemi sırasında “kurye/kargo bedeli” açıklaması altında
+          bilgilendirilmeniz kaydı ile kredi kartınızdan tahsil edilir bu
+          nedenle kuryeye/kargoya herhangi bir ödeme yapmayınız. Teslimat
+          bölgeleri haricinde bir adres vermeniz durumunda teslimat
+          yapılamamaktadır. Teslimat sırasında Mail Order talep Formu veya
+          Teslimat Formu imzalatılabilir. 5. Biletlerinizin kontrol ve muhafaza
+          yükümlüğü size aittir. Biletlerin, doğrudan güneş ışığı veya ısı
+          nedeniyle zarar görerek kullanılmaz hale gelebileceğini unutmayın ve
+          onları güvenli bir yerde saklayın. Kaybolan, çalınan ya da herhangi
+          bir şekilde tahrip olan biletlerden dolayı Biletix hiçbir şekilde
+          sorumlu değildir. Bu durumda, sizlere yeni bir bilet verilemeyeceğini
+          ve/veya bilet değişimi yapılamayacağını unutmayın. 6. Etkinlik
+          Organizatörü çeşitli sebeplerle etkinlikleri iptal edebilir veya
+          tarihlerini değiştirebilir. Bu durumda uygulanacak prosedürü
+          organizatör belirler ve duyurur. Etkinliğin iptal edilmesinden ve/veya
+          etkinlik tarihinin değiştirilmesinden Biletix sorumlu olmayıp,
+          Organizatör sorumludur. Bir etkinliğin iptal edilmesi veya tarihinin
+          değiştirilmesi durumunda Etkinlik Organizatörü'nden gerekli yetkiyi
+          almamız şartına bağlı olarak bilet hamillerini söz konusu iptalden
+          veya değişiklikten haberdar etmek için makul gayreti
+          göstereceğiz.Etkinliğin iptali ya da ertelenmesi durumunda, aracı
+          hizmet sağlayıcı olarak, bu durumu öğrendiğimiz tarihten itibaren üç
+          gün içinde yazılı olarak veya kalıcı veri saklayıcısı ile sizleri
+          bilgilendireceğiz. Dolayısı ile satın aldığınız etkinlik bileti ile
+          ilgili olası güncellemelerden haberdar olabilmeniz için tarafımıza
+          bildirdiğiniz iletişim bilgilerinin güncel ve doğru olduğundan ve de
+          mesajlarınızın çöp kutusuna (SPAMA) taşınmadığından lütfen emin
+          olunuz. 7. Etkinliğin iptali ve/veya ertelenmesi haricinde, tüm bilet
+          satışları kesindir. Mesafeli Sözleşmeler Yönetmeliği’nin "cayma
+          hakkının istisnaları" başlığını taşıyan 15 inci maddesinin (g) bendi
+          uyarınca belirli bir tarihte veya dönemde yapılması gereken,
+          konaklama, eşya taşıma, araba kiralama, yiyecek-içecek tedariki ve
+          eğlence veya dinlenme amacıyla yapılan boş zamanın değerlendirilmesine
+          ilişkin sözleşmeler, cayma hakkının istisnaları arasına giren
+          sözleşmelerden olduğundan, satın aldığınız etkinlik biletlerine dair
+          cayma hakkınız bulunmamaktadır. Satılan biletlerin herhangi bir
+          şekilde kaybolması, çalınması, hasar görmesi ya da imha olması
+          durumunda, bilet değiştirme/yeni bilet basma ya da para iadesi
+          yapılmaz. Etkinliğin iptal edilmesi haricinde, satılan biletler, satış
+          işlemi sonrasında hiçbir şekilde iptal edilmez, değiştirilmez ve ücret
+          iadesi yapılmaz. Ancak, bilet sahibinin tarihi değiştirilmiş etkinliğe
+          katılmasının mümkün olmadığı hallerde iade prosedürlerine riayet
+          edilmesi kaydı ile bilet hamillerine ücret iadesi yapılabilir. Ücret
+          iade tutarları, satın alınan biletin üzerinde yazılı ücret iadesi ile
+          sınırlı olup, sair başkaca bir bedelin talebi mümkün değildir. Bununla
+          birlikte, etkinliğin iptali veya ertelenmesi durumunda, Etkinlik
+          Organizatörü geri ödeme şartları konusunda bazı sınırlandırmalar
+          getirebilme hakkına sahip olduğu gibi, programda değişiklik yapma
+          hakkına da sahiptir. Geri ödemeler konusunda organizatörün belirlediği
+          son iade talebi tarihlerine ve diğer talimatlara uyulması ve
+          tarafımıza bildirdiğiniz iletişim bilgilerine bu konuda gönderdiğimiz
+          bilgilendirmelerin okunması/ kontrolü sizin sorumluluğunuzdadır.
+          Organizatör tarafından belirlenen iade tarihleri dışında bilet ve/veya
+          bedel iadesi yapılamaz. Bu kapsamda Biletix hiçbir sorumluluk
+          üstlenmez. İptal edilen veya değişiklik yapılan etkinliklerle ilgili
+          daha fazla bilgiyi web sitemizde bulabilirsiniz. 8. Biletler ve/veya
+          bilet satın alma hüküm ve koşulları, Sözleşme hükümlerine ek olarak,
+          mekanın ve etkinliğin Organizatörünün belirlenen ve duyurulan
+          kuralları uyarınca da düzenlenir. Bu Kurallar ve Düzenlemelerden
+          herhangi birinin ihlali veya hasara, rahatsızlığa veya
+          yaralanmaya/mevzuat hükümlerinin ihlaline neden olabilecek kabul
+          edilemez herhangi bir davranış (kamu güvenliği nedenleri veya Covid
+          19'un yayılmasıyla mücadele için alınan önlemlere uyulmaması dahil)
+          mekana veya Etkinlik organizatörüne sizi mekandan çıkarma yetkisi
+          verir ve para iadesi alma hakkınız olmaz. Bu durumda Şirketimizin
+          herhangi bir sorumluluğu olmayacağını, bilet bedeli de dahil olmak
+          üzere Şirketimizin herhangi bir ödeme yükümü oluşmayacağını önemle
+          belirtiriz. Mekanda, kamu güvenliğini sağlamak amacıyla zaman zaman
+          güvenlik araması yapılabilir. Ayrıca, bazı organizatörler, ilgili
+          mevzuat hükümlerinin tatbiki amacıyla, güvenlik gerekçesi ile ya da
+          başkaca nedenlere istinaden, muhtelif kişisel bilgileri bulunmayan
+          müşterilere bilet satışı yapılmasını reddetme hakkına sahiptir. Zira,
+          etkinlik mekanına girecek kişilerin kimlik bilgilerinin etkinlik
+          organizatöründe bulunması, başta güvenliğin sağlanması amacıyla bazı
+          etkinlik organizatörleri için gerekli bir bilgi mahiyetinde
+          olabilmektedir. Bu gibi durumlar, ilgili etkinlik bileti satışından
+          önce bilgilendirilir. Dolayısı ile bu gibi durumlarda kişisel
+          bilgilerinizin etkinlik organizatörü ile paylaşılmasını istemez
+          iseniz, etkinlik organizatörünün size bilet satışı yapılmasını
+          reddetme hakkı bulunduğundan, siparişi tamamlamadan ve bileti satın
+          almadan önce, işbu sözleşmenin ayrılmaz bir parçası olan “Gizlilik
+          Beyanını” ve kişisel verilerle ilgili açıklamaları dikkatlice okumanız
+          gerekmektedir. Bu gibi özel durumlarda, Kişisel bilgilerinizi etkinlik
+          organizatörü ile paylaşmak istemeyişiniz nedeni ile, size bilet satışı
+          yapılamayacak olması durumunda, bu durumdan Biletix sorumlu
+          olmayacaktır. 9. Etkinlik mekanına giriş ve çıkışlar, Etkinlik
+          Organizatörü'nün ve etkinlik mekanının belirlediği kural ve
+          düzenlemelere bağlı olarak yapılır. Genel olarak bilet kontrolünden
+          sonra dışarı çıkarsanız yeniden etkinlik mekanına giriş yapamazsınız.
+          Etkinliğe geç kalırsanız, Etkinlik Organizatörü'nün belirlediği kural
+          ve düzenlemelere bağlı olarak içeri hiç alınmayabilir ya da etkinlik
+          mekanına geç alınabilirsiniz ve bu kurallar organizatöre göre
+          farklılık gösterebilir. Geç kalanların içeriye alınması konusunda
+          Biletix hiçbir garanti veremez ve hiçbir şekilde sorumlu değildir.
+          Keza, etkinlik mekanına girmek için Etkinlik Organizatörü ve/veya
+          etkinlik mekanı tarafından belirlenen ve sizlere önceden duyurulan
+          özel kural ve düzenlemeler var ise, bu kurallara uyulmasının gerekli
+          olduğunu, aksi durumda mekana alınmayabileceğinizi ve bilet iadesi
+          yapılmayacağını da lütfen unutmayınız. Dolayısı ile her bir bilet
+          satım aşamasında, etkinlikle ilgili olarak varsa Lütfen Not Ediniz ile
+          ilgili kurallara da bakmak sureti ile etkinlik biletini satın alınız.
+          Lütfen Not Ediniz Bölümündeki şartları sağlayamayacaksınız,
+          siparişinizi onaylamayınız. 10. Fotoğraf makinesi, cep telefonu veya
+          kayıt ekipmanlarının kullanımı Etkinlik Organizatörünün belirlediği
+          kural ve düzenlemelere bağlıdır. Bu nedenle fotoğraf makinesi veya
+          diğer kayıt ekipmanlarının, lazer kalemi ve cep telefonlarının
+          etkinlik mekanına sokulması yasaklanabilir. 11. Etkinlik Organizatörü,
+          engellilere kılavuzluk eden köpekler haricinde, hayvanların etkinlik
+          sahasına sokulmasını yasaklayabilir. 12. Etkinlik Organizatörü,
+          müşterilerin dışarıdan getirdiği yiyecek ve içeceklerin mekana
+          sokulmasını yasaklayabilir. Etkinlik mekanında satılan yiyecek ve
+          içeceklerden Biletix sorumlu değildir. 13. Etkinlik mekanı, Etkinlik
+          Organizatörü ve Biletix, müşterilerin şahsi eşyalarıyla ilgili hiçbir
+          sorumluluğu üstlenmez. Bu yüzden etkinlik mekanında tüm eşyalarınızdan
+          bizatihi sorumlu olduğunuzu lütfen unutmayınız. 14. Bilet hamili,
+          sadece bilet üzerinde yazılı kıymeti haiz bir adet yer üzerinde hak
+          sahibi olup, etkinlik mekanı veya Etkinlik Organizatörü, bilet
+          sahibine, bilet üzerinde belirtilen yerden farklı bir yer verme
+          hakkını saklı tutar. Bu durumdan yalnızca Organizatör sorumlu olup,
+          Biletix sorumlu değildir. 15. Biletix, bilet üzerinde yazılı bedel ve
+          ilgili hizmet bedeli dışında, biletlere/ bilet satışlarına ve/veya
+          etkinliklere/ etkinlik içeriklerine ilişkin olarak başkaca hiçbir
+          yükümlülük, taahhüt ve sorumluluk altında değildir. Dolayısı ile
+          herhangi bir gerekçe ile Biletix’den bu tutarlar haricinde, yol
+          gideri, konaklama gideri, otopark-benzin-geçiş gideri vb her ne nam
+          adı altında olursa olsun başkaca herhangi bir bedel talep
+          edemeyeceğinizi önceden kabul ve taahhüt etmektesiniz. Siz, Biletix’in
+          sorumluluğunun bu madde ile sınırlı olduğunu ve her ne nam adı altında
+          olursa olsun, işbu maddedeki sorumluluk limiti dışında, Biletix’i
+          sorumlu kabul etmeyeceğinizi önceden kabul, beyan ve taahhüt etmiş
+          sayılırsınız. 16. Bilet satın alma işlemiyle ilgili bilgi almak
+          isterseniz, işleminizi tamamlarken size verdiğimiz referans numarası
+          ile Müşteri Hizmetleri’ni arayabilirsiniz. 17. Web sitemiz Türkçe ve
+          İngilizce olarak hazırlanmıştır. Metinler arasında herhangi bir
+          farklılık ve/veya çelişki olması halinde Türkçe metin esas alınır. 18.
+          Sözleşme kapsamındaki ticari elektronik iletiler, önceden onaylarınız
+          alınmak kaydıyla sizlere gönderilebilir. Sözleşme kapsamında ticari
+          elektronik ileti gönderilmesini istemez iseniz, “elektronik ileti
+          gönderilmesi” bölümündeki onay işaretini kaldırmanız gerektiğini
+          hatırlatırız. Ayrıca, dilediğiniz zaman, hiçbir gerekçe belirtmeksizin
+          ticari elektronik iletileri almayı reddedebilme hakkına da sahipsiniz.
+          Buna karşın, kendinizle iletişime geçilmesi amacıyla iletişim
+          bilgilerini vermeniz hâlinde, temin edilen hizmetlere ilişkin
+          değişikliklere ve/veya kullanıma yönelik ticari elektronik iletiler
+          için ayrıca onay alınmayacağını da belirtiriz. Ayrıca, hizmetin
+          sağlanması sırasında, bu tür haberleşmenin yapılacağına dair sizlerin
+          bilgilendirilerek ve size reddetme imkânı sağlanarak iletişim
+          bilgilerinizin edinilmiş olması hâlinde, önceden izniniz alınmaksızın
+          aynı veya benzer hizmetlerle ilgili pazarlama, tanıtım ve/veya
+          değişiklik hizmetleri için haberleşme yapılabilmesi de hukuken
+          mümkündür. Bununla birlikte, bu tür haberleşme yapılmasını reddetme ve
+          bu kapsamda verdiğiniz izinleri geri alma hakkınız saklıdır ve bu
+          talebinizin tarafımıza her türlü yolla iletilmesi yeterlidir. 19. İşbu
+          sözleşme metni, sözleşmenin kurulmasından sonra, Biletix dataları
+          tarafından saklanmakta olup, bu sözleşmeye, revize tarihleri
+          itibariyle sitemizin “Politikalarımız” bölümünden kolayca
+          erişebilirsiniz. Dilerseniz, sözleşmenin çıktısını almak suretiyle,
+          fiziki kopyasına da kolayca erişebilirsiniz. Dolayısı ile sözleşme
+          hükümlerinin ve genel işlem şartlarının sizler tarafından kolayca
+          sağlanmasına ve saklanmasına imkan sağlandığını bilmenizi isteriz.
+          Sözleşmeye erişiminiz, sitemize erişimin sağlanması ile doğru orantılı
+          olacak şekilde devam edecektir. 20. Sitemizin kullanımına ve işbu
+          sözleşmeye dair gizlilik kuralları, “Politikalarımız” bölümünde
+          “Gizlilik Beyanı” kısmında detaylı şekilde belirtilmiştir. Bu
+          kapsamda, Gizlilik Beyanı hükümlerini dikkatlice okumanızı,
+          incelemenizi ve farklı talepleriniz var ise tarafımıza bildirmeniz
+          gerekeceğini bilgilerinize sunarız. Gizlilik Beyanı, işbu Sözleşmenin
+          eki ve ayrılmaz bir parçası olup, Sözleşme ile birlikte aynen
+          uygulanacak ve hüküm ifade edecektir. Dolayısı ile işbu Sözleşmeyi
+          ve/veya siparişi onaylayarak, Gizlilik Beyanı hükümlerini de kabul
+          etmiş sayılacağınızı önemle belirtiriz. 21. Siparişin onaylanması
+          aşamasında ve ödeme bilgilerinin girilmesinden önce, ödeyeceğiniz
+          toplam bedel de dâhil olmak üzere, sözleşmenin tüm şartları sizler
+          tarafından açıkça görülmektedir. Ayrıca, satın aldığınız hizmete dair
+          tüm detaylar da siparişi onaylamadan önce tarafınıza bildirilmiş
+          olmaktadır. Dolayısı ile bileti satın alarak ve siparişi onaylayarak,
+          işbu sözleşme hükümlerini aynen kabul etmiş sayılacağınızı ve Sözleşme
+          hükümleri ile bağlı olacağınızı yineler, siparişi onaylamadan önce tüm
+          sözleşme hükümlerini dikkatlice incelemeniz gerektiğini bir kez daha
+          hatırlatırız. 22. Biletix, sizlerle ilgili elde edilen kişisel
+          verilerin saklanmasından ve güvenliğinden sorumludur. Ayrıca, kişisel
+          verilerinizin sizlerin onayı olmaksızın, üçüncü kişilere
+          iletilemeyeceği ve sizlere bildirilen amaçlar dışında başka amaçlarla
+          kullanılamayacağını da belirtiriz. Ayrıca, kişisel verilerinizin
+          muhafazasına ve kullanımına dair detaylı bilgilerin tümüne, Sitemizin,
+          “Politikalarımız” bölümünde yer alan “Gizlilik Beyanı” ve “Kişisel
+          Verilerin Korunması Hakkında Bilgilendirme” bölümünden
+          ulaşabileceğinizi belirtir, Gizlilik Beyan’ının işbu Sözleşmenin eki
+          ve ayrılmaz bir parçası olduğunu yineleriz. 23. Bu şart ve koşulların
+          tamamı Türk Hukukuna tabidir. Biletix; biletinizi satın almadan önce
+          sözleşme hükümleri ve içeriği konusunda, tüm tüketicileri önceden
+          bilgilendirmiş ve ön bilgilendirme yükümünü yerine getirmiş olup,
+          bileti satın alarak ve siparişi onaylayarak, işbu sözleşmenin
+          düzenlemeleri ve satın aldığınız hizmet hakkında tarafınıza ön
+          bilgilendirme yapıldığını da kabul etmiş sayılacağınızı ve bu maddenin
+          yazılı delil vasfında ispat vasıtası olduğunu da belirtiriz. İşbu
+          Sözleşmeden ve/veya hizmet ya da bilet satın alma işlemlerinden dolayı
+          herhangi bir ihtilafın doğması durumunda, uyuşmazlığı öncelikle sulhen
+          gidermeye çalışmak temel hedefimizdir. Buna karşın, sulh ile
+          çözülemeyen durumlarda, sitemizden bilet satın alan siz tüketicilerin,
+          olası sorunlarını ilgili mevzuatta yayımlanan parasal sınırlar
+          çerçevesinde Tüketici Hakem Heyetlerine ve/veya Tüketici Mahkemelerine
+          götürebileceğini bilmenizi isteriz.
+        </p>
+        <br />
+        <br />
+        <br />
+        <p class="sözlesme1 mb-0">Biletix Bilet Dağıtım Basım ve Tic. A.Ş</p>
+        <p class="sözlesme1 mb-0">MERSİS No: 0171009936100018</p>
+        <p class="sözlesme1 mb-0">
+          Vergi No: Boğaziçi Kurumlar Vergi Dairesi 171 009 9361
+        </p>
+        <p class="sözlesme1 mb-0">
+          İletişim Adresi: Ayazağa Mahallesi Azerbaycan Cad. 1B Blok No: 3B İç
+          kapı No:2, 34396 Sarıyer, İstanbul, TÜRKİYE
+        </p>
+        <p class="sözlesme1 mb-0">
+          İletişim Bilgileri: https://www.biletix.com/contactus/TURKIYE/tr
+        </p>
+        <p class="sözlesme1 mb-0">Güncelleme Tarihi: 01.09.2022)</p>
+      </div>
+    </div>
+    <div id="kullanım" class="row sözle">
+      <div class="col-12 my-5 div2">
+        <h1 class="sözlesme">Kullanım Koşulları</h1>
+        <p class="sözlesme1">Biletix'e hoş geldiniz!</p>
+        <br />
+        <p class="sözlesme1">
+          Aşağıda hükümleri yazılı olan “Kullanım Koşulları”, www.biletix.com
+          uzantılı web sitemizdeki (Site) hizmetlerden faydalanabilmeniz ve
+          etkinlik biletlerini satın alabilmeniz için gerekli kuralları içerir.
+          Sitemizi ziyaret etmekle veya kullanmakla, bu Koşullarıokuduğunuzu,
+          içeriğini anladığınızı, bu koşullarla bağlı olduğunuzu, bu Koşullara
+          ve Site ile ilgili bütün cari kanunlara, yönetmeliklere ve mevzuata
+          uygun davranacağınızı açıkça kabul, beyan ve taahhüt etmiş
+          bulunuyorsunuz. İlaveten, işbu Kullanım Koşulları ile, “bilet satın
+          alma siparişinizin onaylandığı takdirde ödeme yükümlülüğü altına
+          gireceğiniz konusunda açık ve anlaşılır şekilde bilgilendirildiğinizi”
+          de önemle belirtmek isteriz. Biletix Bilet Dağıtım Basım ve Ticaret
+          A.Ş. ve biletix.com (ikisi birlikte "Biletix" olarak anılacaktır),
+          herhangi bir zamanda, bu koşullarda değişiklik yapma hakkına sahiptir.
+          Bu koşullar, sitede ilan edilir edilmez derhal yürürlüğe girer. Bu
+          nedenle lütfen sitenin bu sayfasını düzenli olarak takip edin.
+          Biletix’ten etkinlik bileti ve sair bir hizmetin satın alınması ile
+          ilgili olarak ise, Sitemizde yer alan, “Politikalar ve Satış
+          Sözleşmesi” ve ayrıca “Gizlilik Beyanı” hükümlerinin okunması ve
+          incelenmesi gerekmektedir.
+        </p>
+        <h1 class="sözlesme">Hükümleri:</h1>
+        <p class="sözlesme1">
+          1- Sitenin içeriği ve yazılımı, Biletix'e ve/veya onun tedarikçilerine
+          ait olup, Türk ve uluslararası telif hakkı mevzuatıyla korunmaktadır.
+          Site sayfalarına kanuni telif hakkı uyarısı ve çeşitli tanıtma
+          yazıları konulmuştur. Bu uyarı ve yazıların silinmesi veya
+          kaldırılması ya da değiştirilmesi yasaktır. Lütfen bu uyarıyı veya
+          tanıtma yazılarını ya da bunlarla birlikte verilen ek bilgileri
+          silmeyin veya kaldırmayın ya da değiştirmeyin. 2- Bu Siteyi sadece
+          kişisel kullanımınız için ziyaret etme ve görüntüleme, Siteden,
+          etkinlikleri izleme, tanıtıcı bilgiler edinme, bilet (veya başka
+          ürünler - merchandise) satın alma ve diğer kişisel kullanımlarınız
+          için yararlanma hakkına sahip olduğunuzu kabul etmektesiniz. Bu
+          kapsamda, Biletix tarafından yazılı olarak yetki verilmedikçe, siteyi
+          kişisel kullanımlarınız haricinde hiç bir şekil ve surette
+          kullanmayacağınızı, sitedeki bilgileri/içeriği/görselleri herhangi bir
+          amaçla kopyalamayacağınızı, yüklemeyeceğinizi, yayınlamayacağınızı,
+          değiştirmeyeceğinizi, türev eserler yaratmayacağınızı ya da bunları
+          kamuya teşhir etmeyeceğinizi veya başka bir şekilde dağıtmayacağınızı
+          ya da sair bir hukuka aykırı ya da yetkisiz tasarrufa konu
+          etmeyeceğinizi de kabul etmektesiniz. 3- Siteyi ziyaret ederek veya
+          kullanarak, yalnızca hukuka uygun amaçlarla Site üzerinde işlem
+          yapabilirsiniz. Site dahilinde yaptığınız her işlem ve eylemdeki
+          hukuki, cezai ya da sair her türlü sorumluluk münhasıran size aittir.
+          Bu kapsamda Biletix ve/veya başka bir üçüncü şahsın fikri veya şahsi
+          haklarına ya da sair haklarına veya malvarlığına tecavüz teşkil edecek
+          şekilde, Site dahilinde bulunan resimleri, metinleri, görsel ve
+          işitsel imgeleri, video kliplerini, dosyalarını, veritabanlarını,
+          katalogları ve listeleri ya da sair herhangi bir bilgiyi, unsuru
+          çoğaltmayacağınızı, kopyalamayacağınızı dağıtmayacağınızı,
+          işlemeyeceğinizi, sair bir tasarrufa konu etmeyeceğinizi, Biletix ile
+          doğrudan ve/veya dolaylı olarak rekabete girmeyeceğinizi kabul, beyan
+          ve taahhüt etmiş bulunuyorsunuz. Biletix, sizin işbu kullanım
+          koşullarına ve/veya hukuka/mevzuata aykırı olarak Site üzerinde
+          gerçekleştirdiğiniz faaliyetler/işlemler nedeniyle üçüncü kişilerin
+          uğradıkları veya uğrayabilecekleri zararlardan doğrudan ve/veya
+          dolaylı olarak, hiçbir şekilde sorumlu tutulamaz. Bu kapsamda
+          Biletix’e herhangi bir sorumluluk tevcih edilir ise, ilgili
+          Kullanıcılar Biletix’in her türlü zararını derhal tazmin edeceklerini
+          de kabul, beyan ve taahhüt ederler. Sitemizin, izin ve yetki
+          verilmeyen herhangi bir amaçla kullanılması ya da bu kapsamda sair bir
+          tasarruf gerçekleştirilmesi amacıyla, Biletix’in yazılı izni
+          alınmaksızın, herhangi bir robot, örümcek veya başka otomatik aletler
+          ya da manuel prosesler kullanılması yasaktır. Biletix’in çalışmasına
+          müdahale etmek veya müdahaleye teşebbüs etmek amacıyla herhangi bir
+          alet, yazılım veya sair bir donanım/teçhizat kullanmayacağınızı,
+          sitemiz altyapısı üzerine, makul olmayan veya bu alt yapıya orantısız
+          büyüklükte yük getiren herhangi bir işlem yapmayacağınızı da kabul
+          etmektesiniz. Yetkisiz bilet satışı, sitenin yetkisiz çerçevelenmesi
+          veya siteye yetkisiz bağlantı yapılması ya da sitede bulunan bir
+          robot, örümcek veya başka otomatik aletin yetkisiz kullanımı da dahil
+          olmak üzere sitenin her türlü yasadışı ve/veya yetkisiz kullanımı
+          yasaktır ve bu tür kullanım halinde, gerekli araştırmalar yapılacak ve
+          gerekli her türlü tedbir alınacağı gibi, gerekli yasal ve idari
+          yollara da başvurulacaktır. 4- Biletix’i, telif hakkına konu olan
+          bilgi ve materyalleri açık bir izin almadan yetkisiz bir şekilde
+          kullanan kullanıcıların hak ve imtiyazları sona erdirilecektir.
+          Özellikle, bu siteye makaleler, görüntüler, öyküler, yazılım veya
+          telif hakkına konu olan veya benzeri içerik koyan kullanıcılar, siteye
+          yükledikleri içeriğin üçüncü şahısların telif haklarına veya sair
+          haklarına (özel hayatın gizliliği veya ifşayı men etme hakları gibi)
+          tecavüz etmediğinden veya bu hakları ihlâl etmediğinden emin
+          olmalıdırlar. Bir kullanıcının bu siteyi yasadışı bir hak tecavüzünün
+          veya hak ihlâlinin bir aracı olarak kullandığı konusunda ilgili telif
+          hakkı sahibinin veya onun temsilcisinin ya da sair bir üçüncü kişinin
+          Biletix’e bildirimde bulunması ya da ihlalin bir mahkeme kararıyla
+          veya ilgili kullanıcının ikrarıyla sabit olması ya da Biletix’in
+          durumdan herhangi bir şekilde şüphelenmesi/endişe duyması halinde,
+          ihlâlde bulunan kullanıcının bu siteye erişim ve/veya siteyi kullanım
+          hakları iptal edilecektir. 5- Herhangi bir üçüncü kişi tarafından
+          sağlanan ve yayınlanan bilgilerin, içeriklerin, görsel ve işitsel
+          imgelerin doğruluğu ve hukuka/mevzuata uygunluğunun taahhüdü,
+          bütünüyle bu eylemleri gerçekleştiren ve/veya içerikleri siteye
+          gönderen kişilerin sorumluluğundadır. Biletix, Kullanıcı'lar da dahil
+          olmak üzere üçüncü kişiler tarafından sağlanan hizmetlerin/yayınların
+          ve içeriklerin güvenliğini, doğruluğunu ve hukuka/mevzuata uygunluğunu
+          taahhüt ve garanti etmemektedir. Siteyi başka bir siteye bağlanmak
+          amacıyla ya da siteye içerik veya başka bilgiler yüklemek amacıyla
+          kullanmanız da dahil, siteyi haksız/hukuka aykırı kullanmanızdan
+          dolayı üçüncü şahısların maruz kalabileceği zarar ve ziyanları tazmin
+          edeceğinizi de kabul etmektesiniz., Siteyi kullanırken, ilgili mevzuat
+          hükümlerine uyacağınızı faaliyetleriniz ile ilgili olarak mevzuat
+          hükümlerine uymamanız nedeni ile gerek Biletix ve gerekse de 3.
+          kişiler nezdinde doğacak her türlü sorumluluğun bizzat kendinizeait
+          olacağını, bu sorumluluklar nedeni ile Biletix’ten rücuen herhangi bir
+          talepte bulunmayacağınızı, keza bu madde kapsamında Biletix’e
+          yönelebilecek olası talepleri ve zararları derhal tazmin edeceğinizi
+          beyan, kabul ve taahhüt etmektesiniz. 6- Biletix, sitenin kesintisiz
+          veya hatasız olacağını ya da sitenin veya içeriğinin kullanılmasıyla
+          ya da siteye bağlantı yapılmasıyla belirli sonuçların elde edileceğini
+          garanti ve taahhüt etmez. Yine, Biletix, sitede sunduğu hizmetler
+          kapsamında kullanıcılara belirli bir amaca uygunluk, kesintisiz
+          devamlılık, güncelleme, işlevsellik, doğruluk, hatasızlık dahil, açık
+          ya da zımni hiçbir garanti ve/veya vaad vermemektedir. Site ve içeriği
+          "olduğu gibi" ve "mevcut haliyle" esasında sunulmaktadır. Biletix,
+          siteden yüklediğiniz dosyalarda virüs ya da kirletici veya bozucu
+          özellikler bulunmadığını da garanti etmemektedir. Biletix, sitenin
+          belirli bir amaca uygunluğu ve ticari değerine ilişkin garantiler de
+          dahil olmak üzere her türlü başka aleni veya zımni garantiyi de
+          üstlenmemektedir. Biletix sitenin kullanılmasından kaynaklanabilecek
+          zararlar için hiç bir şekil ve surette sorumlu tutulamaz. Biletix,
+          sitenin kullanılmasından ya da Biletix hizmetinin kullanılmasından
+          beklenebilecek sonuçlar konusunda hiç bir garanti vermez. 7- Biletix;
+          sitenin üçüncü şahıs kullanıcıları, Biletix kullanıcıları,
+          reklamcıları ve/veya sponsorlarının işlem ve fiillerinden dolayı
+          sorumlu olmadığı gibi, sizlerin de siteyi ve/veya Biletix hizmetini
+          kullanmanızla ilgili fiil, ihmal ve davranışlarızdan dolayı hiç bir
+          şekilde sorumlu değildir. Biletix; herhangi bir etkinliği organize
+          eden kişiler, icracılar, kurumlar veya başka üçüncü şahısların siteyle
+          bağlantılı veya siteye atıfta bulunan ürünleri, hizmetleri, fiil veya
+          ihmalleri nedeniyle de sorumlu tutulamaz. 8- Biletix'in sorumluluğunu
+          sınırlayan hükümlerden herhangi birinin ilgili mahkeme tarafından
+          ilgili mevzuata aykırı bulunması halinde, söz konusu hüküm mevzuata
+          uygun olan ve sorumluluğu en aza indiren mevzuat hükmü kapsamında
+          uygulanacak ve Biletix'in sorumluluğu buna göre belirlenecektir. 9-
+          Biletix, Site'de sunulan Hizmet'leri ve içerikleri her zaman
+          değiştirebilme; Siteye “blog” koyma, Kullanıcı'ların sisteme
+          yükledikleri bilgileri ve içerikleri, Kullanıcı'lar da dahil olmak
+          üzere, üçüncü kişilerin erişimine kapatabilme ve silme hakkını
+          haizdir. Biletix, bu hakkını, hiç bir bildirimde bulunmadan ve önel
+          vermeden kullanabilir. 10- Biletix, Site üzerinden, Biletix’in kendi
+          kontrolünde olmayan üçüncü kişilere ve başkaca üçüncü kişilerin sahip
+          olduğu ve işlettiği başka web sitelerine ve/veya portallara, dosyalara
+          veya içeriklere 'link' verebilir, yönlendirme yapabilir. Bu
+          'link'ler/yönlendirmeler, web sitesini veya siteyi işleten kişinin
+          desteklendiği ya da web sitesi veya içerdiği bilgilere yönelik
+          herhangi bir türde bir beyan veya garanti niteliği taşımamaktadır.
+          Site üzerindeki 'link'ler vasıtasıyla erişilen portallar, web
+          siteleri, dosyalar ve içerikler, bu 'link'ler vasıtasıyla erişilen
+          portallar veya web sitelerinde sunulan hizmetler veya ürünler veya
+          bunların içeriği hakkında Biletix’in herhangi bir sorumluluğu ve/veya
+          taahhüdü yoktur. 11- Biletix, gerekli gördüğü zamanlarda site
+          kapsamındaki hizmetleri/siteyi geçici bir süre ile askıya alabilir
+          veya tamamen durdurabilir. Hizmetlerin geçici bir süre askıya alınması
+          veya tamamen durdurulmasından ya da sitenin kapatılmasından dolayı
+          Biletix’in kullanıcılara karşı herhangi bir sorumluluğu
+          bulunmamaktadır. 12- İşbu Kullanım Koşulları, Biletix Satış
+          Politikasını ve Beyanı'nı da kapsamakta olup, sitemizi ziyaret edenler
+          ve siteyi kullananlar, söz konusu Satış Politikası ve Gizlilik Beyanı
+          hükümlerini de okuduklarını, bunları kabul ettiklerini ve anılan
+          Politika içeriklerine riayet edeceklerini kabul, beyan ve taahhüt
+          etmişlerdir. 13- Siteyi kullanmakla, site hakkında veya site ile
+          ilgili bir ihtilâfın çıkması halinde, bu ihtilâfın kanunlar ihtilâfı
+          kurallarına bakılmaksızın Türkiye Cumhuriyeti kanunlarına tâbi
+          olacağını ve bu kanunlara göre çözümleneceğini kabul etmiş
+          sayılıyorsunuz. Ayrıca, siteye ve/veya hükümlerine ilişkin herhangi
+          bir ihtilafın doğması durumunda İstanbul (Çağlayan) mahkemelerinin ve
+          icra dairelerinin görevli ve yetkili olacağını da kabul etmektesiniz.
+          14- Bu Kullanım Koşullarını ihlâl ettiğiniz takdirde, Biletix Siteyi
+          kullanmanıza son verebilir, gelecekte Siteyi kullanmanıza engel
+          olabilir ve/veya aleyhinize ilgili yasal yollara müracaat edebilir.
+        </p>
+      </div>
+    </div>
+    <div id="onbil" class="row sözle">
+      <div class="col-12 my-5 div3">
+        <h1 class="sözlesme">ÖN BİLGİLENDİRME METNİ</h1>
+        <p class="sözlesme1">
+          Biletix Bilet Dağıtım Basım ve Ticaret A.Ş. (“Biletix”) unvanlı
+          Şirketimiz, yetkili bir bilet satış acentesi olarak, etkinlikleri
+          düzenleyen “organizatör, etkinlik mekanı, kulüp veya tiyatroların”
+          (Bundan böyle her biri “Etkinlik Organizatörü” diye anılacaktır)
+          etkinlik biletlerinin satış ve dağıtımına aracılık etmektedir. Biletix
+          olarak hedefimiz; katılmayı düşündüğünüz etkinliğin biletlerini en
+          kısa sürede, en kolay şekilde satın almanızı sağlamaktır. Tercih/
+          talep ettiğiniz etkinlik bileti satım alımı işleminden ve satış
+          sözleşmesinin kurulmasından, bu bağlamda siparişinizi onaylamadan
+          önce, Mesafeli Sözleşmeler Yönetmeliği ve diğer ilgili mevzuat
+          hükümleri kapsamında sizlere ön bilgilendirmede bulunmak ve ön
+          bilgilendirmeye dair yükümlülüklerimizi yerine getirmek isteriz: a.
+          Siparişinize ve sözleşmeye konusu hizmet, etkinlik bileti satış
+          hizmetidir. Biletix, yetkili bir bilet satış acentesi olarak, Etkinlik
+          Organizatörlerinin etkinlik biletlerinin satış ve dağıtımına aracılık
+          etmektedir. Şirketimiz, etkinlik organizatörleri adına ya da hesabına
+          hareket etmemekte, organizatörler ile her ne nam adı altında olursa
+          olsun herhangi bir bayilik, distribütörlük, temsilcilik, alt bayilik
+          vs kapsamında herhangi bir hukuki/ticari ilişkisi bulunmamaktadır.
+          Etkinlik biletleri satışları, belirli bir tarihte yapılması gereken,
+          eğlence veya dinlenme amacıyla yapılan boş zamanın değerlendirilmesine
+          ilişkin sözleşmeler kapsamındadır. Biletix’in etkinliklerin içeriğine
+          dair hiçbir hak ve yetkisi ve sorumluluğu bulunmamaktadır. Satın
+          almayı düşündüğünüz etkinliğin içeriğine ve etkinlik ile ilgili tüm
+          kurallara etkinlik organizatörü karar vermektedir. Yineleriz ki,
+          Biletix, sadece etkinlik biletlerinin satış ve dağıtımına aracılık
+          kapsamında sınırlı bir görev üstlenmektedir. b. Şirketimiz, etkinlik
+          organizatörlerinin biletlerinin satış ve dağıtımına aracılık
+          ettiğinden, her bir etkinlik bazında satıcı veya sağlayıcı bilgileri
+          farklılık gösterebilmektedir. Bu bağlamda, satıcı ve sağlayıcı
+          bilgilerini, satın almayı planladığınız etkinlik biletleri sayfasında,
+          etkinlik organizatörü bilgileri kısmında görebilmeniz mümkündür. Aynı
+          bölümden, organizatör ile hızlı şekilde irtibat kurmanıza ya da
+          şikayetlerinizi iletebilmenize imkan veren açık adres, telefon
+          numarası ve benzeri iletişim bilgilerine ulaşabilmeniz de olanaklıdır.
+          Mesafeli Sözleşmeler Yönetmeliği hükümleri kapsamında aracı bir hizmet
+          sağlayıcı olan Şirketimizin tam unvanı: Biletix Bilet Dağıtım Basım ve
+          Ticaret A.Ş., MERSİS numarası: 0171009936100018, vergi kimlik numarası
+          da Boğaziçi Kurumlar Vergi Dairesi 171 009 9361’dir. Şirketimize, +90
+          850 755 5555 uzantılı telefon numarasından ve linkte bulunan form
+          üzerinden hızlı bir şekilde ulaşabilmeniz ve/veya şikayetlerinizi
+          aktarabilmeniz mümkündür. Ayrıca, 6563 sayılı Elektronik Ticaretin
+          Düzenlenmesi Hakkında Kanun’un 3’üncü maddesi uyarınca, Biletix ile
+          ilgili tanıtıcı bilgilerin tümü, sitemizin “Hakkımızda” başlıklı
+          bölümünde de güncel şekilde yer almaktadır. c. Satın almayı
+          planladığınız etkinlik biletinin ve hizmetin tüm vergiler dahil toplam
+          fiyatı, hizmet bedeli, teslim masrafları ve varsa diğer ek masrafların
+          detayları, ayrıca etkinliğe dair tüm bilgiler, varsa etkinliğe katılım
+          koşulları, etkinlik biletlerinin teslim usulleri, satın almayı
+          planladığınız etkinlik bileti sayfasında, her bir etkinlik özelinde
+          detaylıca karşınıza çıkacaktır. Biletix, bilet başına hizmet bedeli
+          alır, ancak, etkinlik içeriğini, bilet fiyatlarını veya oturma
+          yerlerini belirleme konusunda hak ve yetkiye sahip değildir. Bilet
+          satın alma işleminiz; (i) etkinlik için uygulanacağı açıklanan ve
+          duyurulan özel hüküm ve koşullara, (ii) Etkinlik organizatörünün
+          (organizatörlerinin) belirlediği ve açıkladığı ve/veya etkinliğin
+          açıklanan diğer tüm hüküm ve koşullarına ve (iii) etkinlik
+          organizatörü tarafından açıklanmış ise etkinlik mekan hüküm ve
+          koşullarına (giriş koşulları dahil) da bağlıdır. Dolayısı ile, bilet
+          satın alma işlemini yapmak suretiyle, etkinlik için belirlenen ve
+          duyurulan tüm hüküm ve koşullara aynen riayet edeceğinizi kabul etmiş
+          olmaktasınız. Şayet, etkinliğin belirlenen ve açıklanan hüküm ve
+          koşullarından herhangi birini kabul etmiyorsanız veya bu koşullardan
+          herhangi birine riayet edemiyorsanız ve/veya edemeyeceksiniz, bilet
+          satın alma işlemini yapmamalısınız. Aksi durumda, bilet satın almış
+          olsanız dahi etkinlik mekanına ve/veya etkinliğe alınmamanızdan ya da
+          etkinlik mekanından çıkarılmanızdan dolayı Biletix’in herhangi bir
+          sorumluluğu olmayacağını, bilet bedeli de dahil olmak üzere Biletix’in
+          herhangi bir ödeme yükümü oluşmayacağını önemle belirtiriz. Bilmenizi
+          isteriz ki, siparişi onaylamadan ve satış sözleşmesinin kurulmasından
+          önce, satın almayı düşündüğünüz etkinliğe ve hizmete dair tüm detaylar
+          ve bilgiler detaylıca tarafınıza iletilmiş olmaktadır. Etkinlik
+          şartlarına ve/veya içeriğine karşı herhangi bir çekincenizin olması
+          durumunda siparişi onaylamadan önce, bizlerle iletişime geçmenizi ya
+          da siparişi onaylamamanız gerektiğini önemle belirtiriz. Siparişinizi
+          onaylayarak; bileti satın almadan önce; a) firmamız ile ilgili gerekli
+          tüm bilgileri ve iletişim adreslerini b) satın aldığınız bilete ve
+          hizmete ilişkin tüm özellikleri ve ayrıca tüm vergiler dahil toplam
+          bilet/hizmet fiyatını ve varsa tüm ek masrafları c) Ödeme, teslimat,
+          ifaya ilişkin bilgileri ve şikayetlere ilişkin sözleşmede düzenlenen
+          çözüm yöntemlerini d) uyuşmazlık konusunda başvurularınızı Tüketici
+          Mahkemesine veya Tüketici Hakem Heyetine yapabileceğinize dair
+          sözleşmesel bilgileri e) Mesafeli Sözleşmeler Yönetmeliği’nin 15 (g)
+          maddesine istinaden cayma hakkınızın olmadığını ve neticeten
+          sözleşmede düzenlenen tüm hükümleri bildiğinizi yazılı olarak kabul,
+          beyan ve taahhüt etmektesiniz. d. Hizmet ya da bilet satın alma
+          işlemlerinden dolayı herhangi bir ihtilafın doğması durumunda,
+          uyuşmazlığı öncelikle sulhen gidermeye çalışmak temel hedefimizdir.
+          Buna karşın, sulh ile çözülemeyen durumlarda, sitemizden bilet satın
+          almayı düşünen siz tüketicilerin, olası sorunlarını ilgili mevzuatta
+          yayımlanan parasal sınırlar çerçevesinde Tüketici Hakem Heyetlerine
+          ve/veya Tüketici Mahkemelerine götürebileceğini bilmenizi isteriz. e.
+          Mesafeli Sözleşmeler Yönetmeliği’nin "cayma hakkının istisnaları"
+          başlığını taşıyan 15 inci maddesinin (g) bendi uyarınca belirli bir
+          tarihte veya dönemde yapılması gereken, konaklama, eşya taşıma, araba
+          kiralama, yiyecek-içecek tedariki ve eğlence veya dinlenme amacıyla
+          yapılan boş zamanın değerlendirilmesine ilişkin sözleşmeler, cayma
+          hakkının istisnaları arasına giren sözleşmelerden olduğundan ve
+          etkinlik biletleri satışları, belirli bir tarihte yapılması gereken,
+          eğlence veya dinlenme amacıyla yapılan boş zamanın değerlendirilmesine
+          ilişkin sözleşmeler arasında olduğundan, Yönetmelik gereğince cayma
+          hakkınız bulunmamaktadır. Dolayısı ile siparişi onaylamadan ve bileti
+          satın almadan önce, cayma hakkınızın olmadığını bilerek, satış
+          sürecini gerçekleştirmeniz gerektiğini önemle hatırlatırız. f. Ayrıca,
+          Satış Politikamızı ve Satış Sözleşmemizi, müşteri olarak sizi memnun
+          kılacak ve biletix.com'daki satın alım süreci konusunda sizi
+          bilgilendirecek şekilde hazırladığımızı da belirtiriz. Satış
+          Politikası ve Sözleşmemiz, Kullanım Koşullarımızın da bir bölümünü
+          oluşturmaktadır. Bilet alım işlemlerini gerçekleştirerek, Kullanım
+          Koşullarını, Satış Politikası ve Sözleşme hükümlerini ve Gizlilik
+          Beyanını okuduğunuzu, anladığınızı ve içeriklerini aynen kabul etmiş
+          sayılacağınızı belirtir, satış politikası ve/veya sözleşme
+          hükümlerinin aksine bir talebinizin ya da şikayetinizin olması
+          durumunda, herhangi bir bilet alım işlemi gerçekleştirmeden ve
+          siparişinizi onaylamadan önce, Yardım sayfasını ziyaret etmenizi
+          ve/veya bizimle yukarıda ve/veya sitemizde belirtilen iletişim
+          numaralarından iletişime geçmenizi öneririz. Siparişinizi onaylamadan
+          ve satım sözleşmesinin kurulmasından önce, işbu Ön Bilgilendirme Metni
+          ile mevzuat kapsamında sizlerin yazılı şekilde detaylıca
+          bilgilendirildiğini, ayrıca sipariş öncesinde, ön bilgilendirme onayı
+          alındığını ve ön bilgilendirme onayının, Satış Sözleşmesinin ayrılmaz
+          bir parçası olacağını da bilgilerinize sunarız.
+        </p>
+        <br />
+        <br />
+        <br />
+        <p class="sözlesme1 mb-0">Saygılarımızla,</p>
+        <p class="sözlesme1 mb-0">
+          Biletix Bilet Dağıtım Basım ve Ticaret A.Ş.
+        </p>
+        <br />
+        <p class="sözlesme1 mb-0">Mersis No: 0171009936100018</p>
+        <p class="sözlesme1 mb-0">
+          Vergi No: Boğaziçi Kurumlar Vergi Dairesi 171 009 9361
+        </p>
+        <p class="sözlesme1 mb-0">
+          İletişim Adresi: Ayazağa Mahallesi Azerbaycan Cad. 1B Blok No: 3B İç
+          kapı No:2, 34396 Sarıyer, İstanbul, TÜRKİYE
+        </p>
+        <p class="sözlesme1 mb-0">
+          Diğer İletişim Bilgileri: https://www.biletix.com/contactus/TURKIYE/tr
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ! Sözleşme -->
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

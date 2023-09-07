@@ -1,0 +1,49 @@
+{% extends "search.html" %} 
+{% load static%} 
+{% block content %}
+{% include 'includes/_navbar-main.html' %}
+
+<div class="container w-75">
+      <img src="{% static './img/hata-search/reklam-search.png' %}" class="img-fluid mt-3 w-100" alt="..." >
+      <div class="container w-90">
+        <p class="hata-search mt-5 mx-5">
+          <em> Üzgünüz, aradığınız "{{search}}" etkinlik bulunamadı. </em>
+          <br>
+          Yazım hatası olup olmadığını kontrol edip yeniden deneyiniz.
+          <br>
+          <strong>
+            Bulmak istediğiniz etkinliği şu kategoriler içinde de
+            arayabilirsiniz:
+          </strong>
+        </p>
+
+        <div class="row hata-search m-auto mt-5">
+  {% load mptt_tags %} 
+  {% recursetree kategori %}
+
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <h6>{{node.isim}}</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="">Tüm {{node.isim}}</a>
+              </li>
+
+              {% if not node.is_leaf_node %} 
+              {% for child in node.get_children%}
+
+              <li>
+                <a href="{% url 'etkinlik-liste' child.slug %}">{{ child.isim }}</a>
+              </li>
+
+              {% endfor %} 
+              {% endif %}
+            </ul>
+          </div>
+  {% endrecursetree %}
+
+        </div>
+      </div>
+</div>
+
+{% include 'includes/_footer-main.html' %}
+{% endblock content %}

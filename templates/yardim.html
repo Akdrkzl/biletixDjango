@@ -1,0 +1,427 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %}
+
+<div class="bootyardim-body">
+  <!-- Navbar Start -->
+
+  <!-- Üst Div -->
+  <div class="container-fluid bg-dark p-3" style="height: 38px">
+    <div class="m-auto d-flex justify-content-between h-100">
+      <ul class="d-flex align-items-center m-0 p-0 h-100">
+        <div class="me-3 dropdown p-3">
+          <a
+            id="tr"
+            class="text-light dropdown-toggle"
+            role="button"
+            href="#"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Türkçe
+          </a>
+          <ul class="dropdown-menu">
+            <li class="p-2">
+              <a class="dropdown-item" href="#">English (US)</a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+
+      <ul
+        class="ust-nav-items d-none d-lg-flex align-items-center m-0 p-0 h-100"
+      >
+        <div class="me-3">
+          <a class="text-light" href="#"> Hediye Kart </a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="#">Aylık Dergi</a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="#">Blog</a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="#">Yardım</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-yardim-bg">
+    <div class="container-fluid ms-4 me-4">
+      <div class="container d-flex justify-content-start align-items-center">
+        <a class="navbar-brand" href="/"
+          ><img src="{% static 'img/btx-logo.svg' %}" alt=""
+        /></a>
+
+        <div
+          class="collapse navbar-collapse detay-navbar"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-3">
+            <li class="nav-item-yardim p-2">
+              <a
+                class="nav-link detay-hover-a text-white fw-bold"
+                aria-current="page"
+                href="#"
+                >Müzik</a
+              >
+            </li>
+
+            <li class="nav-item-yardim p-2">
+              <a class="nav-link detay-hover-a text-white fw-bold" href="#"
+                >Sahne</a
+              >
+            </li>
+
+            <li class="nav-item-yardim p-2">
+              <a class="nav-link detay-hover-a text-white fw-bold" href="#"
+                >Spor</a
+              >
+            </li>
+
+            <li class="nav-item-yardim p-2">
+              <a class="nav-link detay-hover-a text-white fw-bold" href="#"
+                >Aile</a
+              >
+            </li>
+
+            <li class="nav-item-yardim p-2">
+              <a class="nav-link detay-hover-a text-white fw-bold" href="#"
+                >Eğitim & Fazlası</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar End -->
+
+  <!-- İçerik -->
+
+  <!-- Hero İmage -->
+
+  <div class="bootyardim-hero-images w-100 fs-4">
+    <div class="bootyardim-hero-text">
+      <h3 class="hero-h3">Merhaba, nasıl yardımcı olabiliriz?</h3>
+      <div class="bootyardim-box ms-2">
+        <i
+          class="bootyardim-icons fa-solid fa-magnifying-glass"
+          style="color: #026cdf"
+        ></i>
+        <input
+          class="yardim-input"
+          type="text"
+          name=""
+          id=""
+          placeholder="Arama"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- İLK 3LÜ -->
+  <div class="row container-fluid w-90 m-2">
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim1.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Kişisel Verilere Ait Haklarınız
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim2.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Hesabım
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a
+        class="bootyardim-a text-decoration-none"
+        href="https://help.biletix.com/hc/tr/categories/360000583393-Bilet-Sat%C4%B1n-Alma"
+      >
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim3.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Bilet Satın Alma
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <!-- Orta 3lü -->
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim4.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Ödeme Seçenekleri
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim5.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Teslimat Seçenekleri
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim6.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Etkinliklere ve Mekanlara Dair
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <!-- SON 3LÜ -->
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim7.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  İptal Olan & Ertelenen Etkinlikler
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim8.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Online (Çevrimiçi) Etkinlikler
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12 col-4 p-2 mt-3">
+      <a class="bootyardim-a text-decoration-none" href="">
+        <div class="bootyardim-card" style="width: 100%">
+          <br />
+          <ul>
+            <li>
+              <img
+                class="bootyardim-card-img-bot mt-3"
+                style="width: 100%"
+                height="90px"
+                src="{% static './img/yardimsss/yardim9.svg' %}"
+                alt=""
+              />
+              <div class="bootyardim-card-body">
+                <h5 class="bootyardim-card-title text-center text-dark fw-bold">
+                  Kampanyalar ve Ürünler
+                </h5>
+                <div class="yard-hr d-flex justify-content-center">
+                  <div class="bootyardim-hr"></div>
+                </div>
+                <br />
+                <div class="bootyardim-card-text"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <div class="bootyardim-helpsite d-flex w-100 row align-items-center">
+    <div class="bootyardim-helpsite-sol col-8 col-lg-8 col-12 pt-3 pb-3">
+      <a class="bya text-white text-decoration-none p-2" href=""
+        >Sözleşme ve Politikalar |</a
+      >
+      <a class="bya text-white text-decoration-none p-2" href=""
+        >Çerez Politikası |</a
+      >
+      <a class="bya text-white text-decoration-none p-2" href=""
+        >TTK Bildirimleri |</a
+      >
+      <a class="bya text-white text-decoration-none p-2" href=""
+        >Kişisel Verilerin Korunması Hakkında |</a
+      >
+      <a class="text-white text-decoration-none p-2" href=""
+        >Tercihleri Yönet |</a
+      >
+    </div>
+    <div
+      class="bootyardim-helpsite-sag d-flex align-items-center justify-content-center col-4 col-lg-4 col-12"
+    >
+      <div class="bootyardim-son">
+        © 1999-2023 Biletix Bilet Dağıtım Basım ve Tic. A.Ş. Tüm hakları
+        saklıdır.
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}

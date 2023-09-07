@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="40px" height="30px" viewBox="0 0 40 30" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <g id="icons8_double_down">
+    <path d="M0 2.53579L1.85053 0L19.2642 12.6295L36.6779 0L38.5284 2.53579L19.2642 16.5063L0 2.53579Z" transform="translate(0.7357941 0.7347412)" id="Polygon" fill="#B6DCFE" stroke="none" />
+    <path d="M20 12.7137L37.5295 0L40 3.38737L20 17.8916L0 3.38737L2.47053 0L20 12.7137ZM38.5274 3.15474L37.2979 1.46842L20.6179 13.5653L20 14.0137L19.3821 13.5653L2.70211 1.46842L1.47263 3.15474L20 16.5916L38.5274 3.15474Z" id="Shape" fill="#4788C7" fill-rule="evenodd" stroke="none" />
+    <path d="M0 2.53789L1.85053 0L19.2642 12.6347L36.6779 0L38.5284 2.53789L19.2642 16.5147L0 2.53789Z" transform="translate(0.7357941 12.30841)" id="Polygon" fill="#B6DCFE" stroke="none" />
+    <path d="M20 12.7189L37.5295 0L40 3.38842L20 17.8989L0 3.38842L2.47053 0L20 12.7189ZM38.5284 3.15579L37.2979 1.46842L20.6179 13.5705L20 14.0189L19.3821 13.5705L2.70316 1.46842L1.47263 3.15579L20 16.5989L38.5284 3.15579Z" transform="translate(0 11.57474)" id="Shape" fill="#4788C7" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

@@ -1,0 +1,144 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<div class="container m-auto w-75 bg-white">
+  <div class="mx-2 py-3">
+    <img src="{% static './img/contactus/contactus_tr.png' %}" width="100%" alt="bizeulasin" />
+    <br />
+    <br />
+  </div>
+
+  <div class="text-left">
+    <!-- ilk row -->
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 m-auto bize-ulasin bize-ulasin-border"
+        style="width: 45%"
+      >
+        <div class="mt-2">
+          <span class="fw-bold fs-5 mt-3 ulas-baslik">Müşteri Hizmetleri</span>
+
+          <br />
+          <p class="ulasin-font mt-2">
+            Haftanın her günü: 10:00 - 17:00 saatleri arasında bizi
+            arayabilirsiniz.
+          </p>
+          <br />
+
+          <p class="ulasin-font">+90 (850) 755 5555</p>
+          <br />
+
+          <p class="ulasin-font">
+            Müşteri hizmetlerimizle bağlantıya geçmek için,
+            <a
+              class="link-offset-2 link-underline link-underline-opacity-0"
+              href="#"
+              >tıklayın</a
+            >
+            . Formu doldurmanız yeterli. Size en kısa sürede cevap vereceğiz.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="col-md-6 col-lg-4 mx-4 bize-ulasin bize-ulasin-border"
+        style="width: 45%"
+      >
+        <div class="mt-3">
+          <span class="fw-bold fs-5 ulas-baslik"
+            >Kurumsal Merkez Ofislerimiz</span
+          >
+
+          <div class="row mt-2">
+            <!-- select row -->
+            <div class="col-12 col-sm-6 p-0 ms-3">
+              <select id="sec">
+                <option value="istanbul">İstanbul Merkez Ofis</option>
+                <option value="antalya">Antalya Bölge Müdürlüğü</option>
+                <option value="izmir">İzmir Bölge Müdürlüğü</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <div id="istanbulInfo" class="ulas-info">
+                <b class="ulasin-font"
+                  >Biletix Bilet Dağıtım Basım ve Ticaret. A.Ş.</b
+                >
+
+                <p class="ulasin-font">
+                  Ayazağa Mah. Azerbaycan Cad. Blok:1B, No:3B İç kapı:2, 34396
+                  Sarıyer, İstanbul, TÜRKİYE
+                </p>
+                <p class="ulasin-font">
+                  Ticaret Sicil No: 438207 Boğaziçi Kurumlar Vergi Dairesi: 171
+                  009 9361 Mersis No: 0171009936100018
+                </p>
+              </div>
+
+              <div id="antalyaInfo" class="ulas-info">
+                <p class="contact-font mt-3">
+                  Demirci Kara Mah. Burhanettin Onat Cad. Murat Zeybek Apt. A
+                  Blok No: 93 / 11 88018 Antalya / TÜRKİYE
+                </p>
+              </div>
+
+              <div id="izmirInfo" class="ulas-info">
+                <p class="contact-font mt-3">
+                  1378 SOKAK NO: 4 Kat.6 Daire 601 Kordon İş Hanı ALSANCAK/İZMİR
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ikinci row -->
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 m-auto mt-3 mb-5 bize-ulasin bize-ulasin-border"
+        style="width: 45%"
+      >
+        <div class="mt-3">
+          <span class="fw-bold fs-5 ulas-baslik"
+            >Perakende Satış Noktaları</span
+          >
+
+          <p class="ulasin-font mt-3">
+            Size en yakın Perakende Satış Noktamızı öğrenmek için
+            <a
+              class="link-offset-2 link-underline link-underline-opacity-0"
+              href="#"
+            >
+              tıklayın.</a
+            >
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 mt-3 mx-4 bize-ulasin bize-ulasin-border"
+        style="width: 45%"
+      >
+        <div class="mt-3">
+          <span class="fw-bold fs-5 ulas-baslik">Uygulamalarımız</span>
+
+          <div class="mt-3 mb-5">
+            <a
+              class="me-4"
+              href="https://apps.apple.com/tr/app/biletix/id1181457295?ls=1"
+              ><img src="{% static './img/contactus/contactusMobileApple.png' %}" alt=""
+            /></a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.biletix.ticketmaster&pli=1"
+              ><img src="{% static './img/contactus/contactusMobileAndroid.png' %}" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

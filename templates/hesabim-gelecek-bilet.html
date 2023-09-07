@@ -1,0 +1,44 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include "includes/_navbar-iki.html" %}
+<form action="">
+  <div class="sidenav-content mt-3 container">
+    <div class="side-nav-header">
+      <div class="row">
+        <!-- left-side -->
+        {% include "includes/_hesabim-left-side.html" %}
+        <div class="col-lg-9 col-sm-12 right-side hessap">
+          <!-- nav -->
+          {% include "includes/_hesabim-nav-iki.html" %}
+
+          <!-- 1.gelecek biletler -->
+          <div class="gelecekBilet etkinlikBilet mt-5" id="gelecekBilet">
+            <img
+              src="{% static './img/biletlerimetkinlik.png' %}"
+              width="100px"
+              height="100px"
+              alt=""
+            />
+            <p class="text-center" style="font-size: 20px">
+              Gelecek Etkinlik bulunmamaktadır.
+            </p>
+            <p class="mt-3 text-center">
+              Satın aldığınız biletleri burada görüntüleyebilirsiniz. Bilet
+              almak için güncel etkinlikleri keşfedin.
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary rounded-3 border-4 fw-bold -"
+            >
+              Etkinliklere Göz Atın
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "includes/_footer-iki.html" %} 
+  {% endblock content %}
+</form>

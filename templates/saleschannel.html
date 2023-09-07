@@ -1,0 +1,52 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %}
+
+{% include 'includes/_navbar-main.html' %}
+
+<!-- !MAİN -->
+<div class="container-fluid main">
+  <div class="container-lg bg-light p-md-5">
+    <div class="satis-cont1">
+      <div class="container satis-cont">
+        <img
+          src="{% static './img/satiskanallari/satiskanallari_tr.png' %}"
+          class="w-80 m-auto p-3 container-fluid img-cont"
+          alt=""
+        />
+
+        <div class="container-satis px-4 text-center">
+          <div
+            class="satis-nav d-flex align-items-center justify-content-center"
+          >
+            <div class="satis-card m-1 border-0">
+              <a href="" class="satis-text-1">
+                <p class="satis-text-1 card-text-1 fw-bold">
+                  Perakende Satış Noktaları
+                </p>
+                <img src="{% static './img/satiskanallari/sat1.png' %}" alt="..." />
+              </a>
+            </div>
+            <div class="satis-card m-1 border-0">
+              <a href="" class="satis-text-1">
+                <p class="satis-text-1 card-text-1 fw-bold">Mobil</p>
+                <img src="{% static './img/satiskanallari/sat2.png' %}" class="" alt="..." />
+              </a>
+            </div>
+            <div class="satis-card m-1 border-0">
+              <a href="" class="satis-text-1">
+                <p class="satis-text-1 card-text-1 fw-bold">
+                  Grup Satış Kanalı
+                </p>
+                <img src="{% static './img/satiskanallari/sat3.png' %}" class="" alt="..." />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/_footer-main.html' %}
+{% endblock content %}

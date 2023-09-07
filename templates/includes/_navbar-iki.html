@@ -1,0 +1,477 @@
+{% load static %}
+<!-- Navbar-iki-start -->
+<header>
+  <!-- üst-div -->
+  <div class="d-none d-lg-flex" style="height: 30px; background-color: #0150a7">
+    <div
+      class="container-fluid container-lg d-flex justify-content-between h-100"
+    >
+      <ul class="d-flex align-items-center m-0 p-0 h-100">
+        <div class="me-3">
+          <ul class="link-grubu navbar-nav me-5 mb-2 mb-lg-0">
+            <!-- dropdown menu -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dil:
+                <img src="{% static './img/tr.svg' %}" alt="" />
+                TR
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Türkçe</a></li>
+                <li><a class="dropdown-item" href="#">English</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="">
+          <a id="tum-tr" class="text-light" href="#">
+            <i class="fa-solid fa-earth-americas"></i>
+            Tüm Türkiye
+          </a>
+        </div>
+      </ul>
+      <ul class="ust-nav-items d-flex align-items-center m-0 p-0 h-100">
+        <div class="me-3">
+          <a class="text-light" href="#">
+            <i class="fa-solid fa-gift"></i>
+            Hediye Kartı
+          </a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="https://www.flipsnack.com/885A97FF8D6/"
+            >Aylık Dergi</a
+          >
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="https://blog.biletix.com/">Blog</a>
+        </div>
+        <div class="me-3">
+          <a class="text-light" href="#">Yardım</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-shadow p-0">
+    <div
+      class="d-flex justify-content-lg-start container-fluid container-lg align-items-center"
+    >
+      <!-- logo ve bar-menu -->
+      <div class="d-flex align-items-center navbar-logo">
+        <i
+          class="fa-solid fa-bars fs-2 me-3 d-lg-none bar-menu"
+          style="color: #ffffff"
+        ></i>
+        <a href="/" class="navbar-brand" href="#">
+          <img src="{% static './img/btx-logo.svg' %}" alt="" />
+        </a>
+      </div>
+      <!-- link-grup-search-girişyap-sepet -->
+      <div class="d-flex align-items-center navbar-content">
+        <!-- link-grubu -->
+        {% load mptt_tags %}
+        <ul class="link-grubu navbar-nav me-5 mb-2 mb-lg-0 d-none d-xl-flex">
+          {% recursetree kategori %}
+          <li class="nav-item pt-2" 
+          onmouseover="showMuzik('{{node.id}}')" onmouseout="hideMuzik('{{node.id}}')" style="height: 60px;">
+            <a
+              class="nav-link active text-white link-grup"
+              href="#"
+              data-target="link-detay-bir">
+              {{node.isim}}
+            </a>
+          </li>
+          {% endrecursetree %}
+        </ul>
+        <!-- drop-down -->
+        <ul class="link-grubu navbar-nav me-5 mb-2 mb-lg-0 d-xl-none dropdown-none">
+          <!-- dropdown menu -->
+          {% load mptt_tags %} 
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light fw-bold"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Kategoriler
+            </a>
+            <ul class="dropdown-menu">
+          {% recursetree kategori %}
+
+              <li>
+                <a class="dropdown-item" href="#">{{node.isim}}</a>
+              </li>
+              {% endrecursetree %}
+            </ul>
+          </li>
+        </ul>
+
+        <!-- search ve giriş-yap-hesabım-sepet -->
+        <ul class="navbar-nav d-flex align-items-center">
+          <!-- search -->
+          <li
+            class="nav-item detay-navbar-search mt-2 justify-content-center d-none d-lg-flex"
+          >
+            <form
+              class="position-relative m-auto align-items-center"
+              role="search"
+              method="GET"
+              action="{% url 'search' %}"
+            >
+              <img
+                src="{% static 'img/SVG icons/search.svg' %}"
+                class="position-absolute"
+                alt=""
+              />
+              <input
+                class="form-control me-2 rounded-5"
+                type="search"
+                placeholder="Etkinlik,sanatçı ya da mekan arayın"
+                aria-label="Search"
+                name="search"
+              />
+            </form>
+          </li>
+          <!-- profil-icon -->
+          <li class="nav-item navbar-ic-login-1 ms-4 me-3">
+            <div class="dropdown position-relative">
+              <a
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="{% static './img/SVG icons/profileiki.svg' %}"
+                  class=""
+                  alt=""
+                />
+              </a>
+              <ul
+                class="dropdown-menu position-absolute d-lg-none"
+                style="left: -110px"
+              >
+              {% if user.is_authenticated %}
+              <!-- profil -->
+              <li class="mb-2">
+                <a class="dropdown-item" href="#">
+                  <i class="fa-regular fa-user me-3" style="color: #bfbfbf"></i>
+                  Profil
+                </a>
+              </li>
+              <!-- Adres -->
+              <li class="mb-2">
+                <a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-house me-3" style="color: #bfbfbf"></i>
+                  Adreslerim
+                </a>
+              </li>
+              <!-- bilet -->
+              <li class="mb-2">
+                <a class="dropdown-item" href="#">
+                  <i class="fa-solid fa-ticket-simple me-3"style="color: #bfbfbf"></i>
+                  Biletilerim
+                </a>
+              </li>
+              <!-- çıkış-yap -->
+              <li class="mb-2">
+                <a class="dropdown-item" href="{% url 'logout' %}">
+                  <i class="fa-solid fa-arrow-right-from-bracket me-3"style="color: #bfbfbf"></i>
+                  Çıkış Yap
+                </a>
+              </li>
+              {% else %}
+              <li class="mb-2">
+                <a class="dropdown-item" href="#"
+                  ><i class="fa-solid fa-arrow-right-to-bracket me-3"></i
+                  >Giriş Yap</a
+                >
+              </li>
+              <li class="mb-2">
+                <a class="dropdown-item" href="#"
+                  ><i class="fa-solid fa-user-plus me-3"></i>Hesap Oluştur</a
+                >
+              </li>
+              <li class="mb-2">
+                <a class="dropdown-item" href="#"
+                  ><i class="fa-regular fa-user me-3"></i>Profil</a
+                >
+              </li>
+              <li class="mb-2">
+                <a class="dropdown-item" href="#"
+                  ><i class="fa-solid fa-house me-3"></i>Adreslerim</a
+                >
+              </li>
+              <li class="mb-2">
+                <a class="dropdown-item" href="#"
+                  ><i class="fa-solid fa-ticket-simple me-3"></i
+                  >Biletilerim</a
+                >
+              </li>
+              {% endif %}
+              </ul>
+            </div>
+          </li>
+          <!-- hesabım-girişyap -->
+          <li class="nav-item navbar-ic-login-2 me-lg-4">
+            <div class="dropdown">
+              <a
+                href="#"
+                class="text-white d-block p-0 m-0 hesabim-none"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hesabım
+                <img
+                  src="{% static 'img/SVG icons/cheveron-down.svg' %}"
+                  alt=""
+                />
+              </a>
+              {% if user.is_authenticated %}
+              <a
+                href="#"
+                class="text-white d-block p-0 m-0 hesabim-none"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >{{request.user.first_name|title}}</a
+              >
+              {% else %}
+
+              <a
+                href="{% url 'register' %}"
+                class="text-white d-block p-0 m-0 hesabim-none"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Giriş Yap/Üye Ol</a
+              >
+              {% endif %}
+
+              <ul class="dropdown-menu position-absolute">
+                {% if user.is_authenticated %}
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'profil' %}"
+                    ><i
+                      class="fa-regular fa-user me-3"
+                      style="color: #bfbfbf"
+                    ></i
+                    >Profil
+                    </a>
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'adres' %}"
+                    ><i
+                      class="fa-solid fa-house me-3"
+                      style="color: #bfbfbf"
+                    ></i
+                    >Adreslerim</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'gelecek-bilet' %}">
+                    <i
+                      class="fa-solid fa-ticket-simple me-3"
+                      style="color: #bfbfbf"
+                    ></i
+                    >Biletilerim
+                  </a>
+                </li>
+
+                <li></li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'logout' %}">
+                    <i
+                      class="fa-solid fa-arrow-right-from-bracket me-3"
+                      style="color: #bfbfbf"
+                    ></i
+                    >Çıkış Yap
+                  </a>
+                </li>
+                {% else %}
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'login' %}"
+                    ><i class="fa-solid fa-arrow-right-to-bracket me-3"></i
+                    >Giriş Yap</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'register' %}"
+                    ><i class="fa-solid fa-user-plus me-3"></i>Hesap Oluştur</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'profil' %}"
+                    ><i class="fa-regular fa-user me-3"></i>Profil</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'adres' %}"
+                    ><i class="fa-solid fa-house me-3"></i>Adreslerim</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item" href="{% url 'gelecek-bilet' %}"
+                    ><i class="fa-solid fa-ticket-simple me-3"></i
+                    >Biletilerim</a
+                  >
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          </li>
+          <!-- sepet -->
+          <li class="nav-item navbar-shopping">
+            <a href="#" class="position-relative">
+              <img src="{% static './img/SVG icons/sepet.svg' %}" alt="" />
+              <span
+                style="left: 13px; bottom: 10px; width: 20px; height: 20px"
+                class="position-absolute text-light bg-danger text-center rounded-5"
+                >{{sepet_miktar}}</span
+              >
+            </a>
+            <a href="{% url 'sepet' %}" class="d-inline-block text-white hesabim-none">
+              Sepetim
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- search-2 -->
+    <li class="nav-item detay-navbar-search mt-2 justify-content-center w-100 d-lg-none">
+      <form class="position-relative m-auto align-items-center" role="search" method="GET" action="{% url 'search' %}">
+        <img src="{% static './img/SVG icons/search.svg' %}" class="position-absolute" alt="" />
+        <input
+          class="form-control me-2 rounded-5"
+          type="search"
+          placeholder="Etkinlik,sanatçı ya da mekan arayın"
+          aria-label="Search"
+          name="search"
+        />
+      </form>
+    </li>
+  </nav>
+  <!--* Alt Kategori -->
+  {% load mptt_tags %}
+  {% recursetree kategori %}
+  <div id="alt-kategori-{{node.id}}" class="alt-kategori position-relative w-100 z-3 ">
+    <div class="container flex-wrap navbar-ic rounded-bottom-1 ps-4 pe-2 pb-5  d-flex position-absolute" style="left: 100px;"   onmouseover="showMuzik('{{node.id}}')" onmouseout="hideMuzik('{{node.id}}')">
+        {% if not node.is_leaf_node %} 
+        {% for child in node.get_children%}
+      <div class="pe-2 pt-2 ">
+        <div class="card card-navbar-ic rounded-0 border-white">
+          <a href="{% url 'etkinlik-liste' child.slug %}">
+            <img
+              src="{{child.altkategori_resim.url}}"
+              class="card-img-top rounded-0"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ child.isim }}</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %} 
+      {% endif %}
+      <div class="link position-absolute pe-3 pt-1 bottom-0 end-0">
+        <a class="p-3" href="{% url 'etkinlik-kategori-detay' node.slug %}"
+          >Tüm {{node.isim}} etkinlikleri gör
+          <img src="{% static 'img/SVG icons/arrow-right2.svg' %}" class="right" alt=""
+        /></a>
+      </div>
+    </div>
+  </div>
+  {% endrecursetree %}
+  <!--* Hamburger-Menu-Nav  -->
+<div style="z-index: 10000 !important;" class="hamburger-menu position-fixed top-0 start-0 overflow-y-auto h-100"
+id="accordionMenu"
+>
+<div class="container-md h-100 m-0 p-0">
+  <div>
+    <i id="ok" class="fa-solid fa-arrow-left ok text-start"></i>
+    <h6 class="text-center">Menu</h6>
+  </div>
+  <div class="hamburger-link d-flex flex-column justify-content-between">
+    <ul class="accordion accordion-flush m-0 p-2" id="accordionFlushExample">
+      {% load mptt_tags %} 
+      {% recursetree kategori %}
+      
+      <li class="accordion-item">
+        <h2 class="accordion-header border-bottom">
+          <button
+            class="accordion-button hamburger-accordion-button collapsed fw-semibold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
+            {{node.isim}}
+          </button>
+        </h2>
+        <span class="arrow-icon"></span>
+        <ul
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <li class="p-2 border-bottom">
+            <a class="fw-semibold" href="{% url 'etkinlik-kategori-detay' node.slug %}">
+              Tüm {{node.isim}} Etkinlikleri
+            </a>
+          </li>
+          {% if not node.is_leaf_node %} 
+          {% for child in node.get_children%}
+          <li class="p-2 border-bottom">
+            <a class="fw-semibold" href="{% url 'etkinlik-liste' child.slug %}"
+            >{{ child.isim }}
+            </a>
+          </li>
+          {% endfor %} 
+          {% endif %}
+        </ul>
+      </li>
+
+      {% endrecursetree %}
+    </ul>
+
+    <ul class="m-0 p-0" style="background: #f6f7f9">
+      <li class="p-3 border-bottom">
+        <a class="fw-normal" href="#">Hediye Kartı</a>
+      </li>
+      <li class="p-3 border-bottom">
+        <a class="fw-normal" href="#">Aylık Dergi</a>
+      </li>
+      <li class="p-3 border-bottom">
+        <a class="fw-normal" href="#">Blog</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+</header>
+<!-- Navbar-iki-end -->
+
+<script>
+  function showMuzik(nodeId) {
+      const menu = document.querySelector('#alt-kategori-'+ nodeId);
+      console.log(menu)
+      menu.style.display = 'block';
+  }
+
+  function hideMuzik(nodeId) {
+      const menu = document.querySelector('#alt-kategori-' + nodeId);
+      menu.style.display = 'none';
+  }
+</script>

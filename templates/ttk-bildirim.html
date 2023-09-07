@@ -1,0 +1,92 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<!-- !TTK BİLDİRİMLERİ START -->
+<div class="ttk-anakapsayıcı container-fluid">
+    <div class="ttk-container container-lg ">
+      <div class="ttk-foto-bıldırım  mx-auto d-block ">
+        <div class="ttkimg">
+          <img class="ttk-foto w-100"  src="{% static './img/ttkimg.png' %}" alt="" />
+        </div>
+  
+        <div class="bugra w-100 mt-1">
+          <strong>Yönlendirilmiş Mesaj</strong>
+          <br />
+          6335 sayılı Kanunla değişik 6102 sayılı Türk Ticaret Kanunu’nun 1524.
+          maddesi gereğince kamuoyuna sunulur.
+        </div>
+      </div>
+        <div class="row  m-auto mt-4">
+            <div class="col-12 col-lg-6 mt-4">
+                <div class="card" id="ttk-card" >
+                    <div class="card-body">
+                        <ul class="ttk-liste-duzenleme">
+                            <li>
+                              <span class="fw-bold">Yönetim Kurulu</span>
+                            </li>
+                            <br />
+                            Başkan: Christopher James Admonds
+                            <br />
+                            Başkan Yardımcısı: David Nicholas Hamilton
+                            <br />
+                            Üye: Mehmet Kemal Erdine
+                          </ul>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-6 mt-4">
+                <div class="card" id="ttk-card" >
+                    <div class="card-body">
+                        <ul class="ttk-liste-duzenleme">
+                            <li>
+                              <span class="fw-bold "
+                                >Ticaret Ünvanı, Sicil No, Merkez ve Web Sitesi</span
+                              >
+                            </li>
+                            <br />
+                            Biletix Bilet Dağıtım Basım ve Ticaret A.Ş.
+                            <br />
+                            Ayazağa Mahallesi Azerbaycan Cad.
+                            <br />
+                            1B Blok No: 3B İç kapı No:2, 34396
+                            <br />
+                            Sarıyer, İstanbul, TÜRKİYE
+                            <br>
+                            <br>
+                            Mersis No: 0171009936100018
+                            <br>
+                            <br>
+                            Ticaret Sicil No: 438207
+                            <br>
+                            Boğaziçi Kurumlar Vergi Dairesi
+                            <br>
+                            171 009 9361
+                            <br>
+                            www.biletix.com
+                          </ul>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-lg-6 mt-4">
+                <div class="card" id="ttk-card">
+                    <div class="card-body">
+                      <ul class="ttk-liste-duzenleme">
+                        <li>
+                          <span class="fw-bold ">Sermaye</span>
+                        </li>
+                        <br>
+                        Taahhüt Edilen Sermaye: 1.020.408,16 TL
+                        <br>
+                        Ödenen Sermaye: 1.020.408,16 TL
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- !TTK BİLDİRİMLERİ END -->
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

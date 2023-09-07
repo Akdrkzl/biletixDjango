@@ -1,0 +1,1200 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %}
+{% include 'includes/_navbar-main.html' %}
+
+<div class="container-fluid container-hediyekart">
+  <div class="hediyekart-container m-auto bg-transparent">
+    <div class="card text-bg-dark border-0 rounded-0">
+      <img
+        src="{% static './img/hediye-kart/hediye-kart-banner' %}'" 
+        class="card-img hediyekart-foto1 rounded-0"
+        alt="..."
+      />
+      <div class="card-img-overlay">
+        <h5 class="card-title mx-5 mt-5 fs-1">HEDİYE KART</h5>
+      </div>
+    </div>
+    <div class="card hediyekart2-card text-bg-dark border-0 rounded-0">
+      <img
+        src="{% static './img/hediye-kart/hediye-kart2.png' %}"
+        class="card-img hediyekart-foto2"
+        alt="..."
+      />
+      <div class="card-img-overlay">
+        <h5 class="card-title mx-5 mt-2 fs-1">HEDİYE KART</h5>
+      </div>
+    </div>
+
+    <!-- ! NAVBAR ALANI-->
+
+    <div class="hediyekar-navbar justify-content-between align-items-center">
+      <ul class="nav navbarWrapper bg-white mb-1">
+        <li class="nav-item mb-1">
+          <a class="nav-link" href="#">SATIN AL</a>
+        </li>
+        <li class="nav-item mb-1">
+          <a class="nav-link" href="#">KAÇ LİRAM VAR?</a>
+        </li>
+        <li class="nav-item mb-1">
+          <a class="nav-link" href="#">SSS</a>
+        </li>
+        <li class="nav-item mb-1">
+          <a class="nav-link" href="#">KULLANIM KOŞULLARI</a>
+        </li>
+        <li class="nav-item mb-1">
+          <a class="nav-link" href="#">KURUMSAL SATIŞ</a>
+        </li>
+      </ul>
+      <button
+        class="btn hediyekart-button btn-outline-success bg-primary border-0 text-white pt-2 pb-2 fw-bold"
+        type="submit"
+      >
+        Satın Al
+      </button>
+    </div>
+
+    <section>
+      <div class="row mt-5">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <h4 class="hediyekart-section">SATIN AL</h4>
+
+          <h5 class="mt-4">Sevdiklerini sahneye davet et!</h5>
+          <br />
+          <p>
+            Birine verebileceğin en güzel hediye deneyimdir, hafızasında yer
+            edecek bir hatıra... <br />
+            Yıllar sonra bile heyecanla hatırlayacağı güzel bir akşamüstü...
+            <br />
+            Gözlerine, kulaklarına, ruhuna hitap eden eşsiz bir anı...
+            <br />
+            <br />
+
+            Tiyatro, konser, stand-up, festival, aile etkinlikleri, spor
+            karşılaşmaları ve çok daha fazlasını Biletix'te bulabilir;
+            sevdiklerinize, çalışanlarınıza, müşterilerinize veya iş
+            ortaklarınıza Biletix Hediye Kart hediye ederek benzersiz ve
+            unutulmaz anlar yaşamalarını sağlayabilirsiniz. <br /><br />
+          </p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div
+            class="card hediyekart-sorgula text-bg-primary mb-3 rounded-0 border-0 mx-4"
+          >
+            <div class="card-header">
+              <h4 class="mt-3 mb-3">KAÇ LİRAM VAR?</h4>
+            </div>
+            <div class="card-body bg-white text-black">
+              <p class="card-text">
+                Lütfen hediye kartınızın üzerindeki 16 haneli numarayı giriniz.
+              </p>
+              <form class="d-flex flex-column mt-4 mb-4" role="search">
+                <input
+                  class="form-control shadow-none w-100 me-4 p-2 mb-2"
+                  type="search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success bg-primary border-0 text-white p-2"
+                  type="submit"
+                >
+                  Sorgula
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="col-lg-9 col-md-9 col-sm-12 mt-5 mb-5">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-4 col-sm-12 hediyekart-card">
+          <div class="card h-100 border-0 bg-transparent">
+            <img
+              src="{% static './img/hediye-kart/foto1.png' %}"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <a
+              class="d-flex justify-content-end text-decoration-none fw-bold mt-3"
+              href=""
+              >Satın Al</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 hediyekart-card">
+          <div class="card h-100 border-0 bg-transparent">
+            <img
+              src="{% static './img/hediye-kart/foto2.png' %}"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <a
+              class="d-flex justify-content-end text-decoration-none fw-bold mt-3"
+              href=""
+              >Satın Al</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 hediyekart-card">
+          <div class="card h-100 border-0 bg-transparent">
+            <img
+              src="{% static './img/hediye-kart/foto3.png' %}"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <a
+              class="d-flex justify-content-end text-decoration-none fw-bold mt-3"
+              href=""
+              >Satın Al</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ! ACCORDİON YAPISI ALANI -->
+    <div class="accordion accordion-flush content1" id="accordionFlushExample">
+      <h4 class="section1 mb-5">SSS</h4>
+
+      <div class="accordion-item bg-transparent mt-2">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button buttonn collapsed bg-transparent shadow-none fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
+            Hediye Kart Nedir?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Dijital ya da kart formatında basılı olan, perakende satış
+            noktalarımızdan ve biletix.com internet sitemizden satın alınan tüm
+            etkinlik biletlerinin ödemesinde kullanılabilen ön ödemeli bir kart
+            tipidir.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item bg-transparent mt-2">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo "
+            aria-expanded="false"
+            aria-controls="flush-collapseTwo"
+          >
+            Neden Biletix hediye kartı satın almalıyım?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Çünkü Biletix hediye kartla yüzlerce etkinlik seçeneği bir arada!
+            Biletix hediye kartını sevdiklerinize, çalışanlarınıza,
+            müşterilerinize ve iş ortaklarınıza hediye ederek eşsiz ve unutulmaz
+            bir deneyim yaşamalarını sağlayabilirsiniz. Belirlenmiş tutarlarda
+            önceden yüklenmiş ön ödemeli Biletix hediye kartları, tercihinize
+            göre kart formatında basılı ya da dijital olarak satın alınabilir.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item bg-transparent mt-2">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed shadow-none bg-transparent fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree"
+            aria-expanded="false"
+            aria-controls="flush-collapseThree"
+          >
+            Biletix hediye kartını nereden satın alabilirim?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseThree"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Dijital hediye kartlarını biletix.com internet sitemizden satın
+            alabilirsiniz. Hediye kartını fiziki olarak satın almak istiyorsanız
+            perakende satış noktalarımızı ziyaret etmeniz gerekmektedir.
+            Perakende satış noktalarımızın adres ve çalışma saatlerini bu linke
+            tıklayarak öğrenebilirsiniz.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item bg-transparent mt-2">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFour"
+            aria-expanded="false"
+            aria-controls="flush-collapseFour"
+          >
+            Hediye kartımı nerelerde kullanabilirim?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseFour"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Dijital ve fiziki Biletix hediye kartları, biletix.com internet
+            sitemizden ve perakende satış noktalarımızdan aldığınız tüm etkinlik
+            biletlerinin ödemesinde kullanılabilir. Mobil uygulamalarımız
+            üzerinden yapacağınız işlemlerde hediye kart kullanılamamaktadır.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item bg-transparent mt-2">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFive"
+            aria-expanded="false"
+            aria-controls="flush-collapseFive"
+          >
+            Hediye kartımı aktif hale getirmem gerekiyor mu?
+          </button>
+        </h2>
+        <div
+          id="flush-collapseFive"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Kartınız ister dijital ister fiziki olsun, satın aldığınız anda
+            aktif hale getirilecektir. Ayrıca bir işlem yapmanıza gerek yoktur.
+          </div>
+        </div>
+      </div>
+      <!-- ! ACCORDİON YAPISI DEAMINI OKU -->
+      <div id="invisible-text1">
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSix"
+              aria-expanded="false"
+              aria-controls="flush-collapseSix"
+            >
+              Hediye kartımın son kullana tarihi var mı?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSix"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Tüm hediye kartları aktivasyon tarihinden itibaren 12 ay
+              geçerlidir.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeven"
+              aria-expanded="false"
+              aria-controls="flush-collapseSeven"
+            >
+              Hediye kartıma kaç lira yükleyebilirim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSeven"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Hediye kart satın alırken limitlerine göre 50,00 TL, 100,00 TL,
+              250,00 ve 500,00 TL’lik kartlardan size uygun olanını
+              seçebilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEight"
+              aria-expanded="false"
+              aria-controls="flush-collapseEight"
+            >
+              Hediye kartımın bakiyesini nasıl kontrol edebilirim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseEight"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Hediye kartınızın bakiyesini kontrol etmek için
+              <a class="text-decoration-none" href="">tıklayınız</a>. Bakiye
+              kontrolü için hediye kartınızın numarasını bilmeniz yeterlidir.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNine"
+              aria-expanded="false"
+              aria-controls="flush-collapseNine"
+            >
+              Hediye kartıma tekrar para yükleyebilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseNine"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Dijital ya da fiziki olarak satın aldığınız hediye karta satın
+              alma esnasında tek seferde ve bir kere para yüklemesi yapılabilir.
+              Aynı karta yeniden yükleme yapılamaz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTen"
+              aria-expanded="false"
+              aria-controls="flush-collapseTen"
+            >
+              Hediye kartımın içindeki bakiye yetmezse kalan tutarı nasıl
+              ödeyebilirim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              İster dijital ister fiziki olsun, hediye kartınızın bakiyesi
+              toplam ödeme tutarına yetmezse, kalan bakiyeyi, internetten işlem
+              yapıyorsanız kredi kartınızla, satış noktalarından işlem
+              yapıyorsanız kredi kartınızla veya nakit olarak ödeyebilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEleven"
+              aria-expanded="false"
+              aria-controls="flush-collapseEleven"
+            >
+              Hediye kartımda kalan bakiyeyi tekrar başka bir işlemde
+              kullanabilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseEleven"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Evet, hediye kartınızın içinde kalan bakiyeyi daha sonra
+              yapacağınız bilet satın alma işleminde kullanabilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwelve"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwelve"
+            >
+              Hediye kartımın son kullanma tarihi geçincekartımın içindeki
+              bakiye ne olacak?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwelve"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Son kullanma tarihi geçen tüm hediye kartlarda, kartınızda kalan
+              bakiye kullanılamaz hale gelir. Hediye kartta yüklü tutarın iadesi
+              veya takası mümkün değildir.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwenty-two"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwenty-two"
+            >
+              Hediye kartta isim yazıyor mu?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwenty-two"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Tüm hediye kartlar isimsizdir ve kartın üzerinde isim yazmaz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThirteen"
+              aria-expanded="false"
+              aria-controls="flush-collapseThirteen"
+            >
+              Hediye Kartla birlikte kişisel bir mesaj gönderebilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThirteen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Evet, gönderebilirsiniz. Ancak bunun için hediye kartınızı
+              internet sitemizden dijital olarak satın almanız gerekmektedir.
+              Satınalma işleminiz sırasında size kişisel bir not ekleyebilme
+              seçeneği sunulmaktadır. Mesajınız siparişinizle birlikte karşı
+              tarafa gönderilecektir.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFourteen"
+              aria-expanded="false"
+              aria-controls="flush-collapseFourteen"
+            >
+              Hediye kartımı etkinlik mekanında bulunan gişeden bilet satın
+              almak için kullanabilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFourteen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Hayır. Hediye kartınızı sadece Biletix perakende satış
+              noktalarından ve internet sitesinden bilet satın almak için
+              kullanabilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFifteen"
+              aria-expanded="false"
+              aria-controls="flush-collapseFifteen"
+            >
+              Hediye kartımı başka ülkelerde kullanabilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFifteen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Biletix üzerinden satın aldığınız hediye kartınızı sadece
+              Türkiye'de kullanabilirsiniz.
+              <br /><br />
+
+              Ticketmaster’ın diğer ülkelerde geçerli hediye kartlarından satın
+              almak istiyorsanız
+              <a class="text-decoration-none" href=""
+                >https://www.ticketmastergiftcard.com/ </a
+              >linkini ziyaret edebilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSixteen"
+              aria-expanded="false"
+              aria-controls="flush-collapseSixteen"
+            >
+              Hediye kartım kaybolur yada çalınırsa ne yapabilirim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSixteen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Fiziki hediye kartlar tek kullanımlıktır. Yeniden basılamaz.
+              Kartınızı kaybetmeniz veya çaldırmanız durumunda içinde kalan
+              bakiyeyi de kaybedersiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeventeen"
+              aria-expanded="false"
+              aria-controls="flush-collapseSeventeen"
+            >
+              Bir işlem sırasında birden fazla hediye kart kullanabilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseSeventeen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Evet, bir işlem için en fazla iki farklı hediye kartı kullanarak
+              ödeme yapabilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEighteen"
+              aria-expanded="false"
+              aria-controls="flush-collapseEighteen"
+            >
+              Dijital hediye kartla fiziki hediye kart arasında ne fark var?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseEighteen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Kullanım açısından hiçbir fark yok. Diğer taraftan dijital hediye
+              kartlar güzel bir son dakika hediyesi olabilir. Fiziksel kartın
+              kurye ile gönderilmesini beklemek yerine, dijital hediye kartınızı
+              satın alma sırasında doğrudan alıcının e-posta adresine
+              mesajınızla birlikte gönderebilirsiniz.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNineteen"
+              aria-expanded="false"
+              aria-controls="flush-collapseNineteen"
+            >
+              Hediye kartını taksitle satın alabilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseNineteen"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Hediye kart satışlarında taksit uygulaması yoktur.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwenty"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwenty"
+            >
+              Hediye kartını iade edebilir miyim?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwenty"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Hediye kartlar kullanılmaması kaydı ile kartın satın alındığı
+              tarihten itibaren 7 (yedi) günlük itiraz süresi içerisinde iade
+              edilebilir. Bu durumda kartta bulunan tutarın iadesi, kartın alımı
+              esnasında tanzim edilen makbuzun ibrazına bağlı olarak, ancak
+              kartın alıcısına yapılır.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent mt-2">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed shadow-none bg-transparent text-black fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwenty-one"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwenty-one"
+            >
+              Toplu hediye kartı almak istiyorum. Ne yapmam gerekiyor?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwenty-one"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Toplu hediye kart siparişleriniz için
+              <a class="text-decoration-none" href="">linkte</a> yer alan formu
+              doldurarak talebinizi bize iletebilirsiniz. <br /><br />
+              Toplu hediye kartı alımlarında, hediye karta en az yükleme limiti
+              KDV dahil 30,00 TL, en çok yükleme limiti ise KDV dahil 500,00
+              TL'dir.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        id="btn1"
+        type="button"
+        class="btn btn-dark rounded-pill fs-5 pt-3 pb-3 fw-bold px-5 pe-5 mb-5 mt-4"
+        onclick="MoreLess1()"
+      >
+        Devamını Oku
+      </button>
+    </div>
+    <!-- ACCORDİON YAPISI BİTİŞ -->
+
+    <!-- ! KULLANIM KOŞULLARI ALANI BİTİŞ -->
+    <section>
+      <div class="main">
+        <h4 class="section1 mb-4">KULLANIM KOŞULLARI</h4>
+        <p class="content fw-normal" id="readless">
+          Aşağıda hükümleri yazılı olan "Biletix Ticketmaster Türkiye Hediye
+          Kartı Kullanım Sözleşmesi", Biletix Ticketmaster Türkiye Hediye
+          Kartı’nın kullanılmasına ilişkin gerekli kuralları düzenlemekte olup,
+          hediye kartının kullanılabilmesi için işbu sözleşmenin kabul edilmesi
+          gerekmektedir. Bu kapsamda, digital satın alımlarda, hediye kartınızı
+          satın aldığınız tarihten itibaren 14 gün içerisinde, fiziki satın
+          alımlarda ise, hediye kartınızı satın aldığınız tarihten itibaren 7
+          gün içerisinde 0850 755 55 55 numaralı irtibat numarasına herhangi bir
+          itirazda bulunmamak ya da bu süre içerisinde cayma hakkınızı
+          kullanmamak suretiyle ve/veya bu süre dolmadan hediye kartınızı
+          kullanarak, Tüketicinin Korunması Hakkında Kanun'un 9/A-2'inci maddesi
+          anlamında işbu Sözleşmeyi elektronik olarak teyid ettiğinizi, işbu
+          sözleşmenin taraflar arasında geçerli olduğunu, taraflar arasındaki
+          ilişkileri düzenlediğini ve sözleşme hükümleri ile sözleşmesel
+          yükümlülüklerle bağlı olduğunuzu kabul, beyan ve taahhüt etmiş
+          sayılacağınızı önemle belirtiriz. <span id="dots">...</span>
+          <span id="invisible-text">
+            <br /><br />
+            <br />
+            <b>Biletix Ticketmaster Türkiye Hediye Kartı Kullanım Sözleşmesi</b>
+            <br /><br />
+            İşbu Biletix Ticketmaster Türkiye Hediye Kartı Kullanım Sözleşmesi
+            ("Sözleşme") Biletix Ticketmaster Türkiye Hediye Kartı’nın ("Hediye
+            Kartı ve/veya Kart") yaratıcısı ve bu kartın her türlü fikri ve
+            sınai mülkiyet hakları ile diğer haklarının sahibi olan Biletix
+            Bilet Basım Dağıtım A.Ş. ("Biletix") ile işbu kartı kullanan kişiler
+            ("kart kullanıcıları") arasında geçerli olup, kartın kullanılmasının
+            hüküm ve şartlarını belirlemekte ve taraflar arasındaki ilişkileri
+            düzenlemektedir.
+            <br /><br />
+            <b>1. Kabul</b>
+            <br /><br />
+            1.1. Hediye kart kullanıcısı, hediye kartını kullanarak,
+            sözleşmedeki tüm hüküm ve şartlara riayet etmeyi kabul, beyan ve
+            taahhüt eder. Hediye kartının kullanılarak kart hamiline "etkinlik
+            bileti" verilmesinden sonraki tüm süreçte, bu bağlamda "bilet
+            iadesi-iptal-kayıp-çalıntı", "etkinliğin ertelenmesi" ve sair her
+            türlü durumda Biletix'in web sitesinde belirtilen "Kullanım
+            Koşulları" ve "Biletix Satış Politikası" geçerli olacaktır. Dolayısı
+            ile hediye kart kullanıcıları, kartlarını kullanmak suretiyle,
+            https://www.biletix.com/ourpolicies/TURKIYE/tr adresinde bulunan
+            "Biletix Satış Politikasını", "Biletix Gizlilik Beyanı"nı ve
+            "Biletix Kullanım Koşulları"nı da okuduğunu, anladığını ve
+            içeriklerini aynen kabul ettiklerini beyan ve taahhüt etmişlerdir.
+            <br /><br />
+            1.2. Hediye kartının, kart kullanıcısının iradesiyle ya da iradesi
+            dışında üçüncü kişiler tarafından kullanılması halinde kartı
+            kullanan üçüncü kişiler de işbu Sözleşmedeki tüm hüküm ve şartlara
+            tabi olacaklardır.
+            <br /><br />
+            <b>2. Hediye Kartı Hakkında</b>
+            <br /><br />
+            2.1. Biletix hediye kartları, Biletix tarafından düzenlenen
+            kartlardır. Her bir hediye kartının satın alınma aşamasındaki en az
+            yükleme limiti KDV dahil 100,00-TL, en çok yükleme limiti ise KDV
+            dahil 1000.00.-TL'dir. Hediye kartlarının toplu alım taleplerinde
+            her bir hediye kartının satın alınma aşamasındaki en az yükleme
+            limiti KDV dahil 100,00-TL’dir, üst limit bulunmamaktadır.
+            <br /><br />
+            2.2. Kart, satın alma platformunda önceden ödenmiş olan parasal bir
+            değeri içermektedir. Hediye kartlar, bir kredi kartı, harcama kartı,
+            çek, garanti kartı ya da borç kartı olmayıp, hediye kart bakiyesi
+            herhangi bir faiz kazanmayacaktır.
+            <br /><br />
+            2.3. Hediye kartları, aktivasyon tarihinden itibaren 12 ay boyunca
+            geçerlidir. Bu süre içinde kart tutarının kısmen ya da tamamen
+            kullanılmaması durumunda, kart bakiyesi kullanılamaz hale gelecek,
+            kart içerisindeki meblağın iadesi, geri ödemesi ya da takası söz
+            konusu olmayacaktır.
+            <br /><br />
+            2.4. Kartın kullanılmaması kaydı ile, digital satın alımlarda kartın
+            satın alındığı tarihten itibaren 14 (ondört) günlük itiraz süresi
+            içerisinde, fiziki satın alımlarda ise 7 günlük süre içerisinde
+            Sözleşme hükümlerine itiraz ederek ve/veya herhangi bir gerekçe
+            göstermeksizin kart iade edilebilir. Bu kapsamda Biletix; "Kart
+            alıcısının hiçbir hukuki ve cezai sorumluluk üstlenmeksizin ve
+            hiçbir gerekçe göstermeksizin, kartı teslim aldığı tarihten itibaren
+            yedi ve/veya on dört günlük süreler içerisinde kartı iade ederek
+            sözleşmeden cayma hakkının var olduğunu ve cayma bildiriminin
+            Sözleşmenin ilgili hükümleri kapsamında Biletix'e ulaşması
+            tarihinden itibaren kartı iade almayı" taahhüt eder. Buna karşın, bu
+            sürenin hitamından sonra, kartın hatalı/ayıplı/bozuk olması durumu
+            dışında ve mevzuat hükümlerinde öngörülen diğer nedenler haricinde,
+            hediye kartının iade edilmesi ya da iptal edilmesi veya karttaki
+            bakiyenin talep edilmesi mümkün olamayacaktır. İşbu Sözleşmedeki
+            hükümler çerçevesinde yapılabilecek kart iadelerinde ve iptallerinde
+            ise, kartta bulunan tutarın iadesi, kartın alımı esnasında tanzim
+            edilen makbuzun ibrazına bağlı olarak, ancak kartın satın alıcısına
+            yapılacaktır.
+            <br /><br />
+            2.5. Hediye kartları, nakit itfa değerine sahip değildir ve nakit
+            karşılığında değiştirilemez yahut satın alırken karta yüklenmiş
+            değerin herhangi bir kısmı üzerinden, herhangi bir nakit avans
+            verilemez. Hediye kartları, nakde çevrilemez ve/veya nakde
+            çevrilmesi talep edilemez.
+            <br /><br />
+            2.6. Farklı bir hediye kartı sınıfı ya da tipi için hediye kartının
+            değiştirilmesi ya da yeni bir hediye kartı üzerinde iki ya da daha
+            fazla kartın kullanılmamış değerinin birleştirilmesi söz konusu
+            olamaz.
+            <br /><br />
+            2.7. Hediye kartın satınalınması aşamasında yüklenilen parasal değer
+            kullanıldığında, karta yeniden yükleme yapılamayacaktır. Başka bir
+            anlatımla, karta ancak tek seferde ve bir kerede yükleme
+            yapılabilir. Buna karşın, kart içerisindeki bakiyenin, bakiye tutarı
+            oranında kullanılması ve/veya parçalı ödeme yöntemi ile (Parçalı
+            Ödeme: Bir ürünü satın alırken toplam tutarın bölünerek birden fazla
+            ödeme aracı ile ödenmesi) kullanılması mümkündür.
+            <br /><br />
+            2.8. Kartın üretim süreci sonucu olarak hatalı ya da hasarlı olması
+            ve/veya Biletix veya katılımcı perakendeciler ile çalışanlarından
+            kaynaklanan nedenlerle hasar görmesi istisnaları dışında, hediye
+            kartları yeniden basılmayacak ve üretilmeyecektir.
+            <br /><br />
+            2.9. Dijital satın alımlarda, hediye kartı satın alan kişiler; kartı
+            hediye etmek istedikleri/kart hamili olmasını istedikleri
+            kullanıcının (hamilin) elektronik posta adresini ilgili alana
+            girerek ve/veya bir mesaj ekleyerek kartı doğrudan üçüncü kişiye de
+            gönderebileceklerdir. Bu durumda, kart hamili olacak üçüncü kişinin
+            elektronik posta adresinin paylaşılmasına dair sorumluluk, hediye
+            kartı satın alan kişiye ait olmaktadır. Ek olarak, bu durumda,
+            hediye kartın; kart sahibinin bildirdiği hamile iletilmesinden ve
+            hamil tarafından kullanılmasından dolayı Biletix hiçbir şekilde
+            sorumlu olmayacaktır.
+            <br /><br />
+            <b>3. Kart Satın Alma ve Aktivasyonu</b>
+            <br /><br />
+            3.1. Hediye kartları dijital ya da basılmış fiziki kart olarak satın
+            alınabilir. Dijital hediye kartları sadece biletix.com internet
+            sitesinden, basılmış fiziki kartlar ise sadece , Biletix'in
+            anlaşmalı perakende satış noktalarından veya herhangi bir katılımcı
+            perakendeci işyeri noktasından satın alınabilir.
+            <br /><br />
+            3.2. Hediye kartları, perakende satın alım işlemi sırasında
+            aktivasyon yapılarak kullanıma hazır hale gelecektir.
+            <br /><br />
+            <b>4. Hediye Kartı İle Neler Satın Alınabilir?</b>
+            <br /><br />
+            4.1. Hediye kartları, yanlızca Türkiye'de Biletix/ Ticketmaster ile
+            ilgili etkinliklere katılım için bilet satın almak amacıyla ve/veya
+            Biletix ürün ve hizmetlerine ("Biletix/Ticketmaster Ürünleri") sahip
+            olmak gayesiyle kullanılabilir.
+            <br /><br />
+            4.2. Hediye kartları, Biletix/Ticketmaster Ürünleri dışında herhangi
+            bir mal ya da hizmet satın almak için kullanılamaz.
+            <br /><br />
+            4.3. Hediye kartları Türkiye dışında gerçekleşen etkinliklere bilet
+            satın almak için kullanılamaz.
+            <br /><br />
+            4.4. Hediye kartı ile yapılan alımlarda herhangi bir para üstü
+            verilmeyecektir ancak satın alma anında karta yüklenen değerin tüm
+            harcanmamış kısmı ("kart bakiyesi") Sözleşmedeki hüküm ve koşullara
+            uygun olarak kullanılmaya hazır kalacaktır.
+            <br /><br />
+            <b>5. Hediye Kartları Nerede Kullanılabilir?</b>
+            <br /><br />
+            5.1. Hediye kartları, ister dijital ister basılmış fiziki kart
+            şeklinde olsun , www.biletix.com uzantılı Biletix internet sitesi
+            ve/veya Biletix Perakende Satış Noktaları'nda kullanılabilir.
+            <br /><br />
+            5.2. Hediye kartları www.biletix.com adresine yönlenen ya da bu
+            linke referans yapılan internet siteleri bile olsa, www.biletix.com
+            uzantılı internet adresi dışında başka sitelerde kullanılamaz.
+            <br /><br />
+            5.3. Hediye kartları etkinlik mekanında bulunan organizatör ana
+            satış gişelerinden bilet satın almak için kullanılamaz.
+            <br /><br />
+            5.4. Hediye kartları, satın alma anında kart üzerinde yüklü olan
+            değere kadar satın alım yapmak için kullanılabilir. Buna karşın,
+            Biletix ürünleri için yapılacak bir ödeme, kısmen hediye kartı,
+            kısmen de diğer kabul edilen ödeme yöntemleri (örneğin, kredi kartı)
+            kullanılmak suretiyle yapılabilir. Başka bir anlatımla, hediye
+            kartlarının tek başına kullanılması mümkün olacağı gibi, kartın
+            karşılığını oluşturan değer üzerine, nakit ya da kredi kartı
+            vasıtasıyla ekleme yapılması suretiyle kartların kullanılabilmesi de
+            mümkündür. Buna karşın, satınalma/kullanım tutarının ya da seçilen
+            etkinliğin bilet bedelinin; hediye kartının bedelinden az olması
+            halinde, kalan tutar kart içerisinde kalacak, Biletix'ten ya da
+            diğer ilgililerden para iadesi yapılması ve bu kapsamda herhangi bir
+            hak ve alacak talep edilmesi mümkün olmayacaktır. Hediye kartlarının
+            online işlemler için kullanılması durumunda işlemin tamamlanması
+            için kartın arkasında yazılı 3 haneli güvenlik sayısına gerek
+            bulunduğundan güvenlik sayısının bilinmesi gerekmektedir. Hediye
+            kartlarının kullanımı vasıtasıyla Biletix ürünlerinin satın alınması
+            durumunda kartınızın değerinin, Biletix ürün değerleri oranında
+            azalabileceğini kabul edersiniz. Kart kullanıcısı, Biletix
+            ürünlerini satın alma yöntemine bağlı olarak (online, yüz yüze vb.)
+            gerekmesi durumunda
+            <br />
+            (a) Sahibi olduğu hediye kartının bilgilerini vermek ve
+            <br /><br />
+            (b) Hediye kartında bulunan 3 haneli güvenlik numarasını sisteme
+            girmek/satış noktalarında ise görevli kişilerle paylaşmak durumunda
+            olduğunu bilmekte ve bunu kabul etmektedir.
+            <br /><br />
+            5.4 Kart kullanıcısı, Biletix ürünlerini satın almaya mütedair bir
+            işleme yetki verdiğinde,
+            <br /><br />
+            (a) Satın aldığı Biletix ürün/ürünlerinin satın alma fiyatını
+            ödemeyi kabul ettiği gibi
+            <br /><br />
+            (b) Satın alım tarihinde hediye kartında yüklenmiş olan değerin
+            azalması suretiyle satın alma fiyatını ödemeyi de kabul etmektedir.
+            <br /><br />
+            5.5. Kart kullanıcısı, hediye kartını; etkinlik şartlarında ya da
+            Biletix ürünlerinin satın alınması şartlarında belirtilen hüküm ve
+            koşullara uygun olarak kullanacağını, aksi durumda bundan dolayı tüm
+            sorumluluğun kendisine ait olacağını kabul ve taahhüt etmektedir. Bu
+            meyanda, örneğin 18 yaşın altındaki kişilerin belirli etkinliklere
+            katılmasına ya da bazı Biletix Ürünlerini satın almasına izin
+            verilmemiş ise ve 18 yaşının altındaki kart kullanıcısı yaş sınırına
+            uymaksızın bu ürünleri satın almışsa , "satın alma" işlemini
+            gerçekleştirmiş olması, ürünleri alabileceği ya da etkinliklere
+            katılabileceği anlamına gelmeyecek, bundan dolayı tüm sorumluluk ve
+            risk kart kullanıcısına ait olacaktır.
+            <br /><br />
+            <b>6. Tüketici Hakları</b>
+            <br /><br />
+            6.1. Kart kullanıcıları, hediye kartlarını kullanmamak ve kartları
+            ile herhangi bir işlem yapmamak kaydı ile ve de kartın alımı
+            esnasında tanzim edilen makbuz ibrazına bağlı olarak, hediye
+            kartlarını satın aldıkları tarihten itibaren , digital satın
+            alımlarda kartın satın alındığı tarihten itibaren 14 (ondört) günlük
+            süre içerisinde, fiziki satın alımlarda ise 7 günlük süre içinde
+            kart satın alımlarını iptal etme ve karta ödedikleri tutarı tam
+            olarak geri alabilme haklarına sahiptir. Bu durumda, kartın iade
+            alınmasına ilişkin tüm teslimat giderleri kart kullanıcısına ait
+            olacaktır.
+            <br /><br />
+            6.2. Hediye kartlarının bu madde şartları kapsamında iptal
+            edilebilmesi için, 0850 755 55 55 numaralı telefonun aranması
+            gerekmekte olup, bu esnada kartın satın alımı sırasında düzenlenen
+            makbuz bilgilerinin de paylaşılması zorunludur.
+            <br /><br />
+            <b>7. Kartın Kullanım Süresi</b>
+            <br /><br />
+            7.1. Hediye kartları, kartın aktivasyon tarihinden itibaren 12 aylık
+            bir süre için geçerlidir ve bu süre içerisinde, 4. madde hükümleri
+            çerçevesinde Biletix/Ticketmaster ürünlerinin satın alınması için
+            kullanılabilir. Kartın aktivasyon tarihinden itibaren 12 ay
+            geçtikten sonra, satın alımda yüklenen değerin tümü ya da bir kısmı
+            kart üzerinde bakiye kalmış bile olsa, kartın yeniden kullanılması
+            ya da kart içerisinde kalan bakiye tutarın iade alınması mümkün
+            olmayacaktır.
+            <br /><br />
+            7.2. Kartın aktivasyon tarihinden 12 ay geçtikten sonra, kartın
+            içerisinde kalan varsa tüm kullanılmamış değerler kaybedilecek ve
+            geçerliliğini yitirecektir. Bu meyanda kart sahibi, bundan dolayı
+            Biletix'e ya da diğer ilgililere karşı herhangi bir talepte, hak ya
+            da alacak iddiasında ya da sair başkaca bir itirazda, talepte
+            bulunmayacağını kabul, beyan ve taahhüt etmektedir.
+            <br /><br />
+            <b>8. Kart Bakiyesinin Kontrolü</b>
+            <br /><br />
+            8.1. 0850 755 55 55 numaralı telefonu aramak suretiyle ya da
+            biletix.com/hediyekart uzantılı linke girerek, hediye kartında
+            bulunan kullanılmamış para tutarının kontrol edilebilmesi mümkündür.
+            <br /><br />
+            <b>9. Kart Güvenliği</b>
+            <br /><br />
+            9.1. Hediye kartları hamiline yazılı olarak düzenlenmektedir ve kart
+            üzerinde herhangi bir isim bulunmamaktadır. Dolayısı ile hediye
+            kartlarınızı lütfen kaybetmeyiniz ve iyi bir şekilde muhafaza
+            ediniz. Aksi durumda, kayıp ya da çalıntı hediye kartlarının
+            kullanılmasından, kartın içerisindeki bakiyenin
+            sarfından/tüketilmesinden ve/veya paranın kaybolmasından dolayı
+            Biletix ve diğer ilgililer hiç bir şekilde sorumlu değildir. Hediye
+            kartları nakit para hükmünde olup, hediye kartlarının kaybedilmesi
+            durumunda kartın değiştirilmesi söz konusu olmayacak, bir cüzdanın
+            kaybedilmesi gibi kartın içerisinde kalan tüm kullanılmamış tutarın
+            kaybı gerçekleşecektir.
+            <br /><br />
+            9.2. Hediye kart numarası ve üç haneli güvenlik numarası daima gizli
+            tutulmalı ve yetkili kişiler dışında herhangi bir kişiye
+            açıklanmamalıdır.
+            <br /><br />
+            <b>10. Kartın Biletix Tarafından İptal Edilmesi</b>
+            <br /><br />
+            10.1. Biletix; bir hediye kartının sahtekarlıkla kullanılmakta
+            olduğundan, izinsiz ya da yasa dışı kullanıldığından şüphelendiği
+            takdirde ya da sair haklı nedenler kapsamında kart kullanıcısı ile
+            olan işbu Sözleşmeyi, tek taraflı gerekçesiz şekilde feshetme, kartı
+            iptal etme ve kart ile yapılan/yapılmak istenen işlemleri
+            reddetme/kabul etmeme haklarına sahiptir. Bu durumda, kart
+            içerisinde kalan bakiye tutarın kart kullanıcısına iade edilmesi söz
+            konusu olmayacaktır. Kart sahibi, bu madde kapsamındaki iptal ve
+            fesih dolayısıyla, Biletix'e ya da diğer ilgililere karşı herhangi
+            bir talepte, hak ya da alacak iddiasında ya da sair başkaca bir
+            itirazda bulunmayacağını kabul, beyan ve taahhüt etmektedir.
+            <br /><br />
+            10.2. Kart ile yapılan/yapılmak istenen bir işlemin herhangi bir
+            nedenle araştırılmasının gerekmesi durumunda, hediye kart sahipleri,
+            Biletix'le ya da diğer yetkili adli/idari mercilerle işbirliği
+            yapmayı önceden kabul etmişlerdir.
+            <br /><br />
+            10.3. 10.1. maddede belirtilen nedenlerin dışında Biletix, kart
+            kullanıcılarına, en geç 30 gün önceden yazılı olarak bildirimde
+            bulunmak kaydı ile herhangi bir zamanda, hiçbir gerekçe göstermek
+            zorunluluğunda olmaksızın, işbu Sözleşmeyi tek yanlı tazminatsız
+            feshetme ve hediye kartlarını iptal edebilme hakkına sahiptir. Bu
+            kapsamda yapılacak bir fesih, tüm kart kullanıcılarını kapsayan
+            toplu bir fesih hükmünde olup, bu durumda, kart içerisinde bulunan
+            tüm kullanılmamış paralar, kart sahiplerine iade edilecek ve hediye
+            kartları Biletix'in mülkiyetinde kalacaktır. Kart bakiyesinin iade
+            edilmeyeceği durumlara yönelik Sözleşmenin ilgili hükümleri ayrı ve
+            saklıdır.
+            <br /><br />
+            <b>11. Kişisel Veriler</b>
+            <br /><br />
+            Hediye kartla bağlantılı olarak verilen tüm kişisel veriler,
+            https://www.biletix.com/ourpolicies/TURKIYE/tr adresinde bulunan
+            "Biletix Satış Politikası", "Biletix Gizlilik Beyanı" ve "Biletix
+            Kullanım Koşulları" doğrultusunda ele alınacak ve bu hükümler
+            çerçevesinde işlem görecektir.
+            <br /><br />
+            <b>12. Sorumluluğun Sınırlandırılması</b>
+            <br /><br />
+            12.1. Biletix ya da çalışanlarının sorumluluğunu gerektirecek
+            nedenler hariç olmak üzere hediye kart sahipleri, hediye kartlarının
+            kullanımından, muhafazasından ve kartın kullanıldığı tüm işlemlerden
+            doğrudan kendileri sorumludurlar. Kart sahipleri, kartlarını
+            kaybettiklerinde, kartları çalındığında, ya da kartlarının
+            izinlerinin olmadığı bir işlem için kullanıldığından
+            şüphelendiklerinde, bu durumu, derhal 0850 755 55 55 no'lu Biletix
+            Çağrı Merkezi numarasına bildirmelidir.
+            <br /><br />
+            12.2. Biletix, kendisinin ya da çalışanlarının sorumluluğunu
+            gerektirecek nedenler hariç olmak üzere kayıp, çalınmış, imha
+            edilmiş ya da izinsiz kullanılmış kartlar için herhangi bir
+            sorumluluk kabul etmemektedir.
+            <br /><br />
+            12.3. Biletix, hediye kartlarına para yüklenmesi ya da kartların
+            kullanılması kapsamındaki herhangi bir iş kaybından, kullanım
+            kaybından, kar kaybından, sözleşme kaybından, gelir kaybından, ya da
+            tahmini tasarrufların kaybından; veri kaybı ya da veri
+            kullanımından; ya da özel ya da dolaylı zarar ya da hasarlardan
+            sorumlu olmayacaktır.
+            <br /><br />
+            12.4. Biletix, makul şekilde kontrol edilemeyen ya da önlenemeyen
+            herhangi bir olaydan kaynaklanan zarar ya da hasarlardan sorumlu
+            olmayacak ya da bu hüküm ve koşullar kapsamında karta ilişkin
+            yükümlülüklerinin herhangi birini gerçekleştirmemekten dolayı
+            sorumlu tutulamayacaktır. Bu olaylar, doğal afetler, toplu
+            salgınlar/hastalıklar, pandemi süreçleri, devletlerin ya da
+            kurumlarının hareket ya da ihmalleri, grevler ya da diğer
+            sanayi-teknoloji olayları, yangın, su basması, fırtına, ayaklanma,
+            elektrik kesilmesi ya da arızalar ya da savaş ya da üçüncü
+            tarafların diğer eylem ve ihmalleri ve benzeri içerikteki mücbir
+            sebep mahiyetindeki tüm olayları/olguları içerir.
+            <br /><br />
+            12.5. Biletix, işbu Sözleşmedeki özel hükümler saklı kalmak kaydı
+            ile, kart içerisinde kalan bakiyenin kart alıcısına iade edilmesi
+            yükümü dışında, işbu Sözleşme çerçevesinde hiçbir sorumluluk
+            taşımamaktadır. Dolayısı ile işbu Sözleşmenin hüküm ve şartlarına
+            tabi olarak, Biletix ya da kart kullanıcısı tarafından Sözleşmenin
+            feshedilmesi ve/veya kartın iptal edilmesi durumunda, yanlızca kart
+            içerisinde bulunan bakiye tutar, kart alıcısına iade edilecek ve
+            Biletix'in bundan başka herhangibir sorumluluğu olmayacaktır. Kart
+            bakiyesinin iade edilmeyeceği durumlara yönelik Sözleşmenin ilgili
+            hükümleri ayrı ve saklıdır.
+            <br /><br />
+            <b>13. Değişiklikler</b>
+            <br /><br />
+            Biletix, işbu Sözleşmenin hüküm ve şartlarını herhangi bir zamanda
+            aşağıdaki nedenlerin bir ya da daha fazlasının gerçekleşmesi
+            durumunda, işbu Biletix Hediye Kart Kullanım Sözleşmesi'nin tadil
+            edilmiş halini https://www.biletix.com/hediyekart uzantılı linkte
+            ilan etmek suretiyle tek yanlı şekilde değiştirebilir:
+            <br /><br />
+            (a) yeni sistemlerin, faaliyet metotlarının, hizmet ya da
+            kolaylıkların başlatılması ya da geliştirilmesi (bunlarla sınırlı
+            olmamak üzere sisteme, Kart ile satın alınabilecek mal ya da
+            hizmetlerin eklenmesi ya da çıkarılması),
+            <br /><br />
+            (b) piyasa şartları, genel iyi uygulamalar ya da müşterilere
+            hizmetleri sağlama maliyetinde değişiklik ya da beklenen değişikliği
+            yansıtmak,
+            <br /><br />
+            (c) Biletix tarafından gerekli görülebilecek herhangi bir durum,
+            <br /><br />
+            (d) Değişen mevzuat düzenlemelerine uyum sağlamak.
+            <br /><br />
+            <b>14. Genel Hükümler</b>
+
+            <br /><br />
+            14.1. Biletix tarafından bu Sözleşme kapsamındaki herhangi bir hak
+            ya da yetkinin uygulanmasında gecikilmesi ya da hiç uygulamaması o
+            hak ya da yetkiden feragat edildiği anlamında yorumlanmayacak ya da
+            bu hak ya da yetkinin herhangi sonraki bir zamanda uygulanmasını
+            engellemeyecektir.
+            <br /><br />
+            14.2. İşbu Sözleşmenin herhangi bir hükmünün uygulanamaz ya da
+            geçersiz olması durumunda kalan hükümler tam geçerli olmaya ve
+            yürürlükte kalmaya devam edecektir.
+            <br /><br />
+            14.3. Biletix, Sözleşmeden doğan haklarını ve alacaklarını herhangi
+            bir zamanda önceden yazılı bildirimde bulunmaksızın devretme hakkına
+            sahiptir. Yine, Biletix, işbu Sözleşme kapsamındaki herhangi bir
+            yükümlülüğünü alt yüklenicilere ya da sair üçüncü kişilere devretme
+            yetkisine de sahiptir.
+            <br /><br />
+            14.4. Bu Sözleşmenin tarafı olmayan bir üçüncü taraf, işbu
+            Sözleşmenin herhangi bir hakkını uygulama / kullanma hakkına sahip
+            değildir. Şu kadar ki, kartı satın almamış olan hediye kart
+            hamillerinin/kullanıcılarının sözleşme hükümlerine ve Biletix
+            politikalarına tabii olması durumu ayrı ve saklıdır.
+            <br /><br />
+            14.5. İşbu Sözleşme ve Sözleşmeden kaynaklanan herhangi bir ihtilaf
+            (sözleşmesel olmayan ihtilaflar ya da talepler dahil) Türkiye
+            Cumhuriyeti yasalarına tabi olacak ve bu yasalar çerçevesinde
+            yorumlanacaktır. Bu Sözleşmeden kaynaklanan ya da bununla bağlantılı
+            herhangi bir talep ya da konuya ilişkin olarak İstanbul (Çağlayan)
+            Mahkemeleri ve İcra Müdürlükleri yetkili kabul edilmiştir.
+            <br /><br />
+            <b>15. Yardım Ve Müşteri Hizmetleri</b>
+            <br /><br />
+            Hediye kartının satın alınması, kullanılması ya da iptal edilmesi
+            konularında veya hediye kartına ilişkin başkaca konularda herhangi
+            bir bilgiye gereklilik duyulması durumunda, www.biletix.com uzantılı
+            internet sitesinden veya 0850 755 55 55 numaralı Biletix Çağrı
+            Merkezi'nden gerekli bilgilere ulaşılabilmesi mümkündür.
+          </span>
+        </p>
+
+        <a href="" class="d-block text-decoration-none fw-normal fs-5"
+          >Kullanım Koşullarını İndir</a
+        >
+
+        <button
+          id="btn"
+          type="button"
+          class="btn btn-dark rounded-pill fs-5 pt-3 pb-3 fw-bold px-5 pe-5 mb-5 mt-4"
+          onclick="MoreLess()"
+        >
+          Devamını Oku
+        </button>
+      </div>
+    </section>
+    <!-- ! KULLANIM KOŞULLARI ALANI BİTİŞ  -->
+  </div>
+</div>
+
+{% include 'includes/_footer-main.html' %}
+{% endblock content %}

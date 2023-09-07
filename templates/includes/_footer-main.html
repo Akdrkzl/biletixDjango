@@ -1,0 +1,213 @@
+{% load static %}
+<!-- !footer-start -->
+<footer class="w-100 footer-main">
+        <div class="container w-75 m-auto">
+          <div class="row">
+            <div class="col-xl-8">
+              <div class="row mt-3">
+                <div
+                  class="col-xl-6 col-lg-6 col-md-6 col-sm-6 footer-main-acordion-item"
+                >
+                  <!-- !yardım edelim -->
+                  <h3 class="footer-main-acordion-header">
+                    YARDIM EDELİM<span class="footer-main-toggle-btn"></span>
+                  </h3>
+                  <hr class="footer-main-line-1 w-80" />
+                  <ul class="footer-main-acordion-content m-0 p-0">
+                    <li class="mb-3 mt-3">
+                      <a href="{% url 'yardim' %}">Yardım/SSS</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'satis-kanallari' %}">Satış Kanalları </a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'hediye-kart' %}"
+                        >Hediye Kart</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'etkinlik-katılım' %}"
+                        >Etkinlik Katılım Sigortası</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'account' %}">Hesabım</a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="col-xl-6 col-lg-6 col-md-6 col-sm-6 footer-main-acordion-item"
+                >
+                  <!-- !hakkımızda-->
+                  <h3 class="footer-main-acordion-header">
+                    HAKKIMIZDA<span class="footer-main-toggle-btn"></span>
+                  </h3>
+                  <hr class="footer-main-line-1 w-80" />
+                  <ul class="footer-main-acordion-content m-0 p-0">
+                    <li class="mb-3 mt-3">
+                      <a href="{% url 'biz-kimiz' %}"
+                        >Biz Kimiz</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'kurum-politikası' %}">Kurum Politikamız </a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'görsel-materyal' %}">Görsel Materyaller</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'bize-ulas' %}">Bize Ulaşın</a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="https://www.livenation.it/ "
+                        >Live Nation Entertainment</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="col-xl-6 col-lg-6 col-md-6 col-sm-6 footer-main-acordion-item"
+                >
+                  <!-- !bizimle çalışın-->
+                  <h3 class="footer-main-acordion-header">
+                    BİZİMLE ÇALIŞIN<span class="footer-main-toggle-btn"></span>
+                  </h3>
+                  <hr class="footer-main-line-1 w-80" />
+                  <ul class="footer-main-acordion-content m-0 p-0">
+                    <li class="mb-3 mt-3">
+                      <a href="{% url 'biz-kimiz' %}"
+                        >Etkinlik Biletleriniz</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'reklam-ver' %}">Reklam Verin </a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'kariyer' %}">Kariyer</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- !UYGULAMALARIMIZ-->
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 acordion-item">
+                  <h3 class="footer-main-acordion-header">
+                    UYGULAMALARIMIZ <span class="footer-main-toggle-btn"></span>
+                  </h3>
+                  <hr class="footer-main-line-1 w-80" />
+                  <ul class="d-flex footer-main-acordion-content m-0 p-0">
+                    <li class="mb-3">
+                      <a
+                        href="https://apps.apple.com/tr/app/biletix/id1181457295?ls=1 "
+                        ><img src="{% static './img/SVG/appleinc.svg' %}" alt=""
+                      /></a>
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        class="ps-3"
+                        href="https://play.google.com/store/apps/details?id=com.biletix.ticketmaster "
+                        ><img src="{% static './img/SVG/android.svg' %}" alt="" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 footer-main-acordion-item">
+                  <!-- !POLİTİKALAR & BİLDİRİMLER-->
+                  <h3 class="footer-main-acordion-header mb-2">
+                    POLİTİKALAR & BİLDİRİMLER<span
+                      class="footer-main-toggle-btn"
+                    ></span>
+                  </h3>
+                  <hr class="footer-main-line-1 w-80" />
+                  <ul class="footer-main-acordion-content m-0 p-0">
+                    <li class="mb-3 mt-3">
+                      <a href="{% url 'sözlesme-politika' %}"
+                        >Sözleşme ve Politikalar</a
+                      >
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="https://privacy.ticketmaster.com.tr/tr/cookie-policy "
+                        >Çerez Politikası
+                      </a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="# ">Tercihleri Yönet </a>
+                    </li>
+                    <li class="mb-3">
+                      <a href="{% url 'ttk-bildirim' %}"
+                        >TTK Bildirimleri
+                      </a>
+                    </li>
+                    <li class="mb-3">
+                      <a
+                        href="https://privacy.ticketmaster.com.tr/tr/privacy-policy "
+                        >Gizlilik Politikası
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- !bizi takip edin -->
+            <div
+              class="col-xl-4 col-lg-6 col-md-8 col-sm-12 mt-3 footer-main-icon"
+            >
+              <h3 class="footer-main-acordion-header">BİZİ TAKİP EDİN</h3>
+              <hr class="footer-main-line-2 w-100" />
+              <ul class="d-flex mt-3 m-0 p-0">
+                <li>
+                  <a href="https://www.instagram.com/biletix/" target="_blank">
+                    <img src="{% static './img/SVG/instagram.svg' %}" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a class="ps-3" href="https://www.facebook.com/Biletix" target="_blank"
+                    ><img src="{% static './img/SVG/facebook.svg' %}" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a class="ps-3" href="https://twitter.com/biletix" target="_blank"
+                    ><img src="{% static './img/SVG/twitter.svg' %}" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a class="ps-3" href="https://blog.biletix.com/" target="_blank"
+                    ><img src="{% static './img/SVG/blogger.svg' %}" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a class="ps-3" href="https://www.youtube.com/channel/UCI6ownTOlxgaN0Um74-sC6Q" target="_blank"
+                    ><img src="{% static './img/SVG/youtube.svg' %}" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a class="ps-3" href="https://www.linkedin.com/company/biletix/" target="_blank"
+                    ><img src="{% static './img/SVG/linkedin2.svg' %}" alt=""
+                  /></a>
+                </li>
+                <li>
+                  <a class="ps-3" href="https://open.spotify.com/user/qcjtfkcpiw94n579mfq1h2pq2" target="_blank"
+                    ><img src="{% static './img/SVG/spotify.svg' %}" alt=""
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mt-5">
+              <p class="text-center footer-main-p mb-3">
+                © 2018 Biletix Bilet Dağıtım Basım ve Tic. A.Ş. Tüm hakları
+                saklıdır.
+              </p>
+              <p class="text-center footer-main-p mb-3">
+                Bu web sitesinin kullanımı, ticari kullanımı engelleyen Kullanım
+                Koşulları'na tabidir. Bu sayfayı geçtiğinizde bu koşulları kabul
+                etmiş sayılırsınız.
+              </p>
+            </div>
+          </div>
+        </div>
+</footer>
+<!-- !footer-end -->

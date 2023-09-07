@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+{% include "includes/_navbar-iki.html" %}
+<form action="">
+
+<div class="sidenav-content mt-3 container">
+        <div class="side-nav-header">
+            <div class="row">
+                <!-- left-side -->
+                {% include "includes/_hesabim-left-side.html" %}
+                <div class="col-lg-9 col-sm-12 right-side hessap">
+                <!-- nav -->
+                {% include "includes/_hesabim-nav.html" %}
+                
+
+
+
+                    <!--! BİLDİRİM TERCİHLERİ BAŞLANGIÇ -->
+                    <div id="bildirimTercihlerii" class=" bildirimTercihleri">
+                        <h2 class="bildirimAdı">Biletix e-posta ve SMS gönderimleri aracılığıyla güncel etkinliklerden
+                            ve kampanyalardan haberdar olmak istiyorum.</h2>
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            E-posta almak istiyorum.
+                        </label>
+
+                    </div>
+                    <!--! BİLDİRİM TERCİHLERİ SON -->
+                    
+
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+{% include "includes/_footer-iki.html" %}
+{% endblock content %}

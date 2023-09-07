@@ -1,0 +1,327 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<!--! CAROUSEL START -->
+<!-- container -->
+<div class="container-fluid container-md  pt-0 bg-light">
+  <div class="row">
+    <div class="col-md-9 col-12 pe-md-5 px-lg-3">
+      <div class="row">
+        <!-- carousel -->
+        <div id="carouselExampleCaptions" class="carousel slide px-0">
+          <button
+            class="bilet-button d-none d-md-block m-auto text-center border-0 text-white"
+          >
+            BİLETLER
+          </button>
+          <div class="carousel-indicators d-none d-md-block w-100 ps-2 py-3">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <!-- carousel items -->
+            {% for i in etkinlik %}
+            {% if forloop.counter <= 3 %}
+
+            <div class="carousel-item">
+              <a href="">
+              <img
+                src="{{i.etkinlik_carousel_resim.url}}"
+                class="d-block w-100"
+                alt="..."
+              />
+
+              <div class="row">
+                <div
+                  class="caption mb-0 mb-md-3 pb-md-5 mt-3 text-center text-md-start px-md-4"
+                >
+                  <h3>{{i.isim}}</h3>
+                  <p>
+                    DenizBank Açıkhava Etkinlikleri ile Açikhava’da Eğlence
+                    Başliyor!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+            {% endif %}
+            {% endfor %}
+          <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                // İlk elemana "active" sınıfını ekle
+                document.querySelector(".carousel-item").classList.add("active");
+            });
+        </script> 
+
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon c-control-icons"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon c-control-icons"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <!-- ÖNE ÇIKANLAR -->
+      <div class="row mt-lg-3">
+        <div class="header-wrapper p-0 px-md-2 px-lg-0 mb-lg-2">
+          <span>ÖNE ÇIKANLAR</span>
+        </div>
+        <!-- CARDS SM< START -->
+        <div
+          class="cards d-none d-sm-flex row-cols-lg-4 row-cols-md-3 row-cols-4 d-flex flex-wrap p-0 px-md-2 px-lg-0"
+        >
+          {% for i in etkinlik %} 
+          {% if forloop.counter <= 4 %}
+
+        
+          <a href="{% url 'etkinlik-detay' i.slug %}">
+            <div class="card rounded-0">
+              <img
+                src="{{i.etkinlik_resim_profil.url}}"
+                class="card-img-top rounded-0"
+                alt="..."
+              />
+              <div class="card-body p-0 pb-2 card-etkinlik">
+                <h6 style="font-size: 11px !important;">{{i.isim}}</h6>
+                <p></p>
+              </div>
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+
+        <!-- CARDS SM< END -->
+        </div>
+        <!-- CARDS ON SM START  -->
+        <div class="d-sm-none onecikanlar-sm px-0 col-xs-12 w-100">
+          <ul class="onecikanlar-container d-flex">
+          
+            {% for i in etkinlik %}
+            {% if forloop.counter <= 4 %} 
+            <li>
+              <a href="{% url 'etkinlik-detay' i.slug %}">
+                <div class="card rounded-0">
+                  <img
+                    src="{{i.etkinlik_resim_profil.url}}"
+                    class="card-img-top rounded-0"
+                    alt="..."
+                  />
+                  <div class="card-body p-0 pb-2 card-etkinlik">
+                    <h6 style="font-size: 11px !important;">{{i.isim}}</h6>
+                    <p></p>
+                  </div>
+                </div>
+              </a>
+            </li>
+           {% endif %} 
+          {% endfor %}
+
+          </ul>
+        </div>
+        <!-- CARDS ON SM END  -->
+      </div>
+    </div>
+    <!-- Reklamlar -->
+    <div class="col-3 d-none d-md-flex flex-column">
+      <div class="ad">
+        <img
+          class="w-100"
+          src="{% static './img/reklam/740904336014607114.jpeg' %}"
+          height="100"
+          alt=""
+        />
+      </div>
+      <div class="ad">
+        <img
+          class="w-100 mt-1"
+          src="{% static './img/reklam/1907835760475153369.jpeg' %}"
+          height="100"
+          alt=""
+        />
+      </div>
+      <div class="ad">
+        <img
+          class="w-100 mt-1"
+          src="{% static 'img/reklam/300x110_all.jpg' %}"
+          height="100"
+          alt=""
+        />
+      </div>
+      <div class="ad">
+        <img
+          class="w-100 mt-1"
+          src="{% static './img/reklam/897542117002895257.png' %}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<!--! CAROUSEL END -->
+
+<!-- ! KATEGROİLER VE ETKİNLİK TARİHLERİ BAŞLANGIÇ -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- left-side -->
+    <div class="col-lg-4">
+      <h1 class="kategori">KATEGORİLER</h1>
+      <div class="mb-3">
+        <span class="text-primary fw-bold"> {{etkinlik.counter}} </span>
+        <span class="fw-300">          
+          {% for i in etkinlik %} 
+          {% if forloop.last %} 
+          {{ forloop.counter }} 
+          {% endif %} 
+          {% endfor %} 
+          ETKİNLİK </span>
+      </div>
+      <div class="kategori-link col-lg-12">
+        {% load mptt_tags %} 
+        {% recursetree kategori %} 
+        {% for i in etkinlik %} 
+        {% if forloop.first %}
+        {% if not node.is_leaf_node and node.slug == i.kategori.parent.slug %}
+        {% for child in node.get_children %}
+        <a
+          class="w-100 h-20 d-block mb-2 p-1 fs-5 fw-bold"
+          href="{% url 'etkinlik-liste' child.slug %}"
+        >
+          {{ child.isim }}
+        </a>
+        {% endfor %} 
+        {% endif %} 
+        {% endif %} 
+        {% endfor %} 
+        {% endrecursetree %}
+      </div>
+    </div>
+    <!-- rigt-side -->
+    <div class="hotticket col-lg-6 mx-lg-5">
+      <ul class="m-0 p-0">
+        <li class="d-inline p-3">
+          <a class="fs-5 text-secondary fw-bold text-decoration-none" href="#"
+            >HOT TICKETS</a
+          >
+        </li>
+      </ul>
+      <div class="etkinlik d-flex justify-content-between w-100">
+        <div class="text-center col-md-3">
+          <i class="fa-regular fa-calendar fs-2 p-1"></i>
+          <p class="icon-tarih">TÜM TARİHLER></p>
+        </div>
+        <div class="etkinlik-ismi col-md-8 px-4 text-start">
+          <span class="performans-ismi">
+            <a class="etknlik-text" href="#">Mahşeri Gümbüş Tiyatro Sporu</a>
+          </span>
+          <span class="d-block etkinlik-mekani">Çeşitli Mekanlar</span>
+          <span class="d-block etkinlik-tarihi">29 Temmuz-30 Ağustos</span>
+        </div>
+        <div class="col-md-1 fs-2 ok">
+          <i class="fa-solid fa-chevron-right text-primary"></i>
+        </div>
+      </div>
+      {% for i in etkinlik %}
+      <div class="etkinlik etkinlik d-flex justify-content-between w-100">
+        <div class="col-3 text-center">
+          <div class="date">
+            <div class="day">
+              <p class="day m-0">{{i.etkinlik_tarihi|date:"d"}}</p>
+            </div>
+            <div class="days">
+              <p class="m-0">{{i.etkinlik_tarihi|date:"D"}}</p>
+              <p class="m-0">{{i.etkinlik_tarihi|date:"M"}}</p>
+              <p class="m-0">{{i.etkinlik_tarihi|date:"Y"}}</p>
+            </div>
+          </div>
+        </div>
+        <div id="res" class="etknlik-text col-7">
+          <p class="etknlik-text m-0">
+            <a class="text-dark" href="{% url 'etkinlik-detay' i.slug %}"
+              >{{i.isim}}</a
+            >
+          </p>
+          <p class="etkinlik-mekani m-0">
+            <a class="" href="{% url 'mekan' i.etkinlik_mekan.all.0.slug %}"
+              >{{i.etkinlik_mekan.all.0}}</a
+            >
+          </p>
+          <p class="etkinlik-tarihi m-0">{{i.etkinlik_tarihi}}</p>
+        </div>
+        <div class="col-md-1 fs-2 ok">
+          <i class="fa-solid fa-chevron-right text-primary"></i>
+        </div>
+      </div>
+      {% endfor %} {% comment %}
+      <div class="etkinlik d-flex justify-content-between w-100">
+        <div class="text-center col-md-3">
+          <i class="fa-regular fa-calendar fs-1"></i>
+          <p class="icon-tarih">TÜM TARİHLER></p>
+        </div>
+        <div class="etkinlik-ismi col-md-8 px-4 text-start">
+          <span class="performans-ismi">
+            <a class="etknlik-text" href="#">Mahşeri Gümbüş Tiyatro Sporu</a>
+          </span>
+          <span class="d-block etkinlik-mekani">Çeşitli Mekanlar</span>
+          <span class="d-block etkinlik-tarihi">29 Temmuz-30 Ağustos</span>
+        </div>
+        <div class="col-md-1 fs-2 ok">
+          <i class="fa-solid fa-chevron-right text-primary"></i>
+        </div>
+      </div>
+      {% endcomment %}
+    </div>
+  </div>
+</div>
+<!-- ! KATEGROİLER VE ETKİNLİK TARİHLERİ SON -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // İlk elemana "active" sınıfını ekle
+    document
+      .querySelector(".carousel-item")
+      .classList.add("active");
+  });
+</script>
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

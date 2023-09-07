@@ -1,0 +1,202 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<div style="background-color: #f7f7f7">
+  <!-- !ORTA BÖLÜM -->
+  <div class="arkaplan-etkınlık-katılım mt-5">
+    <div class="container-etkınlık-katılım" style="background-color: #ffffff">
+      <img
+        src="{% static './img/alianz.jpg' %}"
+        alt=""
+        class="alianzfoto w-100"
+      />
+
+      <p class="fs-5 fw-bold">
+        Biletix ve Allianz’dan Türkiye’de Bir İlk: ETKİNLİK BİLETLERİ ARTIK
+        SİGORTALI!
+      </p>
+
+      <p>
+        Türkiye’nin eğlenceye giriş noktası Biletix ve sigorta sektörünün öncü
+        şirketlerinde Allianz Sigorta, Türkiye’de bir ilke imza atarak hayata
+        geçirdikleri ‘Etkinlik Katılım Sigortası’ ile etkinliklere katılımı
+        sigortalıyor.
+      </p>
+
+      <!-- ! ACCORDİON YAPISI -->
+      <div
+        class="accordion accordion-flush m-auto"
+        id="accordionFlushExample-etkınlık-katılım"
+      >
+        <div class="accordion-item mt-1">
+          <h2 class="accordion-header">
+            <button
+              id="focus-iptal"
+              class="accordion-button collapsed fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Biletix Etkinlik Katılım Sigortası Nedir?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample-etkınlık-katılım"
+          >
+            <div class="accordion-body" id="accordion-bodyrenk">
+              Etkinlik Katılım Sigortası, Biletix web sitesinden etkinlik bileti
+              satın alan müşterilerimizin aşağıda detayları belirtilen teminat
+              şartları altında etkinliğe katılamaması durumunda, bilet bedeli
+              tutarındaki zararını teminat altına almaktadır. Ayrıca sadece
+              kimlik bilgisi ile (TCKN, YKN) bilet satın alan bir kişiye 100 TL
+              teminat bedeli ile sınırlı olmak üzere ferdi kaza sigortası
+              sunmaktadır.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item mt-1">
+          <h2 class="accordion-header">
+            <button
+              id="focus-iptal"
+              class="accordion-button collapsed fw-bold"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Ürün nerden satın alınır?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample-etkınlık-katılım"
+          >
+            <div class="accordion-body" id="accordion-bodyrenk">
+              Ürün, Biletix web sitesinden opsiyonlu olarak satın
+              alınabilmektedir. Bilet alan kullanıcıya e-posta ile sigorta
+              poliçesi hükmündeki sertifika, poliçe genel ve özel şartları ve
+              bilgilendirme formu iletilerek sigorta işlemi tamamlanmaktadır.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item mt-1">
+          <h2 class="accordion-header">
+            <button
+              id="focus-iptal"
+              class="accordion-button collapsed fw-bold bg-gray"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Hangi durumlarda geçerlidir?Hangi teminatları karşılamaktadır?
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample-etkınlık-katılım"
+          >
+            <div class="accordion-body" id="accordion-bodyrenk">
+              <p>
+                Etkinlik Katılım Sigortası, başlangıçta Müzik, Sahne Sanatları,
+                Aile Eğlencesi ve Eğitim kategorilerindeki etkinlikler itibari
+                ile gerçek kişilere yapılan bilet satışları için sağlanacaktır.
+              </p>
+              <p>
+                Bu ürün etkinlik biletlerinin, Biletix Türkiye web sitesinden (
+                www.biletix.com ) alınmış olması ön koşulu ile aşağıda
+                sıralanmış maddeler ve özel şartları sağlayan koşulların
+                gerçekleşmesi kaydı ile geçerli olacaktır.
+              </p>
+
+              <ol>
+                <li>
+                  Adına bilet alınan kişinin 1. ve 2. dereceden kan bağına sahip
+                  kişilerin vefatı durumunda,
+                </li>
+                <li>
+                  Kişinin etkinlik gününde devam etmekte olan ciddi bir
+                  yaralanmasının ya da ciddi bir hastalığının mevcudiyeti
+                  durumunda,
+                </li>
+                <li>
+                  Kişinin etkinlik gününde Türkiye'de bir mahkemeye tanık olarak
+                  çağrılması durumunda,
+                </li>
+                <li>
+                  Etkinlik günü ve etkinliğin başladığı saate kadar kişiye ait
+                  veya kişiye tahsis edilen / kiralanan aracın çalınması ya da
+                  söz konusu aracın bir kaza sonucu trafiğe çıkamayacak derecede
+                  ciddi hasara uğraması durumunda,
+                </li>
+                <li>
+                  Kişinin ikametgah adresinde meydana gelen hırsızlık yada yine
+                  bu adreste oluşan ciddi yangın, fırtına, sel, patlama, çökme,
+                  vandalizm ve/veya benzeri durumlardan kaynaklanan ciddi hasar
+                  durumunda,
+                </li>
+                <li>
+                  Herhangi bir nedenle etkinliğin yapılacağı mekanın il
+                  sınırları dışında bulunan kişinin etkinlik günü etkinliğin
+                  yapılacağı adrese ulaşmak için, tercih ettiği toplu taşıma
+                  araçlarının (tarifeli uçuşlar dahil) çalışmaması ve/veya bu
+                  taşıtların tarifeli saatlerine uymaması nedeni ile
+                  sigortalının etkinliğe katılamaması ve/veya etkinliğe
+                  yetişememesi durumunda,
+                </li>
+                <li>
+                  Kişinin etkinlik günü etkinliğe katılmak için kendisine ait
+                  olan ve/veya kendisine tahsis edilen aracı kullanırken
+                  gerçekleşen kaza ve/veya arıza nedeni ile aracın çalışmaması
+                  ve alternatif ulaşım imkanlarının olmaması ya da trafik
+                  memurunun beklenilmesi vb. durumlarda geçerlidir.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item mt-1">
+          <h2 class="accordion-header">
+            <button
+              id="focus-iptal"
+              class="accordion-button collapsed fw-bold bg-gray"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+              Genel ve Özel Şartlar
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample-etkınlık-katılım"
+          >
+            <div class="accordion-body" id="accordion-bodyrenk">
+              <p>Genel Şartlar</p>
+              <p><a href="#">Ferdi Kaza</a></p>
+              <p>Özel Şartlar</p>
+              <p><a href="#">tıklayın.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% include 'includes/_footer-main.html' %} 
+{% endblock content %}

@@ -1,0 +1,894 @@
+/* BOŞ SEPET START */
+.empty-basket-content{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.basket-image{
+    margin-left: 40%;
+}
+/* BOŞ SEPET END */
+/*DOLU SEPET  START*/
+.ticket-count{
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+.bilet-ozet{
+padding: 5px 15px;
+background-color: #fff;
+box-shadow: #959da533 0 8px 24px;
+border-radius: 5px;
+}
+.zaman-sayac{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding-right: 10px;
+    width: 75px;
+    height: 25px;
+    background: #FAE5AA;
+    box-shadow: 0 0 20px #0000000d;
+    border-radius: 100px;
+    margin: 15px 0;
+}
+.ticket-span {
+  transform: translateX(0); 
+  bottom: 10px; 
+  left: 50%; 
+}
+.kirmizi-yuvarlak{
+   
+    margin-bottom: -80px;
+    left: 90%;
+  
+ }
+ .bilet-bilgisi-2 {
+    display: none!important;
+ }
+
+ .kaldir-2 {
+    display: none!important;
+ }
+
+ .kaldirDivİki {
+    position: relative;
+    text-align: center;
+    margin-bottom: 3rem; 
+  }
+  
+  .kaldirBtnİki {
+    position: absolute;
+   
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+@media screen and (max-width: 1300px){
+.full-sepet{
+    margin: 0!important;
+    width: 100%!important;
+}
+.ticket-body{
+    width: 100%!important;
+    
+}
+.product-detail{
+    width: 100%!important;
+}
+.sanatci-ismi{
+    width: 100%!important;
+}
+.bilet-bilgisi{
+    width: 100%!important;
+}
+.ticket-short{
+    width: 100%!important;
+}
+.bilet-ozet{
+    width: 100%!important;
+}
+}
+@media screen and (max-width: 950px){
+    .dolu-sepetim{
+       width: 100%!important;
+    }
+    .full-sepet{
+        width: 100%!important;
+        margin: auto!important;
+        margin-top: 0px;
+    }
+    .ticket-short{
+        bottom: 0!important;
+        position: sticky!important;
+        width: 100%!important;
+    }
+.sanatci-resim{
+    width: 100%!important;
+    height: 100%!important;
+    max-height: initial!important;
+}
+.product-detail{
+    display: flex;
+    flex-wrap: wrap!important;
+}
+.ticket-body{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%!important;
+}
+.kirmizi-yuvarlak{
+   position: absolute!important;
+ height: 7%!important;
+ width: 4%!important;
+}
+.bilet-bilgisi-2 {
+    display: block!important;
+ }
+ .kaldir-2 {
+    display: block!important;
+ }
+ .bilet-bilgisi {
+    display: none;
+ }
+ .kaldir {
+    display: none;
+ }
+.biletix-event{
+    display: block!important;  
+}
+.sepetim-ucret{
+    align-items: flex-start!important;
+    margin-top: 20px!important;
+}
+.sepetCheck{
+    margin-top: 0!important;
+}
+}
+@media screen and (max-width:650px){
+    .kirmizi-yuvarlak{
+      height: 10%!important;
+      width: 8%!important;
+     }
+}
+/* DOLU SEPET END */
+
+/* ALED-BURCU SON HTML CSS BAŞLANGIÇ  */
+/*! SLİDER KISMI BAŞLANGIÇ  */
+.category-scroller-container {
+    position: relative;
+    /* overflow: hidden; */
+    width: 100%;
+    /* Küçük boyutu */
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    white-space: nowrap;
+  }
+  
+  #categoryScroller,
+  #categoryScroller-2 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    /* overflow: hidden; */
+    border-bottom: 1px solid var(--light-gray);
+    width: 100%;
+    /* Scroll çubuğunu gizle */
+  }
+  
+  .category-item {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+    margin: 0px 80px 0px 80px;
+  }
+  #prevBtn,
+  #nextBtn,
+  #prevBtn-2,
+  #nextBtn-2 {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    /* Küçük boyutu */
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    /* Küçük boyutu */
+    transition: background-color 0.3s, color 0.3s;
+    /* Geçiş süresi */
+  }
+  
+  #prevBtn:hover,
+  #nextBtn:hover,
+  #prevBtn-2:hover,
+  #nextBtn-2:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* Gölge efekti */
+  }
+  
+  #prevBtn,
+  #prevBtn-2 {
+    left: 0px;
+    border: 1px solid var(--light-gray);
+    width: 35px;
+    z-index: 999;
+    /* border-radius: 30px; */
+    /* Küçük boyutu */
+  }
+  
+  #nextBtn,
+  #nextBtn-2 {
+    right: 0px;
+    border: 1px solid var(--light-gray);
+    width: 35px;
+    z-index: 999;
+    /* border-radius: 30px; */
+    /* Küçük boyutu */
+  }
+  
+  .category-item a {
+    text-decoration: none !important;
+    font-size: 16px !important;
+    color: #000;
+    font-weight: 600;
+    list-style-type: none;
+    height: 35px;
+    margin-right: 15px;
+    padding: 0px 18px;
+    overflow: visible !important ;
+  }
+  
+  @media (max-width: 664px) {
+    #prevBtn,
+    #nextBtn,
+    #prevBtn-2,
+    #nextBtn-2 {
+      display: block;
+    }
+  
+    .category-item a {
+      text-decoration: none !important;
+      font-size: 16px !important;
+      color: #000;
+      font-weight: 600;
+      list-style-type: none;
+      height: 35px;
+      margin-left: 30px;
+      padding: 0px 10px;
+    }
+    #categoryScroller,
+    #categoryScroller-2 {
+      overflow: hidden;
+      /* Scroll çubuğunu gizle */
+    }
+  }
+  
+  /*! SLİDER KISMI SON  */
+  
+  /*! HESABIM BAŞLANGIÇ */
+  
+  .accordion-item {
+    border: none !important;
+  }
+  .avatar {
+    text-align: center;
+    padding: 20px 15px;
+    background: linear-gradient(89.13deg, #002da1 8.34%, #026cdf 104.54%);
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+    color: white;
+    height: 180px;
+  }
+  
+  .accordion-button:focus,
+  .accordion-button {
+    box-shadow: none !important;
+    border-color: rgba(0, 0, 0, 0.125) !important;
+    background-color: #fff !important;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    color: blue !important;
+  }
+  
+  .accordion-button {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .avatar img {
+    width: 75px; /* veya istediğiniz boyut */
+    height: 75px; /* veya istediğiniz boyut */
+    border-radius: 50%;
+  }
+  
+  .nameMessage {
+    font-size: 14px;
+    text-align: start;
+    margin-left: 55px;
+  }
+  
+  #accordionExample {
+    width: 250px;
+    background-color: #fff;
+    border-top: none !important;
+  }
+  .accordion-body {
+    padding: 0 0 !important;
+  }
+  
+  .accordion-body a {
+    display: block;
+    text-decoration: none;
+    color: #262626;
+    font-size: 14px;
+    padding: 8px 48px;
+  }
+  
+  .cikisYap {
+    border-top: 1px solid rgba(0, 0, 0, 0.125) !important;
+    padding: 15px 10px !important;
+    margin-left: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #fff;
+  }
+  .cikisYap a,
+  .cikisYap i {
+    text-decoration: none;
+    background-color: #fff;
+    color: #f44336;
+  }
+  
+  .hesapAyari {
+    margin: 0 0 24px;
+  }
+  
+  /* Biletlerim Kısmı */
+  .biletAyari {
+    margin: 0 0 24px;
+  }
+  
+  .biletlerimBody a {
+    text-decoration: none;
+    list-style-type: none;
+  }
+  .etkinlikBilet {
+    display: none;
+  }
+  .etkinlikBilet:target {
+    display: block;
+  }
+  .aled {
+    display: none;
+  }
+  .aled:target {
+    display: block;
+  }
+  
+  .biletlerimEtkinlikHvr.active {
+    color: blue; /* Aktif linklerin metin rengi */
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .biletAyari {
+      margin-left: 25px;
+    }
+    .biletContent {
+      margin-left: 15px;
+    }
+    .biletlerim-t {
+      margin-left: 10px;
+    }
+  }
+  /*  */
+  .asd {
+    border-bottom: 2px solid blue;
+  }
+  
+  .biletlerimBilgisag {
+    display: none;
+  }
+  
+  /*! BİLETLERİM RESPONSİVE   */
+  
+  @media screen and (max-width: 768px) {
+    .biletContentIcerik a {
+      display: flex !important;
+  
+      flex-wrap: nowrap !important;
+      padding: 0 !important;
+      justify-content: space-evenly !important;
+      width: 100%;
+    }
+  }
+  
+  /*! BİLDİRİM TERCİHLERİ CSS START  */
+  .bildirimAdı {
+    float: left;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+  }
+  
+  .form-check-input {
+    box-shadow: none !important;
+    transition: 0.1s ease all !important;
+    border: 1px solid gray !important;
+    border-radius: 2px 2px !important;
+  }
+  .modal-header,
+  .modal-footer {
+    border: none !important;
+  }
+  
+  /*! BİLDİRİM TERCİHLERİ CSS END  */
+  
+  /*! ADRESLERİM BAŞLANGIÇ */
+  .adresBaslari {
+    padding-top: 20px;
+  }
+  .btn-bg {
+    border: 1px solid var(--outline-lightblue) !important;
+    padding: 10px !important;
+  }
+  .btn-bg:hover {
+    background-color: #d7e4f1 !important;
+  }
+  .adresBasi {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px !important;
+    /* margin-top: 10px; */
+  }
+  .aciklamas {
+    font-size: 16px;
+    font-weight: 600;
+    color: #026cdf;
+  }
+  
+  .butonSecenekleri {
+    display: inline-block;
+    padding: 12px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .faturalarIcerik .selected {
+    background-color: #007bff;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .faturaYazdır {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  
+  .bireyselFatura,
+  .kurumsalFatura {
+    display: none;
+    padding: 10px 0px;
+  }
+  
+  /*! ADRESLERİM SON */
+  
+  /*! ŞİFRE DEĞİŞİKLİĞİ BAŞLANGIÇ  */
+  
+  .sifreDegistir {
+    padding-top: 40px !important;
+  }
+  
+  .sifreOzellikleri {
+    display: block;
+    margin-top: 20px;
+  }
+  .form-floating {
+    font-size: 14px;
+    color: gray;
+  }
+  .sifreOzellikleri p {
+    font-size: 14px;
+    color: #000000de;
+    display: flex;
+    text-align: center;
+    gap: 5px;
+  }
+  .guncelle .btn {
+    margin-top: 15px;
+    padding: 7px 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .guncelle .btn:hover {
+    background-color: #0d6efd !important;
+  }
+  
+  .sifreOzellikleri p i {
+    color: gray;
+  }
+  .valid .sifreOzellikleri p i {
+    color: green;
+  }
+  .invalid .form-control {
+    border-color: red;
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  /*! ŞİFRE DEĞİŞİKLİĞİ SON  */
+  
+  /*! KİŞİSEL BİLGİLERİM BAŞLANGIÇ  */
+  .kisiselBilgilerim input {
+    box-shadow: none !important;
+    transition: 0.1s ease all !important;
+    border: 1px solid gray !important;
+  }
+  
+  /*! KİŞİSEL BİLGİLERİM SON  */
+  /* ALED-BURCU SON HTML CSS SON  */
+
+  /* KURUCESME SAYFA START */
+
+.body-container{
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  /* Navbar Start */
+  
+  .kurucesme-navbar {
+    background: var(--navbar-background-image);
+    width: 100%;
+    padding: 20px 0 20px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgb(2 108 223 / 60%);
+    height: 88px !important;
+  }
+  
+  @media (min-width: 768px) and (max-width: 979px){
+  .kurucesme-navbar {
+    height: 104px !important;
+  }
+  }
+  
+  .kurucesme-navbar-container {
+    display: flex !important;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .kurucesme-header-search {
+    background-color: var(--white);
+    border-radius: 20px;
+  } 
+  .kurucesme-header-search a {
+    margin: 0 10px 0 15px;
+    color: #bfbfbf;
+    font-size: 14px;
+  }
+  .kurucesme-header-search input {
+    box-sizing: border-box;
+    width: 335px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #bfbfbf;
+    outline: 0;
+    border-radius: 20px;
+  }
+  
+  .kurucesme-filter-search {
+    border: 1px solid #ebebeb;
+    border-radius: 20px;
+    padding: 8px 5px;
+    color: var(--light-border)
+  }
+  
+  .kurucesme-filter-search input {
+    border: 0;
+    color: var(--light-border);
+    min-width: 220px;
+  }
+  
+  .kurucesme-filter-search a i{
+    font-size: 13px;
+    margin: 0 6px;
+    color: #bfbfbf;
+  }
+  
+  .kurucesme-min-search{
+    position: absolute;
+    top: 110px;
+    width: 93%;
+    border: solid 1px #ccc;
+    left: 0px !important;
+    right: 0px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  
+  .kurucesme-min-search a{
+    margin: 0 6px;
+    color: #bfbfbf;
+  }
+  
+  /* Navbar End */
+  
+  /* Content Start */
+  .kurucesme-card{
+    text-align: left;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  
+  }
+  
+  .kurucesme-card-date{
+    position: relative;
+    left: 0;
+    top: -4px;
+    width: 80px;
+    text-align: center;
+    vertical-align: top;
+    text-transform: capitalize;
+    display: inline-block;
+    color: #262626;
+  ;
+  }
+  
+  .kuruscesme-card-date2{
+    background: 0 0;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: initial;
+    height: auto;
+   margin: 4px 0;
+  }
+  
+  .kurucesme-card-date-month{
+    height: auto;
+      line-height: initial;
+      font-weight: 700;
+      font-size: 12px;
+  }
+  
+  .kurucesme-card-date-day{
+    background: 0 0;
+    color: #000;
+    line-height: initial;
+    height: auto;
+    font-size: 12px;
+  }
+  
+  .kurucesme-card-img{
+      height: 100%;
+      width: 12%;
+      min-height: auto;
+      display: inline-block;
+      vertical-align: top;
+  }
+  
+  .kurucesme-card-img img{
+      
+    width: 100%;
+      position: relative;
+      vertical-align: top;
+      display: inline-block;
+      border-radius: 5px;
+  }
+  
+  
+  
+  
+  .kurucesme-card-title{
+    display: inline-block;
+  
+  }
+  
+  .kurucesme-card-title h3{
+    font-size: 12px;
+    color: #262626;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+  
+  }
+  .kurucesme-card-button{
+    width: auto;
+    border: 1px solid #026cdf;
+    border-radius: 10px;
+    background: 0 0!important;
+    color: #026cdf!important;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 16px;
+    height: auto;
+    position: relative;
+    padding: 5px 0;
+    margin:  0 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  @media (max-width:455px){
+    .kurucesme-filter-search{
+      display: none !important;
+    }
+    .content-filter-header h2{
+      margin: auto;
+    }
+    .content-filter-header{
+      margin: 0 !important;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 827px){
+    .kurucesme-card-button{
+  margin: 0 !important;
+    }
+  }
+  @media (min-width: 768px){
+    .kurucesme-min-search{
+      display: none;
+    }
+    .kurucesme-card-button{
+      width: auto;
+      border: 1px solid #026cdf;
+      border-radius: 10px;
+      background: 0 0!important;
+      color: #026cdf!important;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-size: 16px;
+      padding: 15px 70px;
+      height: auto;
+      float: right;
+      position: relative;
+      top: 8px;
+      right: 10px;
+      text-decoration: none;
+    }
+    .kurucesme-card-li{
+      margin: 15px 0px 0px 0px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+  
+  .kurucesme-card{
+    border: none !important;
+  }
+  
+    .kurucesme-header-search {
+      display: none !important;
+    }
+    .kurucesme-content .kurucesme-content-banner{
+      margin-top: 130px;
+   
+    }
+  
+    .kurucesme-card-img{
+      width: 100% !important;
+    }
+  
+    .kurucesme-card-img img{
+      width: 100% !important;
+    }
+    
+  }
+  
+  @media (max-width: 979px) {
+    .kurucesme-header-search input {
+      width: 300px;
+    }
+    .kurucesme-navbar-container {
+      padding: 0 30px 0 30px !important;
+    }
+  }
+  /* Content End */
+  /* Footer Start */
+  
+  .kurucesme-footer-content{
+    padding-left: 24px !important;
+  }
+  
+  .kurucesme-footer-content .col-md-3 ul{
+    list-style-type: none !important;
+  }
+  .kurucesme-footer-content .col-md-3 ul li a{
+    color: #999;
+    text-decoration: none !important;
+  }
+  
+  
+  .kurucesme-footer-content p{
+  font-size: 13px;
+  margin-bottom: 50px;
+  margin-top: 34px;
+    }
+  .kurucesme-scroll-to-top{
+    position: fixed;
+    border: none;
+    width: 60px;
+    height: 60px;
+    background: #e20453;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .kurucesme-scroll-to-top i{
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .kurucesme-scroll-to-top.show {
+    opacity: 1;
+  }
+      /* Footer End */
+  
+  /* KURUCESME SAYFA END */
+
+  /* !TTK-BİLDİRİMLERİ START */
+.ttk-anakapsayıcı{
+    background-color: #f7f7f7;
+}
+
+.ttk-container{
+    background-color: #ffffff;
+    margin: 0px;
+    padding-bottom: 20px;
+}
+
+
+.ttk-liste-duzenleme{  
+    padding: 0%;
+    font-size: small;
+}
+
+
+#ttk-card{
+    background-color: #f7f7f7;
+    height: 50vh;
+}
+
+@media screen and (max-width:1000px){
+    .ttk-anakapsayıcı{
+        width: 100%;
+    }   
+
+   
+}
+
+
+@media screen and (max-width:768px){
+    .ttk-foto{
+        display: none;
+    }
+  }
+
+/* !TTK-BİLDİRİMLERİ END */

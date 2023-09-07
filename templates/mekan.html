@@ -1,0 +1,259 @@
+{% extends "index.html" %} 
+{% load static%} 
+{% block content %} 
+{% include 'includes/_navbar-main.html' %}
+
+<!-- !Mekan -->
+<div class="mekan-container m-auto">
+  <!-- !Reklam ALANI -->
+  <!-- <img
+    src="./img/mekan/mekanfotoreklam.png"
+    class="img-fluid mt-3 w-100 mekan-ustreklam"
+    alt="..."
+  /> -->
+  <!-- !Sahne Alanı Başlangıç -->
+  <div class="row border mt-5 border-2">
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 m-md-auto mt-3">
+          <div class="card rounded-0">
+            <div class="card-body">
+              <br />
+                {% if mekan.mekan_resim_profil %}
+                <img class="w-100 object-fit-contain" src="{{mekan.mekan_resim_profil.url}}" >
+                {% else %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 m-sm-auto mt-sm-4 mt-3">
+          <h4>{{mekan.isim}}</h4>
+          <p>{{mekan.adres}}</p>
+        </div>
+      </div>
+      <p class="mekan-info w-100 mt-5 mb-5">
+        {{mekan.aciklama}}
+      </p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-8 mt-3 mx-sm-auto">
+      <button
+        type="button"
+        onclick="changeImage('{{mekan.oturma_plani_resim.url}}')"
+        class="btn mekanbtnn btn-sm rounded-0 text-white"
+      >
+        OTURMA
+      </button>
+      <button
+        type="button"
+        onclick="changeImage('{{mekan.mekan_resim.url}}')"
+        class="btn mekan-container btn-sm rounded-0"
+      >
+        FOTOĞRAF
+      </button>
+
+      <img
+        id="bannerImage"
+        src="{{mekan.oturma_plani_resim.url}}"
+        class="img-thumbnail w-100"
+        alt="..."
+      />
+      <br /><br /><br />
+    </div>
+
+  </div>
+  <!-- !Sahne Alanı Bitiş -->
+
+  <!-- !Etkinlik Alanı Başlangıç -->
+  <div class="row">
+    <div class="mekan-tarihler col-lg-8 col-md-12 border mt-3 mb-5">
+      <div class="row mekan-tarih">
+        <h3 class="w-100 bg-secondary text-white">
+          {% for i in etkinlik %} 
+          {% if forloop.last %} 
+          {{ forloop.counter }} 
+          {% endif %} 
+          {% endfor %} 
+          ADET ETKİNLİK BULUNMAKTADIR
+        </h3>
+        <div class="col-3 mekan-bilgi">
+          <p>
+            Etkinlik
+            <i class="fa-solid fa-angle-down" style="color: #a1a3a5"></i>
+          </p>
+        </div>
+        <div class="col-3 mekan-bilgi"></div>
+        <div class="col-3 mekan-bilgi">
+          <p class="px-4">
+            Tarih
+            <i class="fa-solid fa-angle-down" style="color: #a1a3a5"></i>
+          </p>
+        </div>
+      </div>
+
+      {% for i in etkinlik %}
+      <div class="grid mx-2 mb-4">
+        <div class="row">
+          <div class="col-3 mt-2">
+            <img
+              src="{{i.etkinlik_resim_profil.url}}"
+              class="w-100 h-100"
+              alt=""
+            />
+          </div>
+          <div class="col-3 mt-2">
+            <span
+              ><a
+                class="mekan-etkinlik text-black fw-bold text-decoration-none text-center"
+                href="#"
+                >{{i.isim}}</a
+              ></span
+            >
+            <span class="d-block">
+              {% if i.stok %} 
+              <a class="text-decoration-none" href="#">
+                Satışta 
+              </a>
+              {% else %} 
+              <a class="text-decoration-none disabled" style="color: gray;" href="#">
+                Tükendi
+              </a> {% endif %}
+            </span>
+          </div>
+          <div class="col-3 mt-2">
+            <span class="text-center text-secondary"
+              >{{i.etkinlik_tarihi|date:"D, d/m/y"}}</span
+            >
+          </div>
+
+          <div class="col-3 mt-3">
+            {% if i.stok %}
+            <button type="button" class="btn mekan-satinal border-0 text-white fw-bold rounded-0 d-flex    justify-content-end m-auto">
+              <a class="text-decoration-none text-light" href="{% url 'etkinlik-detay' i.slug %}">Satın Al</a>
+            </button>
+            {% else %}
+            <button type="button" class="btn btn-dark border-0 text-white fw-bold rounded-0 d-flex    justify-content-end m-auto disabled">
+              <a class="text-decoration-none" style="color: gray;" href="">Tükendi</a>
+            </button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="mekan-reklam col-lg-4 mt-3">
+      <img src="img/reklam2.jpeg" class="w-100" alt="" />
+    </div>
+  </div>
+</div>
+
+<!-- !Responsivede ki Etkinlik Alanı Başlangıç -->
+<div class="container-fluid mekan-etkinlikler">
+  <div class="col-12 m-0 p-0">
+    <div class="row">
+      <div class="grid border">
+        <div class="row">
+          <h3 class="w-100 bg-secondary text-white">
+            12 ADET ETKİNLİK BULUNMAKTADIR
+          </h3>
+          <div class="col-8 px-0">
+            <h6 class="mb-2 mt-1 fw-bold">Kaan Sekbakan Saçmalar</h6>
+            <p class="m-0">
+              <a href="" class="text-decoration-none">Satışta</a>
+            </p>
+            <p class="p-0 text-secondary">Sal,08/08/23</p>
+          </div>
+          <div class="col-4 px-0">
+            <a
+              href=""
+              class="d-flex justify-content-end text-decoration-none me-4 mt-3"
+              ><i class="fa-solid fa-chevron-right" style="color: #2868d7"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="grid border">
+        <div class="row">
+          <div class="col-8 px-0">
+            <h6 class="mb-2 mt-1 fw-bold">Kaan Sekbakan Saçmalar</h6>
+            <p class="m-0">
+              <a href="" class="text-decoration-none">Satışta</a>
+            </p>
+            <p class="p-0 text-secondary">Sal,08/08/23</p>
+          </div>
+          <div class="col-4 px-0">
+            <a
+              href=""
+              class="d-flex justify-content-end text-decoration-none me-4 mt-3"
+              ><i class="fa-solid fa-chevron-right" style="color: #2868d7"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="grid border">
+        <div class="row">
+          <div class="col-8 px-0">
+            <h6 class="mb-2 mt-1 fw-bold">Kaan Sekbakan Saçmalar</h6>
+            <p class="m-0">
+              <a href="" class="text-decoration-none">Satışta</a>
+            </p>
+            <p class="p-0 text-secondary">Sal,08/08/23</p>
+          </div>
+          <div class="col-4 px-0">
+            <a
+              href=""
+              class="d-flex justify-content-end text-decoration-none me-4 mt-3"
+              ><i class="fa-solid fa-chevron-right" style="color: #2868d7"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="grid border">
+        <div class="row">
+          <div class="col-8 px-0">
+            <h6 class="mb-2 mt-1 fw-bold">Kaan Sekbakan Saçmalar</h6>
+            <p class="m-0">
+              <a href="" class="text-decoration-none">Satışta</a>
+            </p>
+            <p class="p-0 text-secondary">Sal,08/08/23</p>
+          </div>
+          <div class="col-4 px-0">
+            <a
+              href=""
+              class="d-flex justify-content-end text-decoration-none me-4 mt-3"
+              ><i class="fa-solid fa-chevron-right" style="color: #2868d7"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="grid border">
+        <div class="row">
+          <div class="col-8 px-0">
+            <h6 class="mb-2 mt-1 fw-bold">Kaan Sekbakan Saçmalar</h6>
+            <p class="m-0">
+              <a href="" class="text-decoration-none">Satışta</a>
+            </p>
+            <p class="p-0 text-secondary">Sal,08/08/23</p>
+          </div>
+          <div class="col-4 px-0">
+            <a
+              href=""
+              class="d-flex justify-content-end text-decoration-none me-4 mt-3"
+              ><i class="fa-solid fa-chevron-right" style="color: #2868d7"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- !Responsivede ki Etkinlik Alanı Bitiş -->
+
+{% include 'includes/_footer-main.html' %} 
+<script>
+  function changeImage(fileName){
+    let img = document.querySelector('#bannerImage');
+    img.setAttribute("src",fileName);
+}
+</script>
+{% endblock content %}

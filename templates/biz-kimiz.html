@@ -1,0 +1,262 @@
+{% extends "index.html" %} 
+{% load static %} 
+{% block content %} 
+
+<header class="ticket-master-en-dis">
+     <!-- !BİZ KİMİZ NAVBAR START -->
+     <nav class="navbar  navbar-expand-lg  ticket-master">
+        <div class="container-fluid  justify-content-center ">
+            <div class="d-flex  align-items-center">
+                <div class="navbar-logos">
+                    <a id="logo-up" class="navbar-brand" href="#">
+                        <img src="{% static './img/tm-new-logo.svg' %}" class="w-50" alt="">
+    
+                    </a>
+                    <a id="logo-down" class="navbar-brand" href="#">
+                        <img src="{% static './img/t_logo.svg' %}" alt="">
+    
+                    </a>
+                </div>
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse w-100 justify-content-end" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav   float-end mb-2 mb-lg-0 ">
+
+                        <li class="nav-item">
+                            <a class="nav-link detay-hover-a text-white fw-bold" aria-current="page"
+                                href="#">Hikayemiz</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link  detay-hover-a text-white fw-bold" href="#">Ekibimiz</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link detay-hover-a text-white fw-bold" href="#">İşletme Çözümleri</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link detay-hover-a text-white fw-bold" href="#">Medya</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link detay-hover-a text-white fw-bold border" href="#">Bizimle Çalışın</a>
+                        </li>
+
+                        <a href="#"><img src="{% static './img/language.svg' %}" class="mt-2 ms-2" alt=""></a>
+                        <a href="#"><img src="{% static './img/right-search.svg' %}" class="mt-2  ms-2 " alt=""></a>
+
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- !BİZ KİMİZ NAVBAR END -->
+<section class="hero-img">
+    <div class="container position-relative">
+        <div class="hero-text position-absolute w-50">
+
+            <h1 class="text-light ms-4 ">
+                Yarının Eğlence Dünyasına Biletiniz
+            </h1><br>
+
+
+            <ul class="text-light fs-5">
+                <li>Canlı etkinliklerde sanatseverlerin ilk duraklarından biri konumundayız. Hem sanatseverler hem
+                    de gelecek için işletmenizi güçlendirmek üzere her zamankinden fazla çaba harcıyoruz.</li><br>
+                <li>Binlerce müşterinin, bilet ortağı olarak bize güvenmelerinin nedenini keşfedin.</li>
+            </ul>
+
+
+
+        </div>
+
+    </div>
+
+</section>
+<section>
+    
+        <div class="biz-kimiz-slide1 container-fluid text-center border-bottom pb-4 pt-3 d-flex justify-content-center">
+            <div class="biz-kimiz-slide2 row container">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-end">
+
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
+                        <a class="text text-decoration-none" href="#gelecegeodaklı">Geleceğe Odaklı</a>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12"><a class="text text-decoration-none"
+                            href="#dahaiyisonuclar">Daha İyi Sonuçlar</a></div>
+
+
+                </div>
+
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start ">
+
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 "><a
+                            class="d-inline-flex w-100 text text-decoration-none" href="#ürüncözümleri">Ürün Çözümleri</a></div>
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 "><a
+                            class="d-inline-flex w-100 text text-decoration-none" href="#herzamanerisilen">Her Zaman Erişilebilen
+                            Destek</a></div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    
+
+    <div id="gelecegeodaklı" class="text1 container text-center w-50">
+        <div>
+            <h1>Yarın İçin Yenilikler Getiriyoruz</h1>
+        </div>
+        <div>
+            <p>Biletleme teknolojisine yönelik modern yaklaşımımız, bundan sonra nelerin gerçekleşeceğinden haberdar
+                olmanızı sağlıyor.</p>
+        </div>
+    </div>
+
+    <div class="biz-kimiz-main overflow-hidden">
+        <div class="container text-center w-50 ">
+            <img class="w-100 h-100 m-auto d-flex justify-content-center ps-3" src="{% static './img/bilgisayar.png' %}" alt="">
+            <p>Gelecek için tasarlanmış araçlarımızdan ve hedef kitleniz hakkında size bilgi veren teknolojilerimizden
+                faydalanın.</p>
+
+            <button type="button" class="btn btn rounded-5 biz-kimiz-buttons"><a class="text-decoration-none text-primary"
+                    href="https://business.ticketmaster.com.tr/isletme-cozumleri/">Daha Fazla Bilgi ></a></button>
+        </div>
+
+
+    </div>
+
+    <div id="dahaiyisonuclar" class="text2 container text-center w-50">
+        <div>
+            <h1>Önem İfade Eden Sonuçlar</h1>
+        </div>
+        <div>
+            <p>İşimiz; gelirinizi ve kârınızı artırarak işinizi genişletmenize yardım etmek.</p>
+        </div>
+    </div>
+
+    
+    <div class="biz-kimiz-en-main">
+        <div class="biz-kimiz-main2">
+            <div class="d-flex">
+                <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-12 col-sm-12 d-flex justify-content-end ">
+                    <img class="w-75 h-100  d-flex justify-content-center" src="{% static './img/bilgisayar2.png' %}" alt="">
+        
+                </div>
+               
+                    <div class="social-media col-xxl-3 col-xl-3 col-lg-3 col-md-12 col-sm-12  pt-5 " >
+                        <p data-aos="fade-right" data-aos-duration="3000">Dünyanın önde gelen biletleme sitelerinden biriyle iş ortağı olarak küresel dağıtım kanallarına erişimin keyfini çıkarın.</p>
+                        <img src="https://business.ticketmaster.com.tr/wp-content/uploads/2022/05/fb.png' %}" alt="">
+                        <img src="https://business.ticketmaster.com.tr/wp-content/uploads/2022/05/spot.png' %}" alt="">
+                        <img src="https://business.ticketmaster.com.tr/wp-content/uploads/2022/05/snap.png' %}" alt="">
+        
+                    </div>
+                </div>
+                <div class="biz-kimiz-main3">
+                    <div class=" text-center w-75">
+                        
+                        <p class="text-center">Milyarlarca veri sağlayan TMReports üzerinden doğru hedef kitleyi belirleyebilir, hedefe yönelik pazarlama faaliyetleri yürütebilir, satış ve gelir hedeflerinizi artırabilirsiniz. Talebinizi yönlendirmek ve optimize etmek için ihtiyacınız olan her şey burada.</p>
+            
+                        <button type="button" class="btn btn rounded-5 biz-kimiz-buttons"><a class="text-decoration-none text-primary"
+                                href="https://business.ticketmaster.com.tr/isletme-cozumleri/">Vaka Çalışmalarını Keşfedin ></a></button>
+                    </div>
+         </div>
+        </div>
+
+    </div>
+
+    <div id="ürüncözümleri" class="text3 container text-center w-75">
+        <div>
+            <h1>Canlı Etkinlikler İçin En İyi Araçlar</h1>
+        </div>
+        <div>
+            <p>Platformumuz ve ürün çözümlerimiz sektördeki en iyi, en kapsamlı araçlara erişmenizi sağlıyor.</p>
+        </div>
+    </div>
+
+    <div class="biz-kimiz-en-main2">
+        <div class="container text-center w-50 pt-5">
+            <img class="w-100 h-100 m-auto d-flex justify-content-center ps-3 " src="{% static './img/bilgisayar3.png' %}" alt="">
+            </div>
+            <div class="container text-center w-75">
+                <p>Güçlü TMReports platformumuz ile kişiselleştirilmiş portalınızdan yararlanın.</p>
+
+            <button type="button" class="btn btn rounded-5 biz-kimiz-buttons"><a class="text-decoration-none text-primary"
+                    href="https://business.ticketmaster.com.tr/isletme-cozumleri/">Daha Fazla Çözümü Keşfedin ></a></button>
+            </div>
+    </div>
+
+    <div  class="text4 container text-center w-75">
+        <div id="herzamanerisilen">
+            <h1>İhtiyaç Duyduğunuz Destek</h1>
+        </div>
+        <div class="container text-center w-75">
+            <p>En güçlü yanlarımızdan biri olan çalışanlarımız ve sundukları destek, sizin de en büyük avantajınız.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex p-0 m-0 handshake-kapsayici">
+        <div class="handshake">
+            <img src="{% static './img/handshake.webp' %}" alt="">
+
+        </div>
+        <div class="handshake2 position-relative">
+            <div class="handshake2-text position-absolute" data-aos="fade-left" data-aos-duration="3000">
+                <p>Biletleme işlemlerinin her aşamasında yanınızda olan, kişiye özel müşteri ekibi ve operasyonel rehberlerle daha fazla işin üstesinden gelin.</p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="biz-kimiz-en-main4">
+        <div class="container text-center w-75">
+            <p>Ticketmaster ile iş ortaklığının işletmenize katabileceklerini yaşayarak görün.</p>
+
+        <button type="button" class="bizimle-calisin btn btn rounded-5 biz-kimiz-buttons"><a class="text-decoration-none text-primary"
+                href="https://business.ticketmaster.com.tr/bize-ulasin/">Bizimle Çalışın</a></button>
+        </div>
+
+    </div>
+
+   
+
+</section>
+<footer id="main1-footer">
+    <div class=" container d-flex justify-content-between ">
+        <div id="footer1-logo">
+            <img src="{% static './img/ticketmaster_logo.svg' %}"width="119" alt="Ticketmaster">
+
+        </div>
+
+        <div class="biz-kimiz-footer2 d-flex">
+            <button type="button" class="btn btn-dark ">Çerez Onayı</button>
+            <p class="ticketmaster-footer" > ©Ticketmaster 2023</p>
+        </div>
+        
+    </div>
+
+</footer>
+
+<!-- AOS ANIMATION SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+{% endblock content %}
