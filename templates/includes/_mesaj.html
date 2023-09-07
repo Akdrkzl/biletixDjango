@@ -42,9 +42,12 @@
     const alertKapaButton = document.getElementById("alert-kapa");
     const uyariboxes = document.getElementById("uyaribox");
 
-    alertKapaButton.addEventListener("click", () => {
+    if(alertKapaButton){
+      alertKapaButton.addEventListener("click", () => {
       uyariboxes.classList.add("alert-gizle");
     });
+    }
+
     if (alertKapaButton && uyariboxes) {
       uyariboxes.style.display = "none";
     }
