@@ -61,6 +61,7 @@ def searchBos(request):
 
 def kategoriDetay(request, slug):
     etkinlik = Etkinlik.objects.filter(kategori__parent__slug = slug)
+    
     context ={
         'etkinlik' : etkinlik,
     }

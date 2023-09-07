@@ -73,8 +73,8 @@ TEMPLATES = [
                 'etkinlik.context_processors.kategori_context',
                 'user.context_processors.kategori_context',
                 # sepet-context
-                'etkinlik.context_processors.sepet_context',
-                'user.context_processors.sepet_context',
+                # 'etkinlik.context_processors.sepet_context',
+                # 'user.context_processors.sepet_context',
 
             ],
         },
