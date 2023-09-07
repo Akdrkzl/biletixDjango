@@ -3647,7 +3647,7 @@ font-family: Arial, Helvetica, sans-serif;
   margin-left: 10px;
 }
 
-.bilet-ozet{
+.bilet-ozettt{
 padding: 5px 15px;
 background-color: #fff;
 box-shadow: #959da533 0 8px 24px;
@@ -3671,120 +3671,130 @@ transform: translateX(0);
 bottom: 10px; 
 left: 50%; 
 }
-.kirmizi-yuvarlak{
+/* .kirmizi-yuvarlak{
  
   margin-bottom: -80px;
   left: 90%;
 
-}
-.bilet-bilgisi-2 {
+} */
+.bilet-bilgisii-2 {
   display: none!important;
 }
 
-.kaldir-2 {
+.kaldirr-2 {
   display: none!important;
 }
 
-.kaldirDivİki {
+.kaldirDivİkii {
   position: relative;
   text-align: center;
   margin-bottom: 3rem; 
+  
 }
 
-.kaldirBtnİki {
+.kaldirBtnİkii {
   position: absolute;
  
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
 @media screen and (max-width: 1300px){
-.full-sepet{
+  .sepet-f{
+    display: block!important;
+    
+   
+  }
+  .dolu-sepetimmm{
+    width: 100%!important;
+  }
+.full-sepettt{
   margin: 0!important;
   width: 100%!important;
 }
-.ticket-body{
+.ticket-bodyyy{
   width: 100%!important;
   
+  
 }
-.product-detail{
+.product-detailll{
   width: 100%!important;
 }
-.sanatci-ismi{
+.sanatci-ismiii{
   width: 100%!important;
 }
-.bilet-bilgisi{
+.bilet-bilgisiii{
   width: 100%!important;
 }
-.ticket-short{
+.ticket-shorttt{
   width: 100%!important;
 }
-.bilet-ozet{
+.bilet-ozettt{
   width: 100%!important;
+  margin: 0!important;
 }
+
 }
 @media screen and (max-width: 950px){
-  .dolu-sepetim{
+  .dolu-sepetimmm{
      width: 100%!important;
   }
-  .full-sepet{
+  .full-sepettt{
       width: 100%!important;
       margin: auto!important;
       margin-top: 0px;
   }
-  .ticket-short{
+  .ticket-shorttt{
       bottom: 0!important;
-      position: sticky!important;
+      position: fixed!important;
       width: 100%!important;
   }
-.sanatci-resim{
+  .sepet-f{
+    display: block!important;
+    
+    
+  }
+.sanatci-resimmm{
   width: 100%!important;
   height: 100%!important;
   max-height: initial!important;
 }
-.product-detail{
-  display: flex;
+.product-detailll{
+  display: flex!important;
   flex-wrap: wrap!important;
 }
-.ticket-body{
-  display: flex;
-  flex-direction: column;
+.ticket-bodyyy{
+  display: flex!important;
+  flex-direction: column!important;
   max-width: 100%!important;
 }
-.kirmizi-yuvarlak{
- position: absolute!important;
-height: 7%!important;
-width: 4%!important;
-}
-.bilet-bilgisi-2 {
+
+.bilet-bilgisii-2 {
   display: block!important;
 }
-.kaldir-2 {
+.kaldirr-2 {
   display: block!important;
 }
-.bilet-bilgisi {
-  display: none;
+.bilet-bilgisiii {
+  display: none!important;
 }
-.kaldir {
-  display: none;
+.kaldirr {
+  display: none!important;
 }
-.biletix-event{
+.biletix-eventtt{
   display: block!important;  
 }
-.sepetim-ucret{
+.sepetim-ucrettt{
   align-items: flex-start!important;
   margin-top: 20px!important;
 }
-.sepetCheck{
+.sepetCheckkk{
   margin-top: 0!important;
 }
 }
-@media screen and (max-width:650px){
-  .kirmizi-yuvarlak{
-    height: 10%!important;
-    width: 8%!important;
-   }
-}
-/*! DOLU SEPET END */
+
+/* DOLU SEPET END */
 
 
 
