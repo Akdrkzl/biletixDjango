@@ -162,21 +162,21 @@
               {% if user.is_authenticated %}
               <!-- profil -->
               <li class="mb-2">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'profil' %}">
                   <i class="fa-regular fa-user me-3" style="color: #bfbfbf"></i>
                   Profil
                 </a>
               </li>
               <!-- Adres -->
               <li class="mb-2">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'adres' %}">
                   <i class="fa-solid fa-house me-3" style="color: #bfbfbf"></i>
                   Adreslerim
                 </a>
               </li>
               <!-- bilet -->
               <li class="mb-2">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'gelecek-bilet' %}">
                   <i class="fa-solid fa-ticket-simple me-3"style="color: #bfbfbf"></i>
                   Biletilerim
                 </a>
@@ -190,28 +190,28 @@
               </li>
               {% else %}
               <li class="mb-2">
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="{% url 'login' %}"
                   ><i class="fa-solid fa-arrow-right-to-bracket me-3"></i
                   >Giriş Yap</a
                 >
               </li>
               <li class="mb-2">
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="{% url 'register' %}"
                   ><i class="fa-solid fa-user-plus me-3"></i>Hesap Oluştur</a
                 >
               </li>
               <li class="mb-2">
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="{% url 'profil' %}"
                   ><i class="fa-regular fa-user me-3"></i>Profil</a
                 >
               </li>
               <li class="mb-2">
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="{% url 'adres' %}"
                   ><i class="fa-solid fa-house me-3"></i>Adreslerim</a
                 >
               </li>
               <li class="mb-2">
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="{% url 'gelecek-bilet' %}"
                   ><i class="fa-solid fa-ticket-simple me-3"></i
                   >Biletilerim</a
                 >
@@ -331,7 +331,7 @@
           </li>
           <!-- sepet -->
           <li class="nav-item navbar-shopping">
-            <a href="#" class="position-relative">
+            <a href="{% url 'sepet' %}" class="position-relative">
               <img src="{% static './img/SVG icons/sepet.svg' %}" alt="" />
               <span
                 style="left: 13px; bottom: 10px; width: 20px; height: 20px"

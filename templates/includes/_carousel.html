@@ -49,10 +49,14 @@
                 <div
                   class="caption mb-0 mb-md-3 pb-md-5 mt-3 text-center text-md-start px-md-4"
                 >
-                  <h3>{{i.isim}}</h3>
+                  <h3>
+                    <a href="{% url 'etkinlik-detay' i.slug %}" class="text-dark">
+                    {{i.isim}}
+
+                    </a>
+                  </h3>
                   <p>
-                    DenizBank Açıkhava Etkinlikleri ile Açikhava’da Eğlence
-                    Başliyor!
+                    
                   </p>
                 </div>
               </div>
