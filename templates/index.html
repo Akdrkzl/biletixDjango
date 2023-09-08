@@ -113,7 +113,7 @@
           {% for i in etkinlik %}
           {% if i.tum_tr %}
             <div class="mx-2">
-              <a class="d-inline-block h-100" href="#">
+              <a class="d-inline-block h-100" href="{% url 'etkinlik-detay' i.slug %}">
                 <div class="card rounded-0 h-100" style="width: 165px">
                   <img
                     src="{{i.etkinlik_resim_profil.url}}"

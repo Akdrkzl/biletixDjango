@@ -198,7 +198,9 @@
         </div>
         <!--bilet bilgi/  responsivede 950px'te SONRA gizleniyor END (950px'den büyük ekranda görünüyor) -->
       </div>
+      
       {% endfor %}
+
     </div>
     <!-- bilet özet  white box -->
     {% if request.user.sepet_set.all %}
@@ -211,11 +213,12 @@
           />
           <span>04.59</span>
         </div>
+        {% for i in request.user.sepet_set.all %}
 
         <p class="fw-semibold text-uppercase mt-4 m-0" style="font-size: 14px">
           Ödenecek Tutar
         </p>
-        <span class="total-price fw-bold" style="font-size: 24px">₺123</span>
+        <span class="total-price fw-bold" style="font-size: 24px">₺{{i.fiyat}}</span>
 
         <div class="summary-content mt-3">
           <div class="d-grid gap-2 col-6 mx-auto w-100">
@@ -229,17 +232,19 @@
               type="button"
               class="btn btn-light mt-2 text-primary border border-1 border-primary rounded-3 btn-lg"
             >
-              Alışverişe Devam Et
+              <a href="/">Alışverişe Devam Et</a>
             </button>
           </div>
 
           <div class="siparis-bedeli d-flex justify-content-between mt-2">
-            <span>Sipariş bedeli</span><span>₺123</span>
+            <!-- <span>Sipariş bedeli</span><span>₺123</span> -->
           </div>
           <div class="toplam-bilet d-flex justify-content-between mt-1 mb-3">
             <span>Biletler(x {{i.miktar}})</span>
-            <span>₺123</span>
+            <span>₺{{i.fiyat}}</span>
           </div>
+      {% endfor %}
+
         </div>
       </div>
     </div>
