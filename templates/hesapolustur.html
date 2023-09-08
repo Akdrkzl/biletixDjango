@@ -1,581 +1,597 @@
 {% extends "index.html" %}
 {%load static %}
-
 {% block content %}
-
-{% include "includes/_mesaj.html" %}
-
-  <div class="container-fluid">
-    <div class="row full-height-giris h-100">
-      <!-- LEFT SIDE -->
-      <div class="col-lg-6 giris-left-side d-none d-lg-block">
-        <a class="logo-beyaz" href="/"><img src="{% static './img/Giris_Kayit/tmlogo.svg' %}" alt="" /></a>
-        <div class="slider giris-slider p-0">
-          <div id="carouselExampleInterval" class="carousel giris-carousel slide p-0" data-bs-ride="carousel">
-            <div class="carousel-indicators m-auto">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+<div class="container-fluid">
+  <div class="row full-height-giris h-100">
+    <!-- LEFT SIDE -->
+    <div class="col-lg-6 giris-left-side d-none d-lg-block">
+      <a class="logo-beyaz" href="/"><img src="{% static './img/Giris_Kayit/tmlogo.svg' %}" alt="" /></a>
+      <div class="slider giris-slider p-0">
+        <div id="carouselExampleInterval" class="carousel giris-carousel slide p-0" data-bs-ride="carousel">
+          <div class="carousel-indicators m-auto">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="{% static './img/Giris_Kayit/auth-cover-shadow-1X2.png' %}" class="d-block w-100" alt="..." />
+              <div class="carousel-caption text-start w-100 px-0">
+                <h2 class="mb-4">Biletix’e Üye Ol!</h2>
+                <h3>
+                  E-posta gönderimlerine izin ver, binlerce etkinlik
+                  arasında kaybolma.
+                </h3>
+              </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="{% static './img/Giris_Kayit/auth-cover-shadow-1X2.png' %}" class="d-block w-100" alt="..." />
-                <div class="carousel-caption text-start w-100 px-0">
-                  <h2 class="mb-4">Biletix’e Üye Ol!</h2>
-                  <h3>
-                    E-posta gönderimlerine izin ver, binlerce etkinlik
-                    arasında kaybolma.
-                  </h3>
-                </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="{% static './img/Giris_Kayit/auth-cover-shadow-2X2.png' %}" class="d-block w-100" alt="..." />
+              <div class="carousel-caption text-start px-">
+                <h2 class="mb-4">
+                  Yeni etkinliklerden ilk önce senin haberin olsun.
+                </h2>
+                <h3>
+                  İlgi alanlarına ve yaşadığın konuma göre etkinlikler
+                  e-posta adresine gelsin.
+                </h3>
               </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="{% static './img/Giris_Kayit/auth-cover-shadow-2X2.png' %}" class="d-block w-100" alt="..." />
-                <div class="carousel-caption text-start px-">
-                  <h2 class="mb-4">
-                    Yeni etkinliklerden ilk önce senin haberin olsun.
-                  </h2>
-                  <h3>
-                    İlgi alanlarına ve yaşadığın konuma göre etkinlikler
-                    e-posta adresine gelsin.
-                  </h3>
-                </div>
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="{% static './img/Giris_Kayit/auth-cover-shadow-3X2.png' %}" class="d-block w-100" alt="..." />
-                <div class="carousel-caption text-start px-0">
-                  <h2 class="mb-4">
-                    Üyeliğin sayesinde hızlıca biletini al.
-                  </h2>
-                  <h3>Satın aldığın tüm biletlere profilinden ulaş.</h3>
-                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="{% static './img/Giris_Kayit/auth-cover-shadow-3X2.png' %}" class="d-block w-100" alt="..." />
+              <div class="carousel-caption text-start px-0">
+                <h2 class="mb-4">
+                  Üyeliğin sayesinde hızlıca biletini al.
+                </h2>
+                <h3>Satın aldığın tüm biletlere profilinden ulaş.</h3>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- RIGHT SIDE -->
-      <div class="col-lg-6 giris-right-side d-flex flex-column d-lg-flex overflow-scroll overflow-x-hidden">
-        <!--ZATEN HESABIN VAR MI? TOP LINK CONTAINER -->
-        <div class="sign-in-link-container me-3 mt-4 mb-5 align-items-center align-bottom">
-          <a href="#" class="float-start d-lg-none"><img src="{% static './img/Giris_Kayit/tmlogo-blue.png' %}" class="logo-blue"
-              alt="" /></a>
-          <div class="hesabin-varmi float-end">
-            <span class="do-not-have-account me-2 fs-6 d-none d-md-inline">Zaten hesabınız var mı?</span>
-            <a href="{% url 'login' %}"><button type="button" class="btn hesap-olustur-button">
-                Giriş Yap
-              </button></a>
-          </div>
-        </div>
-        <!-- FORM GROUP -->
-        <div class="hesapolustur-form-container m-auto mt-5">
-          <form method="POST" class="hesapolustur-form-kapsayici m-auto flex-column text-center align-items-center w-100"
-            style="place-content: center">
-            {% csrf_token %}
-            <div class="sign-in-title mb-3">
-              <h1 style="font-size: 26px; font-weight: 600">Hesap Oluştur</h1>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 mb-lg-2">
-                <!-- isim-input -->
-                <div class="giris-form form-floating">
-                  <input type="text" class="form-control mb-3 rounded-3" id="kayitad" name="isim" placeholder="Ad" required />
-                  <label for="kayitad" class="float-start form-label">Ad</label>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-lg-2">
-                <!-- soyisim-input -->
-                <div class="giris-form form-floating">
-                  <input type="text" class="form-control mb-3 rounded-3" id="kayitsoyad" name="soyisim" placeholder="Ad" required />
-                  <label for="kayitsoyad" class="float-start form-label">Soyad</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 mb-lg-2">
-                <!-- doğum-tarihi -->
-                <div class="giris-form form-floating">
-                  <input type="date" class="form-control mb-3 rounded-3" id="hesapDate" name="dogum-tarihi" required />
-                  <label for="date" class="float-start form-label">Doğum Tarihi</label>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-lg-2">
-                <!-- cinsiyet -->
-                <div class="giris-form" style="height: 58px;  ">
-                  <select class="form-select select-canim" style="height: 58px;" name="cinsiyet">
-                    <option data-hidden="true" hidden>CİNSİYET</option>
-                    <option>Erkek</option>
-                    <option>Kadın</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-6 mb-lg-2">
-                <!-- email -->
-                <div class="giris-form form-floating">
-                  <input type="email" class="form-control mb-3 rounded-3" id="kayitemail" name="email"
-                    placeholder="Mail adresinizi girin" required />
-                  <label for="email" class="float-start form-label">E-posta</label>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-lg-2">
-                <!-- tel -->
-                <div class="giris-form form-floating">
-                  <input name="telefon" type="tel" class="form-control mb-3 rounded-3" id="kayitad" placeholder="kayittelefon"
-                    required />
-                  <label for="kayittelefon" class="float-start form-label">Telefon</label>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col-sm-6 mb-lg-2">
-                <!-- şifre -->
-                <div class="giris-form form-floating">
-                  <input type="password" class="form-control mb-3 rounded-3" id="kayitPassword" name="sifre"
-                    placeholder="Mail adresinizi girin" required />
-                  <i class="fa-regular fa-eye sifre-icon" id="showPassword"></i>
-                  <i class="fa-regular fa-eye-slash sifre-icon" id="hidePassword"></i>
-                  <label for="Kayitpassword" class="float-start form-label">Şifre</label>
-                </div>
-              </div>
-            </div>
-
-            <!-- CHECKBOX CONTAINER -->
-            <div class="row mb-lg-2">
-              <div class="checkbox-container">
-                <div class="form-check kayit-checkbox mb-2">
-                  <input class="form-check-input" type="checkbox" value="" id="okudumAnladim" disabled />
-                  <a href="" data-bs-target="#hesapModal" data-bs-toggle="modal">
-                    <label class="form-check-label text-start w-100" for="flexCheckDefault" style="font-size: 14px">
-                      Kişisel Verilerin Korunması hakkında bilgilendirme
-                      metnini okudum ve içeriğini anladım.
-                    </label></a>
-                </div>
-                <div class="form-check kayit-checkbox mb-2">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled"
-                    disabled />
-                  <label class="form-check-label text-start" for="flexCheckIndeterminateDisabled"
-                    style="font-size: 14px">
-                    Kişisel verilerimin, Biletix üyelik kaydı oluşturmak ve
-                    üyelik haklarından yararlanmak amacıyla Biletix’in Kişisel
-                    Verilerin Korunması hakkında bilgilendirme metninde yer
-                    alan hususlarda işlenmesine ve paylaşılmasına
-                    aydınlatılmış açık rızam ile onay veriyorum
-                  </label>
-                </div>
-                <div class="form-check kayit-checkbox mb-2">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                  <label class="form-check-label text-start" for="flexCheckDefault" style="font-size: 14px">
-                    Biletix e-posta ve SMS gönderimleri aracılığıyla güncel
-                    etkinliklerden ve kampanyalardan haberdar olmak istiyorum.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <!-- HESAP OLUŞTUR BUTON -->
-            <button type=" submit" class="btn giris-yap-btn mb-2" id="hesapolustur-btn">
-              Hesap Oluştur
-            </button>
-          </form>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- OKUDUM ANLADIM MODAL -->
-  <div class="modal" id="hesapModal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog hesap-modal-dialog modal-dialog-scrollable">
-      <div class="modal-content hesapolusturModal">
-        <div class="modal-header  p-0" style="border: none !important">
-          <h2 class="modal-title fs-5  float-start" id="exampleModalLabel">
-            KİŞİSEL VERİLERİN KORUNMASI HAKKINDA BİLGİLENDİRME
-          </h2>
+    <!-- RIGHT SIDE -->
+    <div class="col-lg-6 giris-right-side d-flex flex-column d-lg-flex overflow-scroll overflow-x-hidden">
+      <!--ZATEN HESABIN VAR MI? TOP LINK CONTAINER -->
+      <div class="sign-in-link-container me-3 mt-4 mb-5 align-items-center align-bottom">
+        <a href="#" class="float-start d-lg-none"><img src="{% static './img/Giris_Kayit/tmlogo-blue.png' %}"
+            class="logo-blue" alt="" /></a>
+        <div class="hesabin-varmi float-end">
+          <span class="do-not-have-account me-2 fs-6 d-none d-md-inline">Zaten hesabınız var mı?</span>
+          <a href="{% url 'login' %}"><button type="button" class="btn hesap-olustur-button">
+              Giriş Yap
+            </button></a>
         </div>
-        <div class="modal-body hesap-modal-body p-0" style="border: none !important">
-          <!-- P's inside the modal -->
-          <p class="text-center mb-2">(Son güncelleme: 20 Ocak 2021)</p>
-          <p c>
-            Biletix A.Ş. (“Biletix”) olarak, siz değerli müşterilerimizin
-            güvenliğini göz önünde bulundurarak, başta özel hayatın gizliliği
-            olmak üzere, temel hak ve özgürlüklerin korunması amacıyla,
-            kişisel verilerle ilgili düzenlenen "Kişisel Verilerin Korunması
-            Kanunu" hususunda sizi bilgilendirmek ve bu kapsamda “Aydınlatma
-            Yükümlülüğümüzü” yerine getirmek istiyoruz.
-          </p>
-          <p>
-            Amacımız; kişisel verilerinizin alınma şekilleri, işlenme
-            amaçları, hukuki nedenleri ve haklarınız konularında sizi en
-            şeffaf şekilde bilgilendirmektir. Biletix’e iletmiş olduğunuz her
-            türlü kişisel veri (“Veri”) bakımından, 7 Nisan 2016 tarihinde
-            yürürlüğe giren 6698 sayılı Kişisel Verilerin Korunması Kanunu
-            (“KVKK”) gereğince, Şirketimiz Biletix A.Ş.; Veri Sorumlusu ve
-            Veri İşleyen sıfatıyla, kişisel bilgileri; kanunda açıklandığı
-            çerçevede ve aşağıda açıklanan şart ve sınırlara bağlı kalarak;
-            elde edebilecek, kaydedebilecek, depolayabilecek, muhafaza
-            edebilecek, hizmetlerini devam ettirebilmek amacıyla
-            güncelleyebilecek, değiştirebilecek, yeniden düzenleyebilecek,
-            mevzuatın izin verdiği durumlarda ve ölçüde üçüncü kişilere
-            açıklayabilecek, devredebilecek, aktarabilecek, paylaşabilecek,
-            sınıflandırabilecek, anonim hale getirebilecek ve kanunda sayılan
-            diğer şekillerde işleyebilecektir.
-          </p>
-          <p>
-            Veri Sorumlusu: İletişim bilgileri aşağıda aktarılan Biletix Bilet
-            Dağıtım Basım ve Ticaret A.Ş.
-          </p>
-
-          <p>
-            Kişisel verilerinizin işlenme amaçları ve hukuki sebepleri; Kimlik
-            bilgileri, erişim/iletişim bilgileri, tüketici alışkanlığına
-            ilişkin bilgiler, sesli ve görüntülü görüşmelerde veya kurulan
-            sözleşmeler kapsamında gerçekleşen işlemler sonucu edinilen siz
-            müşterilerimizin kimliğini belirli veya belirlenebilir hale
-            getirmeye yarayan her türlü bilgi ve belge, KVKK madde 3/d hükmüne
-            istinaden kişisel veri kapsamındadır.
-          </p>
-          <!-- Table inside the modal -->
-          <table class="table table-borderless hesap-olustur-table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Veri Kategorisi</th>
-                <th scope="col">Veri Saklama Süresi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-              </tr>
-
-              <tr>
-                <th scope="row">4</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">8</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">9</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">10</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">11</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">12</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">13</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">14</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">15</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">16</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">17</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">18</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-              <tr>
-                <th scope="row">19</th>
-                <td>Larry the Bird</td>
-                <td>adsa</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- P's inside the modal again  -->
-          <p>
-            Kişisel verileriniz; tarafınızla akdedilen sözleşmelerin
-            gereklerinin yerine getirilmesi, etkinlik biletlerinin satışının
-            yapılması ve tercih ettiğiniz teslimat yöntemine bağlı olarak
-            teslim edilebilmesi, ödemelerinizin gerçekleşebilmesi,
-            e-faturalama, e-arşiv faturalama ve gerekmesi durumunda iade ve
-            değişiklik işlemlerinin yapılabilmesi, satın aldığınız etkinlikler
-            ya da katıldığınız kampanya/çekilişler kapsamında tercih ettiğiniz
-            iletişim kanalı üzerinden size bilgi paylaşımı yapılması, işlem
-            bilgilerinin tespiti, talebinize bağlı olarak Biletix üyelik kaydı
-            oluşturabilmeniz ve kaydınızın muhafazası, iletişim izni vermiş
-            iseniz tanıtım/bilgilendirme, pazarlama ve kampanya
-            faaliyetlerinin yapılması, etkinlik bülteni gönderilmesi, veri
-            analizi-araştırma yapılabilmesi, bilet satın alırken sigorta
-            seçimi yapmış iseniz sigorta işlemlerinin yapılması,
-            şikayetlerinizin/taleplerinizin Şirketimize aktarılabilmesi ve
-            takibi, talebinize bağlı olarak kombine üyelik ve sadakat programı
-            üyelik işlemleriniz ile akreditasyon işlemlerinin yapılabilmesi ve
-            bu üyelikler kapsamında size bilgi verilebilmesi, yapılan işlem
-            kayıtlarının yedeklenmesi/arşivlenmesi, depolanması ve saklanması,
-            ilgili mevzuat hükümlerince bilgi saklama, raporlama,
-            bilgilendirme yükümlülüklerine uyulması ve yasal
-            yükümlülüklerimizin ifası amaçlarıyla işlenebilmektedir. Biletix,
-            kişisel verilerinizi burada belirtilen işleme amaçları dışında
-            kullanmayacak, açık rızanız ya da ilgili mevzuatta öngörülen
-            sebepler olmaksızın 3. kişilere aktarmayacak ve/veya ifşa
-            etmeyecektir.
-          </p>
-          <p>
-            Kişisel Verileriniz; tercih ettiğiniz ödeme şekline bağlı olarak
-            ilgili Bankalara, online ödeme sistemlerine, bilet satın alırken
-            sigorta seçimi yapmış iseniz ilgili sigorta şirketine ve aracı
-            kurumlarına, tercih ettiğiniz teslimat seçimi kapsamında ilgili
-            dağıtım/kargo-kurye şirketlerine, kombine üyelik ve sadakat
-            programı üyeliği gibi özel bir üyelik satın almış iseniz, ilgili
-            spor kulüplerine ve program üyesi olan ilgili Vakıflara/firmalara,
-            bilet satın alırken bağış seçimi yapmış iseniz ilgili kuruma,
-            şikayetlerinizin giderilmesi ve size daha iyi bir hizmet
-            sunabilmemiz için alt yapı sağlayıcısına, e-faturalama/e-arşiv
-            faturalama işlemleri kapsamında ilgili kurum/kuruluş ve alt yapı
-            sağlayıcılarına, yapılan işlem kayıtlarının
-            yedeklenmesi/saklanması/arşivlenmesi/depolanması için yurt içi ve
-            dışında birlikte çalıştığımız sunucu barındırma, arşivleme,
-            depolama ve yazılım hizmetleri sağlayıcılarına, Şirketimizin ana
-            hissedarına, doğrudan/dolaylı yurtiçi/yurtdışı iştiraklerine;
-            şikayetlerinizin ya da hasıl olan bir sorunun giderimi ya da yasal
-            yükümlülüklerimizin ifası için Şirket’imizin çalışanlarına, hukuk,
-            mali ve vergi danışmanlarına, denetçilerine ve de mevzuat
-            hükümlerinin izin verdiği kişi, kurum ve kuruluşlara
-            aktarılabilecektir. Kişisel verileriniz bu maddede belirtilen
-            üçüncü kişilere aktarılırken sadece gerektiği kadarı ile ve ilgisi
-            kapsamında bir aktarım yapılacaktır.
-          </p>
-          <br />
-          <p>Kişisel verilere ait haklarım nelerdir?</p>
-
-          <p>Kanun’un 11. Maddesi Çerçevesinde Haklarınız ve İstisnaları</p>
-          <p class="mb-0">
-            Şirketimize yazılı olarak veya Kurulun belirleyeceği diğer
-            yöntemlerle başvurarak;
-          </p>
-          <ol type="a" class="hesap-list" style="font-size: 13px; padding-left: 15px">
-            <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
-            <li>
-              Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,
-            </li>
-            <li>
-              Kişisel verilerinizin işlenme amacını ve amacına uygun
-              kullanılıp kullanılmadığını öğrenme,
-            </li>
-            <li>
-              Kişisel verilerinizin yurt içinde veya yurt dışında aktarıldığı
-              üçüncü kişileri bilme,
-            </li>
-            <li>
-              Kişisel verilerinizin eksik veya yanlış işlenmiş ise
-              düzeltilmesini isteme,
-            </li>
-            <li>
-              Kanun’un 7. maddesinde öngörülen şartlar çerçevesinde kişisel
-              verilerinizin silinmesini veya yok edilmesini isteme,
-            </li>
-            <li>
-              Kişisel verilerinizin aktarıldığı üçüncü kişilere yukarıda
-              sayılan ve bentleri uyarınca yapılan işlemlerin bildirilmesini
-              isteme,
-            </li>
-            <li>
-              Kişisel verilerinizin münhasıran otomatik sistemler ile analiz
-              edilmesi nedeniyle aleyhinize bir sonucun ortaya çıkmasına
-              itiraz etme ve
-            </li>
-            <li>
-              Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle
-              zarara uğramanız hâlinde zararın giderilmesini talep etme
-              hakkına sahipsiniz. Haklarınızın, düzenlemenin yürürlük tarihi
-              olan 07.10.2016 tarihinden itibaren kullanılması mümkündür.
-            </li>
-          </ol>
-
-          <br /><br />
-          <p>
-            Yukarıdaki maddelerle ilgili daha detaylı bilgi almak ve kişisel
-            verileriniz hakkındaki talepleriniz için lütfen formu doldurun.
-          </p>
-
-          <p>
-            Kişisel verilerle ilgili taleplerinizi; kimliğinizi tespit edici
-            gerekli bilgiler ve kullanmak istediğiniz hakkınıza yönelik
-            açıklamalarınızla birlikte, a) Şirketimizin Yardım adresindeki
-            ilgili yardım sayfalarındaki formu doldurarak, b) Ayazağa
-            Mahallesi, Ayazağa Yolu, Çelik İş Merkezi, B Blok, No: 3,
-            Şişli-İstanbul adresine iadeli taahhütlü posta, noter vasıtasıyla
-            veya elden teslim yöntemi ile göndereceğiniz bir dilekçe/müracaat
-            yazısı ile iletebilirsiniz. Ayrıca, talebin iletimi konusunda
-            Kurulun başkaca yöntemler belirlemesi durumunda söz konusu
-            yöntemlerle de talebinizi iletebilmeniz mümkün olacaktır.
-            Şirketimiz, başvuruda yer alan taleplerinizi, talebin niteliğine
-            göre en kısa sürede ve en geç otuz gün içinde ücretsiz olarak
-            sonuçlandıracaktır.
-          </p>
-          <p>
-            Ancak, işlemin ayrıca bir maliyet gerektirmesi hâlinde, Kurulca
-            belirlenen tarifedeki ücret alınabilir. Şirketimiz talebi kabul
-            etme veya gerekçesini açıklayarak reddetme ve cevabını ilgili
-            kişiye yazılı olarak veya elektronik ortamda bildirme hakkına
-            sahiptir. Başvuruda yer alan talebin kabul edilmesi hâlinde
-            Şirketimiz talebinizin gereğini yerine getirecektir. Başvurunun
-            Şirketimizin hatasından kaynaklanması hâlinde alınan bir ücret
-            varsa, ücret ilgiliye iade edilecektir. Başvurunun reddedilmesi,
-            verilen cevabın yetersiz bulunması veya süresinde başvuruya cevap
-            verilmemesi hâllerinde; ilgili kişinin, Şirketimizin cevabını
-            öğrendiği tarihten itibaren otuz ve her hâlde başvuru tarihinden
-            itibaren altmış gün içinde Kurula şikâyette bulunabilme hakkı
-            saklıdır. KVKK madde 14/2 hükmüne istinaden, veri sorumlusu olan
-            Şirketimize başvuru yolu tüketilmeden Kurula şikâyet yoluna
-            başvurulamaz. Kişilik hakları ihlal edilenlerin, genel hükümlere
-            göre tazminat hakkı saklıdır.
-          </p>
-
-          <p>
-            Bununla birlikte, KVKK madde 28/2 hükmüne istinaden; “zararın
-            giderilmesini talep etme hakkı hariç, haklarınızı düzenleyen 11
-            inci maddenin; a) Kişisel veri işlemenin suç işlenmesinin
-            önlenmesi veya suç soruşturması için gerekli olması b) İlgili
-            kişinin kendisi tarafından alenileştirilmiş kişisel verilerin
-            işlenmesi c Kişisel veri işlemenin kanunun verdiği yetkiye
-            dayanılarak görevli ve yetkili kamu kurum ve kuruluşları ile kamu
-            kurumu niteliğindeki meslek kuruluşlarınca, denetleme veya
-            düzenleme görevlerinin yürütülmesi ile disiplin soruşturma veya
-            kovuşturması için gerekli olması ç) Kişisel veri işlemenin bütçe,
-            vergi ve mali konulara ilişkin olarak Devletin ekonomik ve mali
-            çıkarlarının korunması için gerekli olması durumlarında
-            uygulanmayacağını da belirtiriz.
-          </p>
-
-          <p>
-            Rıza Gerektirmeyen Haller: 6698 sayılı Kişisel Verilerin Korunması
-            Kanunu’nun 5. Maddesinin 2. fıkrası uyarınca, kanunlarda açıkça
-            öngörülmesi, bir sözleşmenin kurulması veya ifasıyla doğrudan
-            doğruya ilgili olması kaydıyla, sözleşmenin taraflarına ait
-            kişisel verilerin işlenmesinin gerekli olması, veri sorumlusu/veri
-            işleyen sıfatıyla Biletix A.Ş.’nin hukuki yükümlülüğünü yerine
-            getirebilmesi için zorunlu olması, ilgili kişi tarafından
-            alenileştirilmiş olması, bir hakkın tesisi, kullanılması veya
-            korunması için veri işlemenin zorunlu olması, ilgili kişinin temel
-            hak ve özgürlüklerine zarar vermemek kaydıyla veri sorumlusu olan
-            Şirketimizin meşru menfaatleri için veri işlenmesinin zorunlu
-            olması hallerinde Şirketimizin açık rıza almaksızın kişisel
-            verileri işleyebilme hakkı mevcuttur. Ayrıca, Şirketimizin tabii
-            olduğu mevzuattan kaynaklanan kanuni yükümlülüklerini yerine
-            getirmesi için ve/veya yasal zorunluluklar nedeniyle bilgi talep
-            edebilecek kişi/kurumlara yapılacak açıklama, kullanım ve
-            aktarımlar için açık rıza alınmasına gerek olmamaktadır.
-          </p>
-          <p>Ticaret Ünvanı : Biletix Bilet Dağıtım Basım ve Ticaret A.Ş.</p>
-          <p>
-            İletişim Adresi : Ayazağa Mahallesi Vadistanbul Bulvar Cendere
-            Caddesi No:109/B 1B Blok Ofis No:1-2 , 34396 Sarıyer, İstanbul,
-            TÜRKİYE
-          </p>
-          <p>MERSİS No : 0171009936100018</p>
-          <p>İletişim Telefonu : 0850 755 55 55</p>
-          <p>Merkez Ofis : 0212 365 00 00</p>
-          <p>İletişim Faks Numarası : 0212 285 15 25</p>
-          <p>İletişim Web Adresi : Yardım</p>
-
-
-          <div class="modal-buttons float-end">
-            <button type="button" class="btn " data-bs-dismiss="modal">
-              Onaylamadan Çık
-            </button>
-            <button type="button" class="btn " data-bs-dismiss="modal" id="confirmButton">
-              Okudum Anladım
-            </button>
+      </div>
+      <!-- FORM GROUP -->
+      <div class="hesapolustur-form-container m-auto mt-5">
+        <form method="POST" class="hesapolustur-form-kapsayici m-auto flex-column text-center align-items-center w-100"
+          style="place-content: center">
+          {% csrf_token %}
+          <div class="sign-in-title mb-3">
+            <h1 style="font-size: 26px; font-weight: 600">Hesap Oluştur</h1>
           </div>
-        </div>
+          <div class="row">
+            <div class="col-sm-6 mb-lg-2">
+              <!-- isim-input -->
+              <div class="giris-form form-floating">
+                <input type="text" class="form-control mb-3 rounded-3" id="kayitad" name="isim" placeholder="Ad"
+                  required />
+                <label for="kayitad" class="float-start form-label">Ad</label>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-lg-2">
+              <!-- soyisim-input -->
+              <div class="giris-form form-floating">
+                <input type="text" class="form-control mb-3 rounded-3" id="kayitsoyad" name="soyisim" placeholder="SoyAd"
+                  required />
+                <label for="kayitsoyad" class="float-start form-label">Soyad</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-lg-2">
+              <!-- doğum-tarihi -->
+              <div class="giris-form form-floating">
+                <input type="date" class="form-control mb-3 rounded-3" id="hesapDate" name="dogum-tarihi" required />
+                <label for="date" class="float-start form-label">Doğum Tarihi</label>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-lg-2">
+              <!-- cinsiyet -->
+              <div class="giris-form" style="height: 58px;  ">
+                <select class="form-select select-canim" style="height: 58px; " name="cinsiyet">
+                  <option data-hidden="true" hidden>CİNSİYET</option>
+                  <option>Kadın</option>
+                  <option>Erkek</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-lg-2">
+              <!-- email -->
+              <div class="giris-form form-floating">
+                <input type="email" class="form-control mb-3 rounded-3" id="kayitemail" name="email"
+                  placeholder="Mail adresinizi girin" required />
+                <label for="email" class="float-start form-label">E-posta</label>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-lg-2">
+              <!-- tel -->
+              <div class="giris-form form-floating">
+                <input name="telefon" type="tel" class="form-control mb-3 rounded-3" id="kayitad" placeholder="kayittelefon"
+                  required />
+                <label for="kayittelefon" class="float-start form-label">Telefon</label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-6 mb-lg-2">
+              <!-- şifre -->
+              <div class="giris-form form-floating">
+                <input type="password" class="form-control mb-3 rounded-3" id="kayitPassword" name="sifre"
+                  placeholder="Mail adresinizi girin" required />
+                <i class="fa-regular fa-eye sifre-icon" id="showPassword"></i>
+                <i class="fa-regular fa-eye-slash sifre-icon" id="hidePassword"></i>
+                <label for="Kayitpassword" class="float-start form-label">Şifre</label>
+              </div>
+            </div>
+          </div>
 
+          <!-- CHECKBOX CONTAINER -->
+          <div class="row mb-lg-2">
+            <div class="checkbox-container">
+              <div class="form-check kayit-checkbox mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="okudumAnladim" disabled />
+                <a href="" data-bs-target="#hesapModal" data-bs-toggle="modal">
+                  <label class="form-check-label text-start w-100" for="flexCheckDefault"
+                    style="font-size: 14px; cursor: pointer;">
+                    Kişisel Verilerin Korunması hakkında bilgilendirme
+                    metnini okudum ve içeriğini anladım.
+                  </label></a>
+              </div>
+              <div class="form-check kayit-checkbox mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled" disabled />
+                <label class="form-check-label text-start" for="flexCheckIndeterminateDisabled" style="font-size: 14px">
+                  Kişisel verilerimin, Biletix üyelik kaydı oluşturmak ve
+                  üyelik haklarından yararlanmak amacıyla Biletix’in Kişisel
+                  Verilerin Korunması hakkında bilgilendirme metninde yer
+                  alan hususlarda işlenmesine ve paylaşılmasına
+                  aydınlatılmış açık rızam ile onay veriyorum
+                </label>
+              </div>
+              <div class="form-check kayit-checkbox mb-2">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label class="form-check-label text-start" for="flexCheckDefault" style="font-size: 14px">
+                  Biletix e-posta ve SMS gönderimleri aracılığıyla güncel
+                  etkinliklerden ve kampanyalardan haberdar olmak istiyorum.
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- HESAP OLUŞTUR BUTON -->
+          <button type=" submit" class="btn giris-yap-btn mb-2" id="hesapolustur-btn" disabled>
+            Hesap Oluştur
+          </button>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
-  
-  <script>
-    // Get references to the elements
-    const checkbox = document.getElementById("okudumAnladim");
-    const confirmButton = document.getElementById("confirmButton");
+<!-- OKUDUM ANLADIM MODAL -->
+<div class="modal" id="hesapModal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog hesap-modal-dialog modal-dialog-scrollable">
+    <div class="modal-content hesapolusturModal">
+      <div class="modal-header  p-0" style="border: none !important">
+        <h2 class="modal-title fs-5  float-start" id="exampleModalLabel">
+          KİŞİSEL VERİLERİN KORUNMASI HAKKINDA BİLGİLENDİRME
+        </h2>
+      </div>
+      <div class="modal-body hesap-modal-body p-0" style="border: none !important">
+        <!-- P's inside the modal -->
+        <p class="text-center mb-2">(Son güncelleme: 20 Ocak 2021)</p>
+        <p c>
+          Biletix A.Ş. (“Biletix”) olarak, siz değerli müşterilerimizin
+          güvenliğini göz önünde bulundurarak, başta özel hayatın gizliliği
+          olmak üzere, temel hak ve özgürlüklerin korunması amacıyla,
+          kişisel verilerle ilgili düzenlenen "Kişisel Verilerin Korunması
+          Kanunu" hususunda sizi bilgilendirmek ve bu kapsamda “Aydınlatma
+          Yükümlülüğümüzü” yerine getirmek istiyoruz.
+        </p>
+        <p>
+          Amacımız; kişisel verilerinizin alınma şekilleri, işlenme
+          amaçları, hukuki nedenleri ve haklarınız konularında sizi en
+          şeffaf şekilde bilgilendirmektir. Biletix’e iletmiş olduğunuz her
+          türlü kişisel veri (“Veri”) bakımından, 7 Nisan 2016 tarihinde
+          yürürlüğe giren 6698 sayılı Kişisel Verilerin Korunması Kanunu
+          (“KVKK”) gereğince, Şirketimiz Biletix A.Ş.; Veri Sorumlusu ve
+          Veri İşleyen sıfatıyla, kişisel bilgileri; kanunda açıklandığı
+          çerçevede ve aşağıda açıklanan şart ve sınırlara bağlı kalarak;
+          elde edebilecek, kaydedebilecek, depolayabilecek, muhafaza
+          edebilecek, hizmetlerini devam ettirebilmek amacıyla
+          güncelleyebilecek, değiştirebilecek, yeniden düzenleyebilecek,
+          mevzuatın izin verdiği durumlarda ve ölçüde üçüncü kişilere
+          açıklayabilecek, devredebilecek, aktarabilecek, paylaşabilecek,
+          sınıflandırabilecek, anonim hale getirebilecek ve kanunda sayılan
+          diğer şekillerde işleyebilecektir.
+        </p>
+        <p>
+          Veri Sorumlusu: İletişim bilgileri aşağıda aktarılan Biletix Bilet
+          Dağıtım Basım ve Ticaret A.Ş.
+        </p>
 
-    // Add a click event listener to the confirm button
-    confirmButton.addEventListener("click", () => {
-      // Enable the checkbox and check it when the confirm button is clicked
-      checkbox.disabled = false;
-      checkbox.checked = true;
-    });
+        <p>
+          Kişisel verilerinizin işlenme amaçları ve hukuki sebepleri; Kimlik
+          bilgileri, erişim/iletişim bilgileri, tüketici alışkanlığına
+          ilişkin bilgiler, sesli ve görüntülü görüşmelerde veya kurulan
+          sözleşmeler kapsamında gerçekleşen işlemler sonucu edinilen siz
+          müşterilerimizin kimliğini belirli veya belirlenebilir hale
+          getirmeye yarayan her türlü bilgi ve belge, KVKK madde 3/d hükmüne
+          istinaden kişisel veri kapsamındadır.
+        </p>
+        <!-- Table inside the modal -->
+        <table class="table table-borderless hesap-olustur-table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Veri Kategorisi</th>
+              <th scope="col">Veri Saklama Süresi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+            </tr>
 
-    // Show password
-    const passwordInput = document.getElementById("kayitPassword");
-    const showPasswordIcon = document.getElementById("showPassword");
-    const hidePasswordIcon = document.getElementById("hidePassword");
+            <tr>
+              <th scope="row">4</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">9</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">10</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">11</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">12</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">13</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">14</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">15</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">16</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">17</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">18</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+            <tr>
+              <th scope="row">19</th>
+              <td>Larry the Bird</td>
+              <td>adsa</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- P's inside the modal again  -->
+        <p>
+          Kişisel verileriniz; tarafınızla akdedilen sözleşmelerin
+          gereklerinin yerine getirilmesi, etkinlik biletlerinin satışının
+          yapılması ve tercih ettiğiniz teslimat yöntemine bağlı olarak
+          teslim edilebilmesi, ödemelerinizin gerçekleşebilmesi,
+          e-faturalama, e-arşiv faturalama ve gerekmesi durumunda iade ve
+          değişiklik işlemlerinin yapılabilmesi, satın aldığınız etkinlikler
+          ya da katıldığınız kampanya/çekilişler kapsamında tercih ettiğiniz
+          iletişim kanalı üzerinden size bilgi paylaşımı yapılması, işlem
+          bilgilerinin tespiti, talebinize bağlı olarak Biletix üyelik kaydı
+          oluşturabilmeniz ve kaydınızın muhafazası, iletişim izni vermiş
+          iseniz tanıtım/bilgilendirme, pazarlama ve kampanya
+          faaliyetlerinin yapılması, etkinlik bülteni gönderilmesi, veri
+          analizi-araştırma yapılabilmesi, bilet satın alırken sigorta
+          seçimi yapmış iseniz sigorta işlemlerinin yapılması,
+          şikayetlerinizin/taleplerinizin Şirketimize aktarılabilmesi ve
+          takibi, talebinize bağlı olarak kombine üyelik ve sadakat programı
+          üyelik işlemleriniz ile akreditasyon işlemlerinin yapılabilmesi ve
+          bu üyelikler kapsamında size bilgi verilebilmesi, yapılan işlem
+          kayıtlarının yedeklenmesi/arşivlenmesi, depolanması ve saklanması,
+          ilgili mevzuat hükümlerince bilgi saklama, raporlama,
+          bilgilendirme yükümlülüklerine uyulması ve yasal
+          yükümlülüklerimizin ifası amaçlarıyla işlenebilmektedir. Biletix,
+          kişisel verilerinizi burada belirtilen işleme amaçları dışında
+          kullanmayacak, açık rızanız ya da ilgili mevzuatta öngörülen
+          sebepler olmaksızın 3. kişilere aktarmayacak ve/veya ifşa
+          etmeyecektir.
+        </p>
+        <p>
+          Kişisel Verileriniz; tercih ettiğiniz ödeme şekline bağlı olarak
+          ilgili Bankalara, online ödeme sistemlerine, bilet satın alırken
+          sigorta seçimi yapmış iseniz ilgili sigorta şirketine ve aracı
+          kurumlarına, tercih ettiğiniz teslimat seçimi kapsamında ilgili
+          dağıtım/kargo-kurye şirketlerine, kombine üyelik ve sadakat
+          programı üyeliği gibi özel bir üyelik satın almış iseniz, ilgili
+          spor kulüplerine ve program üyesi olan ilgili Vakıflara/firmalara,
+          bilet satın alırken bağış seçimi yapmış iseniz ilgili kuruma,
+          şikayetlerinizin giderilmesi ve size daha iyi bir hizmet
+          sunabilmemiz için alt yapı sağlayıcısına, e-faturalama/e-arşiv
+          faturalama işlemleri kapsamında ilgili kurum/kuruluş ve alt yapı
+          sağlayıcılarına, yapılan işlem kayıtlarının
+          yedeklenmesi/saklanması/arşivlenmesi/depolanması için yurt içi ve
+          dışında birlikte çalıştığımız sunucu barındırma, arşivleme,
+          depolama ve yazılım hizmetleri sağlayıcılarına, Şirketimizin ana
+          hissedarına, doğrudan/dolaylı yurtiçi/yurtdışı iştiraklerine;
+          şikayetlerinizin ya da hasıl olan bir sorunun giderimi ya da yasal
+          yükümlülüklerimizin ifası için Şirket’imizin çalışanlarına, hukuk,
+          mali ve vergi danışmanlarına, denetçilerine ve de mevzuat
+          hükümlerinin izin verdiği kişi, kurum ve kuruluşlara
+          aktarılabilecektir. Kişisel verileriniz bu maddede belirtilen
+          üçüncü kişilere aktarılırken sadece gerektiği kadarı ile ve ilgisi
+          kapsamında bir aktarım yapılacaktır.
+        </p>
+        <br />
+        <p>Kişisel verilere ait haklarım nelerdir?</p>
 
-    showPasswordIcon.addEventListener("click", function () {
-      passwordInput.type = "text";
-      showPasswordIcon.style.display = "none";
-      hidePasswordIcon.style.display = "inline-block";
-    });
+        <p>Kanun’un 11. Maddesi Çerçevesinde Haklarınız ve İstisnaları</p>
+        <p class="mb-0">
+          Şirketimize yazılı olarak veya Kurulun belirleyeceği diğer
+          yöntemlerle başvurarak;
+        </p>
+        <ol type="a" class="hesap-list" style="font-size: 13px; padding-left: 15px">
+          <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+          <li>
+            Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,
+          </li>
+          <li>
+            Kişisel verilerinizin işlenme amacını ve amacına uygun
+            kullanılıp kullanılmadığını öğrenme,
+          </li>
+          <li>
+            Kişisel verilerinizin yurt içinde veya yurt dışında aktarıldığı
+            üçüncü kişileri bilme,
+          </li>
+          <li>
+            Kişisel verilerinizin eksik veya yanlış işlenmiş ise
+            düzeltilmesini isteme,
+          </li>
+          <li>
+            Kanun’un 7. maddesinde öngörülen şartlar çerçevesinde kişisel
+            verilerinizin silinmesini veya yok edilmesini isteme,
+          </li>
+          <li>
+            Kişisel verilerinizin aktarıldığı üçüncü kişilere yukarıda
+            sayılan ve bentleri uyarınca yapılan işlemlerin bildirilmesini
+            isteme,
+          </li>
+          <li>
+            Kişisel verilerinizin münhasıran otomatik sistemler ile analiz
+            edilmesi nedeniyle aleyhinize bir sonucun ortaya çıkmasına
+            itiraz etme ve
+          </li>
+          <li>
+            Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle
+            zarara uğramanız hâlinde zararın giderilmesini talep etme
+            hakkına sahipsiniz. Haklarınızın, düzenlemenin yürürlük tarihi
+            olan 07.10.2016 tarihinden itibaren kullanılması mümkündür.
+          </li>
+        </ol>
 
-    hidePasswordIcon.addEventListener("click", function () {
-      passwordInput.type = "password";
-      showPasswordIcon.style.display = "inline-block";
-      hidePasswordIcon.style.display = "none";
-    });
+        <br /><br />
+        <p>
+          Yukarıdaki maddelerle ilgili daha detaylı bilgi almak ve kişisel
+          verileriniz hakkındaki talepleriniz için lütfen formu doldurun.
+        </p>
 
-  </script>
+        <p>
+          Kişisel verilerle ilgili taleplerinizi; kimliğinizi tespit edici
+          gerekli bilgiler ve kullanmak istediğiniz hakkınıza yönelik
+          açıklamalarınızla birlikte, a) Şirketimizin Yardım adresindeki
+          ilgili yardım sayfalarındaki formu doldurarak, b) Ayazağa
+          Mahallesi, Ayazağa Yolu, Çelik İş Merkezi, B Blok, No: 3,
+          Şişli-İstanbul adresine iadeli taahhütlü posta, noter vasıtasıyla
+          veya elden teslim yöntemi ile göndereceğiniz bir dilekçe/müracaat
+          yazısı ile iletebilirsiniz. Ayrıca, talebin iletimi konusunda
+          Kurulun başkaca yöntemler belirlemesi durumunda söz konusu
+          yöntemlerle de talebinizi iletebilmeniz mümkün olacaktır.
+          Şirketimiz, başvuruda yer alan taleplerinizi, talebin niteliğine
+          göre en kısa sürede ve en geç otuz gün içinde ücretsiz olarak
+          sonuçlandıracaktır.
+        </p>
+        <p>
+          Ancak, işlemin ayrıca bir maliyet gerektirmesi hâlinde, Kurulca
+          belirlenen tarifedeki ücret alınabilir. Şirketimiz talebi kabul
+          etme veya gerekçesini açıklayarak reddetme ve cevabını ilgili
+          kişiye yazılı olarak veya elektronik ortamda bildirme hakkına
+          sahiptir. Başvuruda yer alan talebin kabul edilmesi hâlinde
+          Şirketimiz talebinizin gereğini yerine getirecektir. Başvurunun
+          Şirketimizin hatasından kaynaklanması hâlinde alınan bir ücret
+          varsa, ücret ilgiliye iade edilecektir. Başvurunun reddedilmesi,
+          verilen cevabın yetersiz bulunması veya süresinde başvuruya cevap
+          verilmemesi hâllerinde; ilgili kişinin, Şirketimizin cevabını
+          öğrendiği tarihten itibaren otuz ve her hâlde başvuru tarihinden
+          itibaren altmış gün içinde Kurula şikâyette bulunabilme hakkı
+          saklıdır. KVKK madde 14/2 hükmüne istinaden, veri sorumlusu olan
+          Şirketimize başvuru yolu tüketilmeden Kurula şikâyet yoluna
+          başvurulamaz. Kişilik hakları ihlal edilenlerin, genel hükümlere
+          göre tazminat hakkı saklıdır.
+        </p>
+
+        <p>
+          Bununla birlikte, KVKK madde 28/2 hükmüne istinaden; “zararın
+          giderilmesini talep etme hakkı hariç, haklarınızı düzenleyen 11
+          inci maddenin; a) Kişisel veri işlemenin suç işlenmesinin
+          önlenmesi veya suç soruşturması için gerekli olması b) İlgili
+          kişinin kendisi tarafından alenileştirilmiş kişisel verilerin
+          işlenmesi c Kişisel veri işlemenin kanunun verdiği yetkiye
+          dayanılarak görevli ve yetkili kamu kurum ve kuruluşları ile kamu
+          kurumu niteliğindeki meslek kuruluşlarınca, denetleme veya
+          düzenleme görevlerinin yürütülmesi ile disiplin soruşturma veya
+          kovuşturması için gerekli olması ç) Kişisel veri işlemenin bütçe,
+          vergi ve mali konulara ilişkin olarak Devletin ekonomik ve mali
+          çıkarlarının korunması için gerekli olması durumlarında
+          uygulanmayacağını da belirtiriz.
+        </p>
+
+        <p>
+          Rıza Gerektirmeyen Haller: 6698 sayılı Kişisel Verilerin Korunması
+          Kanunu’nun 5. Maddesinin 2. fıkrası uyarınca, kanunlarda açıkça
+          öngörülmesi, bir sözleşmenin kurulması veya ifasıyla doğrudan
+          doğruya ilgili olması kaydıyla, sözleşmenin taraflarına ait
+          kişisel verilerin işlenmesinin gerekli olması, veri sorumlusu/veri
+          işleyen sıfatıyla Biletix A.Ş.’nin hukuki yükümlülüğünü yerine
+          getirebilmesi için zorunlu olması, ilgili kişi tarafından
+          alenileştirilmiş olması, bir hakkın tesisi, kullanılması veya
+          korunması için veri işlemenin zorunlu olması, ilgili kişinin temel
+          hak ve özgürlüklerine zarar vermemek kaydıyla veri sorumlusu olan
+          Şirketimizin meşru menfaatleri için veri işlenmesinin zorunlu
+          olması hallerinde Şirketimizin açık rıza almaksızın kişisel
+          verileri işleyebilme hakkı mevcuttur. Ayrıca, Şirketimizin tabii
+          olduğu mevzuattan kaynaklanan kanuni yükümlülüklerini yerine
+          getirmesi için ve/veya yasal zorunluluklar nedeniyle bilgi talep
+          edebilecek kişi/kurumlara yapılacak açıklama, kullanım ve
+          aktarımlar için açık rıza alınmasına gerek olmamaktadır.
+        </p>
+        <p>Ticaret Ünvanı : Biletix Bilet Dağıtım Basım ve Ticaret A.Ş.</p>
+        <p>
+          İletişim Adresi : Ayazağa Mahallesi Vadistanbul Bulvar Cendere
+          Caddesi No:109/B 1B Blok Ofis No:1-2 , 34396 Sarıyer, İstanbul,
+          TÜRKİYE
+        </p>
+        <p>MERSİS No : 0171009936100018</p>
+        <p>İletişim Telefonu : 0850 755 55 55</p>
+        <p>Merkez Ofis : 0212 365 00 00</p>
+        <p>İletişim Faks Numarası : 0212 285 15 25</p>
+        <p>İletişim Web Adresi : Yardım</p>
+
+
+        <div class="modal-buttons float-end">
+          <button type="button" class="btn " data-bs-dismiss="modal">
+            Onaylamadan Çık
+          </button>
+          <button type="button" class="btn " data-bs-dismiss="modal" id="confirmButton">
+            Okudum Anladım
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Get references to the elements
+  const checkbox = document.getElementById("okudumAnladim");
+  const checkbox2 = document.getElementById("flexCheckIndeterminateDisabled")
+  const confirmButton = document.getElementById("confirmButton");
+  const hesapButton = document.getElementById("hesapolustur-btn");
+
+  // Add a click event listener to the confirm button
+  confirmButton.addEventListener("click", () => {
+    // Enable the checkbox and check it when the confirm button is clicked
+    checkbox.disabled = false;
+    checkbox.checked = true;
+    checkbox2.disabled = false
+  });
+
+  // Show password
+  const passwordInput = document.getElementById("kayitPassword");
+  const showPasswordIcon = document.getElementById("showPassword");
+  const hidePasswordIcon = document.getElementById("hidePassword");
+
+  showPasswordIcon.addEventListener("click", function () {
+    passwordInput.type = "text";
+    showPasswordIcon.style.display = "none";
+    hidePasswordIcon.style.display = "inline-block";
+  });
+
+  hidePasswordIcon.addEventListener("click", function () {
+    passwordInput.type = "password";
+    showPasswordIcon.style.display = "inline-block";
+    hidePasswordIcon.style.display = "none";
+  });
+
+  // Making Hesap Olustur button active once the first and second checkboxes are checked
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // Checking the state of the checkboxes and enable/disable the button
+    function updateButtonState() {
+      hesapButton.disabled = !(checkbox.checked && checkbox2.checked);
+    }
+
+    // Add event listeners to the checkboxes
+    checkbox.addEventListener("change", updateButtonState);
+    checkbox2.addEventListener("change", updateButtonState);
+
+    // Initial state
+    updateButtonState();
+  });
+
+
+</script>
 {% endblock content %}

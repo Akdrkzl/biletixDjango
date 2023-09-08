@@ -79,7 +79,17 @@ def kisiselBilgilerDegistir(request):
         user.save()
         messages.success(request,'Kullanıcı Bilgileri Başarıyla Değiştirildi')
         return redirect('profil')
-    return render(request,'hesabim-bilgileri.html')
+    
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+    context = {
+        'sepet_miktar' : sepet_miktar
+    }
+    return render(request,'hesabim-bilgileri.html',context)
 
 def sifreDegistir(request):
     if request.method == 'POST':
@@ -98,36 +108,109 @@ def sifreDegistir(request):
         else:
             messages.error(request, 'Mevcut Şifre Yanlış veya Yeni Şifreler Eşleşmiyor')
             return redirect('sifre-degistir')
-
-    return render(request,'hesabim-sifre-degistir.html')
+    
+    
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+    context = {
+        'sepet_miktar' : sepet_miktar
+    }
+    return render(request,'hesabim-sifre-degistir.html',context)
 
 def adresDegistir(request):
     if request.method == 'POST':
         ulke = request.POST['ulke']
         sehir = request.POST['sehir']
         ilce = request.POST['ilce']
-        acik_adres = requst.POST['acik-adres']
-        adres_başlık = request['adres-baslik']
-
+        acik_adres = request.POST['acik-adres']
+        adres_baslik = request.POST['adres-baslik']
         user = request.user
-        adres = Adres.objects.get(user = user)
-        adres.ulke = ulke
-        adres.sehir = sehir
-        adres.ilce = ilce
-        adres.acik_adres = acik_adres
-        adres.adres_baslik = adres_baslik
+        
+        try:
+            adres = Adres.objects.get(user=user)
+            adres.ulke = ulke
+            adres.sehir = sehir
+            adres.ilce = ilce
+            adres.acik_adres = acik_adres
+            adres.adres_baslik = adres_baslik
+            adres.save()
+        
+        except Adres.DoesNotExist:
+            
+            adres = Adres.objects.create(
+            user=user,
+            ulke=ulke,
+            sehir=sehir,
+            ilce=ilce,
+            acik_adres=acik_adres,
+            adres_baslik=adres_baslik
+        )
         adres.save()
-        return redirect('profil')
-    return render(request,'hesabim-adres.html')
+
+        return redirect('adres')
+    
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+
+    adress = Adres.objects.all()
+    context = {
+        'adress' : adress,
+        'sepet_miktar' : sepet_miktar,
+    }
+    return render(request,'hesabim-adres.html',context)
 
 def bildirimTercihleri(request):
-    return render(request,'hesabim-bildirim.html')
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+    context = {
+        'sepet_miktar' : sepet_miktar
+    }
+    return render(request,'hesabim-bildirim.html',context)
 
 def gelecekBilet(request):
-    return render(request,'hesabim-gelecek-bilet.html')
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+    context = {
+        'sepet_miktar' : sepet_miktar
+    }
+    return render(request,'hesabim-gelecek-bilet.html',context)
 
 def gecmisBilet(request):
-    return render(request,'hesabim-gecmis-bilet.html')
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+    context = {
+        'sepet_miktar' : sepet_miktar
+    }
+    return render(request,'hesabim-gecmis-bilet.html',context)
 
 def sezonlukBilet(request):
-    return render(request,'hesabim-sezonluk-bilet.html')
+    user = request.user
+    sepet = Sepet.objects.filter(user=user)
+    #sepetteki-tüm-miktarı-görüntüler
+    sepet_miktar = 0
+    for sepet_item in sepet:
+        sepet_miktar += sepet_item.miktar
+    context = {
+        'sepet_miktar' : sepet_miktar
+    }
+    return render(request,'hesabim-sezonluk-bilet.html',context)

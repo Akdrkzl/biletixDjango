@@ -103,13 +103,16 @@ class Sepet(models.Model):
     def __str__(self):
         return self.isim
 
-# class Adres(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-#     ulke = models.CharField(max_length=100)
-#     sehir = models.CharField(max_length=100)
-#     ilce = models.CharField(max_length=100)
-#     acik_adres = models.CharField(max_length=255)
-#     adres_baslık = models.CharField(max_length=100)
+class Adres(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    ulke = models.CharField(max_length=100)
+    sehir = models.CharField(max_length=100)
+    ilce = models.CharField(max_length=100)
+    acik_adres = models.CharField(max_length=255)
+    adres_baslik = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.ulke
 
 class Musteri(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
