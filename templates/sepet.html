@@ -211,14 +211,13 @@
             src="{% static './img/dolusepet/bg-orange-timer.svg' %}"
             alt=""
           />
-          <span>04.59</span>
+          <span class="geriSayim"></span>
         </div>
-        {% for i in request.user.sepet_set.all %}
 
         <p class="fw-semibold text-uppercase mt-4 m-0" style="font-size: 14px">
           Ödenecek Tutar
         </p>
-        <span class="total-price fw-bold" style="font-size: 24px">₺{{i.fiyat}}</span>
+        <span class="total-price fw-bold" style="font-size: 24px">₺{{sepet_toplam_fiyat}}</span>
 
         <div class="summary-content mt-3">
           <div class="d-grid gap-2 col-6 mx-auto w-100">
@@ -240,10 +239,9 @@
             <!-- <span>Sipariş bedeli</span><span>₺123</span> -->
           </div>
           <div class="toplam-bilet d-flex justify-content-between mt-1 mb-3">
-            <span>Biletler(x {{i.miktar}})</span>
-            <span>₺{{i.fiyat}}</span>
+            <span>Biletler(x {{sepet_miktar}})</span>
+            <span>₺{{sepet_toplam_fiyat}}</span>
           </div>
-      {% endfor %}
 
         </div>
       </div>
@@ -377,7 +375,7 @@
     const url = "/etkinlik/sepet-hepsini-sil/";
     window.location.href = url;
   }
-  geriSayimBaslat(4, 59);
+  geriSayimBaslat(0, 10);
 </script>
 
 {% endblock content %}
